@@ -13,8 +13,8 @@ Adultos y jóvenes entre 12 años y 50. Sexo indistinto.
 De conocimiento básico a avanzado sobre computadoras e informática. Clase medias a alta.
 
 ## Referencias
- - https://www.maximus.com.ar/HOME/maximus.aspx3
- - https://compragamer.com/
- - https://www.compumundo.com.ar/
- - https://www.letsbld.com/
+ - https://www.maximus.com.ar
+ - https://compragamer.com
+ - https://www.compumundo.com.ar
+ - https://www.letsbld.com
  - https://www.ibuypower.com

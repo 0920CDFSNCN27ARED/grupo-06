@@ -2,9 +2,9 @@
 
 ## Temática del sitio
 
-Sitios de venta de computadoras/notebooks, partes de PC y periféricos (mouse, teclados, auriculares y micrófonos, cámaras, parlantes, sillas gamer, Monitores, etc). 
+Sitio de venta de computadoras/notebooks, partes de PC y periféricos (mouse, teclados, auriculares, micrófonos, cámaras, parlantes, sillas gamer, Monitores, etc.). 
 
-El sitio brindará asesoramiento al comprador para obtener el mejor producto que se adapte a su necesidad o en el armado de una al comprarla una PC por partes. 
+Brindará asesoramiento al comprador de acuerdo a la necesidad planteada. Tendrá en cuenta los juegos o programas que utilizará, las tecnologías que desea y su presupuesto. Ofrecerá un producto o una selección de ellos, si de una PC se tratase, acorde a los parámetros informados.
 
 ## Audiencia objetivo
 Adultos y jóvenes entre 12 años y 50. Sexo indistinto.

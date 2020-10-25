@@ -14,7 +14,7 @@ De conocimiento básico a avanzado sobre computadoras e informática. Clase medi
 
 ## Referencias
  - https://www.maximus.com.ar
- - https://compragamer.com
+ - https://www.compragamer.com
  - https://www.compumundo.com.ar
  - https://www.letsbld.com
  - https://www.ibuypower.com

@@ -1,1 +1,13 @@
 # grupo-06
+
+## Temática del Marketplace
+
+Sitios de venta de computadoras/notebooks, partes de PC y periféricos (mouse, teclados, auriculares y micrófonos, cámaras, parlantes, sillas gamer, Monitores, etc). 
+
+El sitio brindará un asesoramiento al comprador para obtener el mejor producto que se adapte a su necesidad o en el armado de una al comprarla por partes. 
+
+## Audiencia objetivo
+Adultos y jóvenes entre 12 años y 50. Sexo indistinto.
+
+## Publico Objetivo
+De conocimiento básico a avanzado sobre computadoras e informática. Clase medias a alta.

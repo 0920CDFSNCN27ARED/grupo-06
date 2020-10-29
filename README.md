@@ -18,3 +18,9 @@ De conocimiento básico a avanzado sobre computadoras e informática. Clase medi
  - https://www.compumundo.com.ar
  - https://www.letsbld.com
  - https://www.ibuypower.com
+
+
+### Integrantes
+- Silvestre Novaro
+- Lucas Aranda
+- Juan Ignacio Guastello

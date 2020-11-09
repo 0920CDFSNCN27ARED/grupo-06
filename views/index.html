@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="/css/style.css" href="style.css" />
-    <title>CompumundoHiperMegaRed</title>
-  </head>
-  <body>
-    <header>
-      <img src="" alt="" />
 
-      <nav>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <ul>
-          
-            <li id="search"><i class="fas fa-search"></i></i></li>
-            <ul id="account"><i class="fas fa-user-circle"></i></i>
-            <li id="login">Ingresá <a href="/views/login"><i class="fas fa-sign-in-alt"></i></i></a></li>
-            <li id="register">Creá tu cuenta<i class="fas fa-address-card"></i></li>
-            </ul>
-            
-          </ul>
-          
-          
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div id="carrusel"></div>
-    </main>
-    <div id="cards-l"></div>
-    <div id="banner"></div>
-    <div id="cards-m"></div>
-    <div id="brands"></div>
-    <footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>CompumundoHiperMegaRed</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="/"><img src="images/logo_header.png" alt="Logo CompumundoHiperMegaRed" /></a>
+      <ul class="menu_nav">
+        <li><a href="/pc">PC de escritorio</a></li>
+        <li><a href="/notebook">Notebook</a></li>
+        <li><a href="/productos">Productos</a></li>
+        <li><a href="/perifericos">Perifericos</a></li>
+        <li><a href="/configuracion">Configura tu PC</a></li>
+      </ul>
+      <ul>
+        <li id="search"><a href=""><i class="fas fa-search"></i></a></li>
+        <li id="account"><a href="/login"><i class="fas fa-user-circle"></i></a></i>
+          <!--<li id="login">
+            <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+          </li>
+          <li id="register">
+            <a href="/register">Creá tu cuenta<i class="fas fa-address-card"></i></a>
+          </li>-->
+        </li>
+        <li id="search"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="slider">slider</section>
+    <section id="sales">sales</section>
+    <section id="banner">banner</section>
+    <section id="cards_products">cards_productos</section>
+    <section id="brands">brands</section>
+  </main>
+  <footer>
+    <section id="elements_footer">
       <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <h3>Suscribite a nuestro newsletter</h3>
+        <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
+        <form>
+          <input type="text" id="newsletter_send" name="newsletter" placeholder="Ingrese sus email">
+          <input type="submit" value="Enviar">
+        </form>
       </div>
       <div>
-        <div></div>
-        <div><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-instagram"></i></div>
+        <h3>Contacto</h3>
+        <ul>
+          <li>11 2345 6789</li>
+          <li>info@compumundohipermegared.com</li>
+          <li><a href=""></a>Encontrar un local</li>
+        </ul>
       </div>
-    </footer>
-  </body>
+      <div>
+        <h3>Productos</h3>
+        <ul>
+          <li><a href="">Microprocesadore</a>s</li>
+          <li><a href="">Motherboards</a></li>
+          <li><a href="">Memorias ram</a></li>
+          <li><a href="">Placas de video</a></li>
+          <li><a href="">Discos rigidos</a></li>
+          <li><a href="">Ver todos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Perifericos</h3>
+        <ul>
+          <li><a href="">Teclados</a></li>
+          <li><a href="">Mouses</a></li>
+          <li><a href="">Pads</a></li>
+          <li><a href="">Auriculares</a></li>
+          <li><a href="">Parlantes</a></li>
+          <li><a href="">Ver todos</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="social_footer">
+      <img src="images/logo_footer.png" alt="" />
+      <ul>
+        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+        <li><a href=""><i class="fab fa-instagram"></i></a></i></li>
+      </ul>
+    </section>
+  </footer>
+</body>
+
 </html>

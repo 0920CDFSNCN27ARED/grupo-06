@@ -65,36 +65,21 @@
     margin-top: 10px;
     margin-bottom: 50px;
     width: 40%;
-    
 }
-.content_register li{
-list-style-type: disc !important;
-padding: 10px;
-
+.content_register li {
+    list-style-type: disc !important;
+    padding: 10px;
 }
 
-
-
-.display_flex_register{
+.display_flex_register {
     justify-content: space-around;
-   }
-
-.avatar_register{
-font-size: 200px;
-text-align: center;
 }
 
-h6{
+.avatar_register {
+    font-size: 200px;
+    text-align: center;
+}
+
+h6 {
     margin: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-

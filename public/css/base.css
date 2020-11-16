@@ -1,0 +1,62 @@
+h1 {
+    font-size: 2.4em;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0px;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 0px;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 0px;
+}
+h5 {
+    font-size: 0.83em;
+    margin: 0px;
+}
+h5 {
+    font-size: 0.67em;
+    margin: 0px;
+}
+
+p {
+    line-height: 1.5em;
+}
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin_20 {
+    margin: 20px;
+}
+
+.margin_10 {
+    margin: 10px;
+}
+
+.padding_y_15 {
+    padding: 15px 0;
+}
+.padding_20 {
+    padding: 20px;
+}
+.width_50 {
+    width: 50%;
+}
+
+.width_100 {
+    width: 100%;
+}
+
+.box_sizing_border_box {
+    box-sizing: border-box;
+}

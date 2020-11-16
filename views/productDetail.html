@@ -1,86 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="css/styles.css" />
-        <link rel="stylesheet" href="css/forms.css">
-        <title>CompumundoHiperMegaRed</title>
-    </head>
+<html lang="es">
 
-    <body>
-        <header>
-            <nav>
-                <a href="/"
-                    ><img
-                        src="images/logo_header.png"
-                        alt="Logo CompumundoHiperMegaRed"
-                /></a>
-                <ul class="menu_nav">
-                    <li><a href="/pc">PC de escritorio</a></li>
-                    <li><a href="/notebook">Notebook</a></li>
-                    <li><a href="/productos">Productos</a></li>
-                    <li><a href="/perifericos">Perifericos</a></li>
-                    <li><a href="/configuracion">Configura tu PC</a></li>
-                </ul>
-                <ul>
-                    <li id="search">
-                        <a href=""><i class="fas fa-search"></i></a>
-                    </li>
-                    <li id="account">
-                        <a href="/login"><i class="fas fa-user-circle"></i></a>
-                    </li>
-                    <!--<li id="login">
-            <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-          </li>
-          <li id="register">
-            <a href="/register">Creá tu cuenta<i class="fas fa-address-card"></i></a>
-          </li>-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <title>CompumundoHiperMegaRed</title>
+</head>
 
-                    <li id="search">
-                        <a href=""><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="directory">
+<body>
+    <header>
+        <nav>
+            <a href="/"><img src="images/logo_header.png" alt="Logo CompumundoHiperMegaRed" /></a>
+            <ul class="menu_nav">
+                <li><a href="/pc">PC de escritorio</a></li>
+                <li><a href="/notebook">Notebook</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/perifericos">Perifericos</a></li>
+                <li><a href="/configuracion">Configura tu PC</a></li>
+            </ul>
+            <ul>
+                <li id="search">
+                    <a href=""><i class="fas fa-search"></i></a>
+                </li>
+                <li id="account">
+                    <a href="/login"><i class="fas fa-user-circle"></i></a>
+                </li>
+                <li id="search">
+                    <a href=""><i class="fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <section class="breadcrumb padding_y_15">
                 Inicio > Categoria > Marca > Producto
             </section>
-            <section id="product">
-                <articles><img src="" alt="" /></articles>
-                <articles>
-                    <h2>Grupo Producto</h2>
+
+            <section class="product">
+                <articles class="product-gallery padding_20 width_50 box_sizing_border_box"><img
+                        src="/images/products/micro-intel-core-i9-9900k.jpg" alt="intel i9 9900k" /></articles>
+                <articles class="padding_20 width_50 box_sizing_border_box">
+                    <h3>Grupo Producto</h3>
                     <h1>Item Full Name</h1>
-                    <h3>Precio: $4000</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit..
+                    <h2 class="padding_y_15 color_primary">$4000</h2>
+                    <p class="grey">
+                        Solo compatible con sus placas base basadas en chipset de la serie 300, el procesador Core
+                        i9-9900K 3.6 GHz Eight-Core LGA 1151 de Intel está diseñado para juegos, creación y
+                        productividad. Tiene una velocidad de
+                        reloj base de 3.6 GHz y viene con características como la compatibilidad con Intel Optane
+                        Memory, el cifrado AES-NI, la
+                        tecnología Intel vPro, Intel TXT, la Protección de dispositivos Intel con Boot Guard, la
+                        tecnología de virtualización
+                        Intel VT-d para E / S dirigida y la tecnología Intel Hyper-Threading para multitarea de 16 vías.
                     </p>
-                    <label for="cantidad">Cantidad:</label>
-                    <select name="cantidad" id="cantidad">
+                    <label for="quantity">Cantidad:</label>
+                    <select name="quantity" class="quantity_product">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <button value="AGREGAR AL CARRITO"></button>
+                    <button class="button background_primary" value="AGREGAR AL CARRITO">AGREGAR AL CARRITO</button>
                 </articles>
             </section>
             <section id="configuration">
                 <h2>Productos Combinables</h2>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -105,7 +102,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -130,7 +129,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -155,7 +156,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -180,7 +183,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -205,7 +210,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -230,7 +237,9 @@
                 </div>
                 <div>
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3></div>
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
                     <div>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -278,36 +287,48 @@
                 </article>
             </section>
             <section id="related_products">
-                     <div class="card_product">
+                <div class="card_product">
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3><p>Categoria</p></div>
+                    <div>
+                        <h3>Item full name</h3>
+                        <p>Categoria</p>
+                    </div>
                     <div>
                         <h4>Precio</h4>
                         <p>$1500</p>
                     </div>
                     <div><button value="VER PRODUCTO"></button></div>
                 </div>
-                 <div class="card_product">
+                <div class="card_product">
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3><p>Categoria</p></div>
+                    <div>
+                        <h3>Item full name</h3>
+                        <p>Categoria</p>
+                    </div>
                     <div>
                         <h4>Precio</h4>
                         <p>$1500</p>
                     </div>
                     <div><button value="VER PRODUCTO"></button></div>
                 </div>
-                 <div class="card_product">
+                <div class="card_product">
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3><p>Categoria</p></div>
+                    <div>
+                        <h3>Item full name</h3>
+                        <p>Categoria</p>
+                    </div>
                     <div>
                         <h4>Precio</h4>
                         <p>$1239.99</p>
                     </div>
                     <div><button value="VER PRODUCTO"></button></div>
                 </div>
-                 <div class="card_product">
+                <div class="card_product">
                     <div><img src="" alt="" /></div>
-                    <div><h3>Item full name</h3><p>Categoria</p></div>
+                    <div>
+                        <h3>Item full name</h3>
+                        <p>Categoria</p>
+                    </div>
                     <div>
                         <h4>Precio</h4>
                         <p>$1239.99/p>
@@ -315,67 +336,64 @@
                     <div><button value="VER PRODUCTO"></button></div>
                 </div>
             </section>
-        </main>
-        <footer>
-            <section id="elements_footer">
-                <div>
-                    <h3>Suscribite a nuestro newsletter</h3>
-                    <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
-                    <form>
-                        <input
-                            type="text"
-                            id="newsletter_send"
-                            name="newsletter"
-                            placeholder="Ingrese sus email"
-                        />
-                        <input type="submit" value="Enviar" />
-                    </form>
-                </div>
-                <div>
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li>11 2345 6789</li>
-                        <li>info@compumundohipermegared.com</li>
-                        <li><a href=""></a>Encontrar un local</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Productos</h3>
-                    <ul>
-                        <li><a href="">Microprocesadore</a>s</li>
-                        <li><a href="">Motherboards</a></li>
-                        <li><a href="">Memorias ram</a></li>
-                        <li><a href="">Placas de video</a></li>
-                        <li><a href="">Discos rigidos</a></li>
-                        <li><a href="">Ver todos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Perifericos</h3>
-                    <ul>
-                        <li><a href="">Teclados</a></li>
-                        <li><a href="">Mouses</a></li>
-                        <li><a href="">Pads</a></li>
-                        <li><a href="">Auriculares</a></li>
-                        <li><a href="">Parlantes</a></li>
-                        <li><a href="">Ver todos</a></li>
-                    </ul>
-                </div>
-            </section>
-            <section id="social_footer">
-                <img src="images/logo_footer.png" alt="" />
+        </div>
+    </main>
+    <footer>
+        <section id="elements_footer">
+            <div>
+                <h3>Suscribite a nuestro newsletter</h3>
+                <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
+                <form>
+                    <input type="text" id="newsletter_send" name="newsletter" placeholder="Ingrese sus email" />
+                    <input type="submit" value="Enviar" />
+                </form>
+            </div>
+            <div>
+                <h3>Contacto</h3>
                 <ul>
-                    <li>
-                        <a href=""><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </li>
+                    <li>11 2345 6789</li>
+                    <li>info@compumundohipermegared.com</li>
+                    <li><a href=""></a>Encontrar un local</li>
                 </ul>
-            </section>
-        </footer>
-    </body>
+            </div>
+            <div>
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="">Microprocesadore</a>s</li>
+                    <li><a href="">Motherboards</a></li>
+                    <li><a href="">Memorias ram</a></li>
+                    <li><a href="">Placas de video</a></li>
+                    <li><a href="">Discos rigidos</a></li>
+                    <li><a href="">Ver todos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Perifericos</h3>
+                <ul>
+                    <li><a href="">Teclados</a></li>
+                    <li><a href="">Mouses</a></li>
+                    <li><a href="">Pads</a></li>
+                    <li><a href="">Auriculares</a></li>
+                    <li><a href="">Parlantes</a></li>
+                    <li><a href="">Ver todos</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="social_footer">
+            <img src="images/logo_footer.png" alt="" />
+            <ul>
+                <li>
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+</body>
+
 </html>

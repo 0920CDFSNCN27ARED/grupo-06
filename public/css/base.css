@@ -34,6 +34,10 @@ p {
     display: block;
 }
 
+.display_flex_register {
+    justify-content: space-around;
+}
+
 .strong_font {
     font-weight: 700;
 }

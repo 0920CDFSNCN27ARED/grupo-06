@@ -94,3 +94,8 @@ p {
 .box_sizing_border_box {
     box-sizing: border-box;
 }
+
+
+.text_align_center{
+    text-align: center;
+}

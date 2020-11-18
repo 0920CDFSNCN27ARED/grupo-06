@@ -123,23 +123,15 @@ footer a {
 footer h3 {
     margin: 20px 0;
 }
+
 /* Home */
 
-#slider {
-    background-color: #029ccb;
+#home_container{
+  margin-left: 3vw;
+    margin-right: 3vw;
+   
 }
-#sales {
-    background-color: #02c4cb;
-}
-#banner {
-    background-color: #02cb7e;
-}
-#cards_products {
-    background-color: #02cb45;
-}
-#brands {
-    background-color: #2acb02;
-}
+
 .card_product_small{
      width: 16%;
     border-radius: 5px;
@@ -151,6 +143,21 @@ footer h3 {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
+.cards_brands{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+        margin: 38px;
+}
+
+.cards_brands img {
+    width: 13vw;
+    height: 5vh;
+}
+
+
+
 /* Listado */
 
 /* Producto */

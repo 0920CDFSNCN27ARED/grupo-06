@@ -244,12 +244,14 @@ section {
 }
 
 /* Checkout */
-.card_item_checkout {
+.card_resumen_compra {
     display: flex;
-    border: solid 2px blue;
     margin: 5px;
     justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: solid 1px #cccccc;
 }
 .margin_5 {
     margin: 5px;
@@ -259,9 +261,8 @@ section {
     width: 10vw;
     height: 15vh;
 }
-.wrap {
-    flex-wrap: wrap;
-}
+
+
 .block {
     display: inline-block;
     box-sizing: border-box;

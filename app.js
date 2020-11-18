@@ -20,7 +20,7 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/productDetail", (req, res) => {
-    res.sendFile(__dirname + "/views/productDetail.html");
+    res.sendFile(__dirname + "/views/productdetail.html");
 });
 
 app.get("/checkout", (req, res) => {

@@ -140,7 +140,17 @@ footer h3 {
 #brands {
     background-color: #2acb02;
 }
-
+.card_product_small{
+     width: 16%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: solid 1px #cccccc;
+}
+.card_product_small img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 /* Listado */
 
 /* Producto */

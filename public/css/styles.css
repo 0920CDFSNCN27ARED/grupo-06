@@ -120,6 +120,7 @@ footer a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0px;
 }
 
 #social_footer ul {

@@ -17,3 +17,11 @@
 .grey {
     color: #757575;
 }
+
+.button_hover:hover{
+   background-color: #066fa3;
+}
+
+.button_hover_secondary:hover{
+   background-color: #0b7e31;
+}

@@ -80,7 +80,14 @@ nav i {
 
 .menu_nav li {
     margin: 0 10px;
+    
 }
+
+.menu_nav a:hover {
+    color: black;
+    
+}
+
 
 /* Footer */
 footer {
@@ -162,8 +169,18 @@ footer h3 {
    
     margin: auto;
 }
+#z_index{
+    position: relative;
+    bottom: 244px;
+    right: 243px;
+    z-index: 10;
+}
 
-
+#configura_tu_pc{
+    justify-content: center;
+     display: flex;
+    flex-wrap: wrap;
+}
 
 /* Listado */
 

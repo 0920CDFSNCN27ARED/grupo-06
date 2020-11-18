@@ -148,12 +148,19 @@ footer h3 {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-        margin: 38px;
+        margin-top: 38px;
+        margin-bottom: 38px;
 }
 
 .cards_brands img {
     width: 13vw;
     height: 5vh;
+   
+}
+
+.cards_brands div {
+   
+    margin: auto;
 }
 
 

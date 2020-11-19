@@ -1,38 +1,23 @@
 <!DOCTYPE html>
+<html lang="es">
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <title>CompumundoHiperMegaRed</title>
+</head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="stylesheet" href="css/forms.css" />
-
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-        />
-
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="css/forms.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/theme.css" />
-        <link rel="stylesheet" href="css/styles.css" />
-
-        <title>CompumundoHiperMegaRed</title>
-    </head>
-
-    <body>
-        <header>
-                    <nav>
-                <a href="/"
-                    ><img
-                        src="images/logo_header.png"
-                        alt="Logo CompumundoHiperMegaRed"
-                /></a>
+<body>
+    <header>
+        <nav class="background_dark_grey">
+            <div class="navbar container">
+                <a href=" /"><img src="images/logo_header.png" alt="Logo CompumundoHiperMegaRed" /></a>
                 <ul class="menu_nav">
                     <li><a href="/productDetail">Productos</a></li>
                     <li><a href="/productDetail">PC de escritorio</a></li>
@@ -48,207 +33,190 @@
                         <a href="/login"><i class="fas fa-user-circle"></i></a>
                     </li>
                     <li id="register">
-                        <a href="/register"
-                            ><i class="fas fa-address-card"></i
-                        ></a>
+                        <a href="/register"><i class="fas fa-address-card"></i></a>
                     </li>
 
                     <li id="checkout">
-                        <a href="/checkout"
-                            ><i class="fas fa-shopping-cart"></i
-                        ></a>
+                        <a href="/checkout"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>Mi carrito</h1>
-            <section
-                class="display_flex box_sizing_border_box margin_20 padding_y_15"
-            >
-                <article class="width_70 margin_10">
-                    <div class="product_combo">
-                        <img
-                            src="/images/products/ASUS_ROG_Strix_B550.jpg"
-                            class="checkout_image"
-                            alt=""
-                        />
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="margin_20">Mi carrito</h1>
+        <section class="display_flex box_sizing_border_box margin_20 padding_y_15">
+            <article class="width_70 margin_10">
+                <div class="product_combo">
+                    <img src="/images/products/ASUS_ROG_Strix_B550.jpg" class="checkout_image" alt="" />
 
-                        <div><h3>Item full name</h3></div>
-
-                        <h4>Precio</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div>
-                            <label for="cantidad">Cantidad:</label>
-
-                            <select name="cantidad" id="cantidad">
-                                <option value="1">1</option>
-
-                                <option value="2">2</option>
-
-                                <option value="3">3</option>
-
-                                <option value="4">4</option>
-
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-
-                        <h4>Subtotal</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div class="margin_5"><i class="fas fa-trash"></i></div>
-                    </div>
-
-                    <div class="product_combo">
-                        <img
-                            src="/images/products/micro-intel-core-i9-9900k.jpg"
-                            class="checkout_image"
-                            alt=""
-                        />
-
-                        <div><h3>Item full name</h3></div>
-
-                        <h4>Precio</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div>
-                            <label for="cantidad">Cantidad:</label>
-
-                            <select name="cantidad" id="cantidad">
-                                <option value="1">1</option>
-
-                                <option value="2">2</option>
-
-                                <option value="3">3</option>
-
-                                <option value="4">4</option>
-
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-
-                        <h4>Subtotal</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div class="margin_5"><i class="fas fa-trash"></i></div>
-                    </div>
-
-                    <div class="product_combo">
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            class="checkout_image"
-                            alt=""
-                        />
-
-                        <div><h3>Item full name</h3></div>
-
-                        <h4>Precio</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div>
-                            <label for="cantidad">Cantidad:</label>
-
-                            <select name="cantidad" id="cantidad">
-                                <option value="1">1</option>
-
-                                <option value="2">2</option>
-
-                                <option value="3">3</option>
-
-                                <option value="4">4</option>
-
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-
-                        <h4>Subtotal</h4>
-
-                        <h3>$11.999</h3>
-
-                        <div class="margin_5"><i class="fas fa-trash"></i></div>
-                    </div>
-                </article>
-
-                <article class="width_30 margin_10">
-                    <div class="card_resumen_compra">
-                        <h3>Resumen de Compra</h3>
-                                        
-                        <div>
-                            <p>Subtotal</p>
-
-                            <p>$123.000</p>
-                        </div>
-                        <div>
-                            <h2>Total</h2>
-                            <h2>$123.000</h2>
-                        </div>
-                    </div>                    
                     <div>
-                        <a href="views/index.html"><h3>Compra mas productos</h3></a>
+                        <h3>Item full name</h3>
                     </div>
 
-                    <button
-                        class="button background_primary"
-                        value="FINALIZAR COMPRA"
-                    >FINALIZAR COMPRA</button>
-                </article>
-            </section>
-        </main>
+                    <h4>Precio</h4>
 
-        <footer>
-            <section id="elements_footer">
-                <div>
-                    <h3>Suscribite a nuestro newsletter</h3>
-                    <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
-                    <form>
-                        <input
-                            type="text"
-                            id="newsletter_send"
-                            name="newsletter"
-                            placeholder="Ingrese sus email"
-                        />
-                        <input type="submit" value="Enviar" />
-                    </form>
+                    <h3>$11.999</h3>
+
+                    <div>
+                        <label for="cantidad">Cantidad:</label>
+
+                        <select name="cantidad" id="cantidad">
+                            <option value="1">1</option>
+
+                            <option value="2">2</option>
+
+                            <option value="3">3</option>
+
+                            <option value="4">4</option>
+
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <h4>Subtotal</h4>
+
+                    <h3>$11.999</h3>
+
+                    <div class="margin_5"><i class="fas fa-trash"></i></div>
+                </div>
+
+                <div class="product_combo">
+                    <img src="/images/products/micro-intel-core-i9-9900k.jpg" class="checkout_image" alt="" />
+
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
+
+                    <h4>Precio</h4>
+
+                    <h3>$11.999</h3>
+
+                    <div>
+                        <label for="cantidad">Cantidad:</label>
+
+                        <select name="cantidad" id="cantidad">
+                            <option value="1">1</option>
+
+                            <option value="2">2</option>
+
+                            <option value="3">3</option>
+
+                            <option value="4">4</option>
+
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <h4>Subtotal</h4>
+
+                    <h3>$11.999</h3>
+
+                    <div class="margin_5"><i class="fas fa-trash"></i></div>
+                </div>
+
+                <div class="product_combo">
+                    <img src="/images/products/geforce-rtx-3090.jpg" class="checkout_image" alt="" />
+
+                    <div>
+                        <h3>Item full name</h3>
+                    </div>
+
+                    <h4>Precio</h4>
+
+                    <h3>$11.999</h3>
+
+                    <div>
+                        <label for="cantidad">Cantidad:</label>
+
+                        <select name="cantidad" id="cantidad">
+                            <option value="1">1</option>
+
+                            <option value="2">2</option>
+
+                            <option value="3">3</option>
+
+                            <option value="4">4</option>
+
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <h4>Subtotal</h4>
+
+                    <h3>$11.999</h3>
+
+                    <div class="margin_5"><i class="fas fa-trash"></i></div>
+                </div>
+            </article>
+
+            <article class="width_30 margin_10">
+                <div class="card_resumen_compra">
+                    <h3>Resumen de Compra</h3>
+
+                    <div>
+                        <p>Subtotal</p>
+
+                        <p>$123.000</p>
+                    </div>
+                    <div>
+                        <h2>Total</h2>
+                        <h2>$123.000</h2>
+                    </div>
                 </div>
                 <div>
-                    <h3>Contacto</h3>
-                    <ul>
-                        <li>11 2345 6789</li>
-                        <li>info@compumundohipermegared.com</li>
-                        <li><a href=""></a>Encontrar un local</li>
-                    </ul>
+                    <a class="color_primary" href="views/index.html">
+                        <h3>Compra mas productos</h3>
+                    </a>
                 </div>
-                <div>
-                    <h3>Productos</h3>
-                    <ul>
-                        <li><a href="">Microprocesadore</a>s</li>
-                        <li><a href="">Motherboards</a></li>
-                        <li><a href="">Memorias ram</a></li>
-                        <li><a href="">Placas de video</a></li>
-                        <li><a href="">Discos rigidos</a></li>
-                        <li><a href="">Ver todos</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Perifericos</h3>
-                    <ul>
-                        <li><a href="">Teclados</a></li>
-                        <li><a href="">Mouses</a></li>
-                        <li><a href="">Pads</a></li>
-                        <li><a href="">Auriculares</a></li>
-                        <li><a href="">Parlantes</a></li>
-                        <li><a href="">Ver todos</a></li>
-                    </ul>
-                </div>
-            </section>
-            <section id="social_footer">
+
+                <button class="button background_primary" value="FINALIZAR COMPRA">FINALIZAR COMPRA</button>
+            </article>
+        </section>
+    </main>
+    <footer class="background_dark_grey">
+        <section id="elements_footer" class="container">
+            <div>
+                <h3>Suscribite a nuestro newsletter</h3>
+                <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
+                <form>
+                    <input type="text" class="newsletter_send" name="newsletter" placeholder="Ingrese sus email" />
+                    <button class="button_small background_primary" value="ENVIAR">ENVIAR</button>
+                </form>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <ul>
+                    <li>11 2345 6789</li>
+                    <li><a href="">info@compumundohipermegared.com</a></li>
+                    <li><a href="">Encontrar un local</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="">Microprocesadores</a></li>
+                    <li><a href="">Motherboards</a></li>
+                    <li><a href="">Memorias ram</a></li>
+                    <li><a href="">Placas de video</a></li>
+                    <li><a href="">Discos rigidos</a></li>
+                    <li><a href="">Ver todos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Perifericos</h3>
+                <ul>
+                    <li><a href="">Teclados</a></li>
+                    <li><a href="">Mouses</a></li>
+                    <li><a href="">Pads</a></li>
+                    <li><a href="">Auriculares</a></li>
+                    <li><a href="">Parlantes</a></li>
+                    <li><a href="">Ver todos</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="background_black ">
+            <div class="social_footer container">
                 <img src="images/logo_footer.png" alt="" />
                 <ul>
                     <li>
@@ -261,7 +229,9 @@
                         <a href=""><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
-            </section>
-        </footer>
-    </body>
+            </div>
+        </section>
+    </footer>
+</body>
+
 </html>

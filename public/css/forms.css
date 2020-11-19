@@ -2,9 +2,11 @@
 .register input {
     width: 100%;
     padding: 10px;
-    margin: 20px 0px;
+    margin: 6px 0px;
+    margin-bottom: 15px;
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: #ffffff;
     background-color: #ffffff;
 }
 
@@ -63,7 +65,7 @@
 }
 
 .content_login {
-    margin: 40vw;
+    width: 33%;
     margin-top: 10px;
     margin-bottom: 50px;
 }

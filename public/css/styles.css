@@ -284,13 +284,20 @@ footer h3 {
 
 /* Checkout */
 .card_resumen_compra {
-    display: flex;
-    margin: 5px;
-    justify-content: space-between;
-    align-items: center;
+    
+    margin: 10px;
+    margin-top: 10px;
     border-radius: 5px;
     box-sizing: border-box;
     border: solid 1px #cccccc;
+    padding: 10px;
+}
+
+.card_valores {
+    display: flex;
+    justify-content: space-between;
+       
+    
 }
 .margin_5 {
     margin: 5px;

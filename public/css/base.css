@@ -49,6 +49,14 @@ p {
     align-content: center;
 }
 
+.justify_center {
+    justify-content: center;
+}
+
+.align_text_center{
+    text-align: center;
+}
+
 .wrap {
     flex-wrap: wrap;
 }
@@ -60,6 +68,18 @@ p {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.mt-14{
+    margin-top: 14px;
+}
+.mb-14{
+    margin-bottom: 14px;
+}
+
+
+.margin_5 {
+    margin: 5px;
 }
 
 .margin_10 {

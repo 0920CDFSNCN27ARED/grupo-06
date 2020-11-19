@@ -29,3 +29,7 @@ Publico objetivo: Todas aquellas personas que desean adentrarse en el mundo de l
 - Silvestre Novaro
 - Lucas Aranda
 - Juan Ignacio Guastello
+
+
+### Trello
+https://trello.com/b/8PWxgw5H/0920-grupo06

@@ -1,27 +1,49 @@
 .color_primary {
-    color: #0289cb;
+    color: #ff5a09;
 }
 
 .background_primary {
-    background-color: #0289cb;
+    background-color: #ff5a09;
+}
+a:hover {
+    color: #e94e00;
+}
+.background_primary:hover {
+    background-color: #e94e00;
 }
 
 .color_secondary {
-    color: #4caf50;
+    color: #ff9900;
 }
 
 .background_secondary {
-    background-color: #4caf50;
+    background-color: #ff9900;
+}
+
+.background_secondary:hover {
+    background-color: #da8300;
 }
 
 .grey {
     color: #757575;
 }
 
-.button_hover:hover{
-   background-color: #066fa3;
+.dark_grey {
+    color: #393939;
 }
 
-.button_hover_secondary:hover{
-   background-color: #0b7e31;
+.background_dark_grey {
+    background-color: #393939;
+}
+
+.background_black {
+    background-color: #202020;
+}
+
+.button_hover:hover {
+    background-color: #e94e00;
+}
+
+.button_hover_secondary:hover {
+    background-color: #da8300;
 }

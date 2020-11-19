@@ -15,12 +15,9 @@
 
 <body>
     <header>
-                <nav>
-                <a href="/"
-                    ><img
-                        src="images/logo_header.png"
-                        alt="Logo CompumundoHiperMegaRed"
-                /></a>
+        <nav class="background_dark_grey">
+            <div class="navbar container">
+                <a href=" /"><img src="images/logo_header.png" alt="Logo CompumundoHiperMegaRed" /></a>
                 <ul class="menu_nav">
                     <li><a href="/productDetail">Productos</a></li>
                     <li><a href="/productDetail">PC de escritorio</a></li>
@@ -36,18 +33,15 @@
                         <a href="/login"><i class="fas fa-user-circle"></i></a>
                     </li>
                     <li id="register">
-                        <a href="/register"
-                            ><i class="fas fa-address-card"></i
-                        ></a>
+                        <a href="/register"><i class="fas fa-address-card"></i></a>
                     </li>
 
                     <li id="checkout">
-                        <a href="/checkout"
-                            ><i class="fas fa-shopping-cart"></i
-                        ></a>
+                        <a href="/checkout"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 </ul>
-            </nav>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="container">
@@ -80,7 +74,7 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <button class="button background_primary" value="AGREGAR AL CARRITO">AGREGAR AL CARRITO</button>
+                    c
                 </articles>
             </section>
             <section id="configuration">
@@ -370,28 +364,28 @@
             </section>
         </div>
     </main>
-    <footer>
-        <section id="elements_footer">
+    <footer class="background_dark_grey">
+        <section id="elements_footer" class="container">
             <div>
                 <h3>Suscribite a nuestro newsletter</h3>
                 <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
                 <form>
-                    <input type="text" id="newsletter_send" name="newsletter" placeholder="Ingrese sus email" />
-                    <input type="submit" value="Enviar" />
+                    <input type="text" class="newsletter_send" name="newsletter" placeholder="Ingrese sus email" />
+                    <button class="button_small background_primary" value="ENVIAR">ENVIAR</button>
                 </form>
             </div>
             <div>
                 <h3>Contacto</h3>
                 <ul>
                     <li>11 2345 6789</li>
-                    <li>info@compumundohipermegared.com</li>
-                    <li><a href=""></a>Encontrar un local</li>
+                    <li><a href="">info@compumundohipermegared.com</a></li>
+                    <li><a href="">Encontrar un local</a></li>
                 </ul>
             </div>
             <div>
                 <h3>Productos</h3>
                 <ul>
-                    <li><a href="">Microprocesadore</a>s</li>
+                    <li><a href="">Microprocesadores</a></li>
                     <li><a href="">Motherboards</a></li>
                     <li><a href="">Memorias ram</a></li>
                     <li><a href="">Placas de video</a></li>
@@ -411,19 +405,22 @@
                 </ul>
             </div>
         </section>
-        <section id="social_footer">
-            <img src="images/logo_footer.png" alt="" />
-            <ul>
-                <li>
-                    <a href=""><i class="fab fa-facebook"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
+        <section class="background_black ">
+            <div class="social_footer container">
+                <img src="images/logo_footer.png" alt="" />
+                <ul>
+                    <li>
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+
         </section>
     </footer>
 </body>

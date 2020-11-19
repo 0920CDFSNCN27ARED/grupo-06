@@ -38,6 +38,14 @@
 .register input[type="reset"]:hover {
     background-color: #cc1155;
 }
+.newsletter_send {
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: solid 1px #cccccc;
+    background-color: #ffffff;
+}
 
 .align_center {
     align-items: center;
@@ -70,8 +78,6 @@
     list-style-type: disc !important;
     padding: 10px;
 }
-
-
 
 .avatar_register {
     font-size: 200px;

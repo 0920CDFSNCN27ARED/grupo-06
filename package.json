@@ -4,6 +4,7 @@
   "description": "Sitio de venta de computadoras/notebooks, partes de PC y periféricos (mouse, teclados, auriculares, micrófonos, cámaras, parlantes, sillas gamer, Monitores, etc.).",
   "main": "app.js",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.6"
   },

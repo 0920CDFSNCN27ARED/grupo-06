@@ -3,13 +3,19 @@ const app = express();
 
 app.use(express.static("public"));
 
+const indexRouter = require("./routes/indexRouter") 
+const checkoutRouter = require("./routes/checkoutRouter");
+const loginRouter = require("./routes/loginRouter");
+const productDetail = require("./routes/productDetailRouter");
+const registerRouter = require("./routes/registerRouter");
+
 app.listen(3000, () => {
     console.log("Servidor funcionando");
 });
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/index.html");
-});
+app.use("/", indexRouter);
+
+
 
 app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/views/login.html");

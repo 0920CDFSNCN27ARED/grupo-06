@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
+const indexcontroller = require("../controllers/indexController");
 
 
-router.get("/", (req, res) => {
-    res.sendFile(__dirname + "../views/index.html");
-});
-
+router.get("/", indexcontroller.index);
 
 
 

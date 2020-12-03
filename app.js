@@ -1,13 +1,18 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 app.use(express.static("public"));
 
-const indexRouter = require("./routes/indexRouter") 
+const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
 const loginRouter = require("./routes/loginRouter");
-const productDetail = require("./routes/productDetailRouter");
+const productDetailRouter = require("./routes/productDetailRouter");
 const registerRouter = require("./routes/registerRouter");
+
+//app.set("view engine", "ejs");
+//app.set("views", path.resolve(__dirname, "views"));
+app.use(express.static(__dirname + "/public"));
 
 app.listen(3000, () => {
     console.log("Servidor funcionando");
@@ -15,20 +20,10 @@ app.listen(3000, () => {
 
 app.use("/", indexRouter);
 
+app.use("/login", loginRouter);
 
+app.use("/register", registerRouter);
 
-app.get("/login", (req, res) => {
-    res.sendFile(__dirname + "/views/login.html");
-});
+app.use("/productDetail", productDetailRouter);
 
-app.get("/register", (req, res) => {
-    res.sendFile(__dirname + "/views/register.html");
-});
-
-app.get("/productDetail", (req, res) => {
-    res.sendFile(__dirname + "/views/productDetail.html");
-});
-
-app.get("/checkout", (req, res) => {
-    res.sendFile(__dirname + "/views/checkout.html");
-});
+app.use("/checkout", checkoutRouter);

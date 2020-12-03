@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-app.use(express.static("public"));
+//app.use(express.static("public"));
 
 const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
@@ -10,8 +10,9 @@ const loginRouter = require("./routes/loginRouter");
 const productDetailRouter = require("./routes/productDetailRouter");
 const registerRouter = require("./routes/registerRouter");
 
-//app.set("view engine", "ejs");
-//app.set("views", path.resolve(__dirname, "views"));
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "grupo-06/views"));
+
 app.use(express.static(__dirname + "/public"));
 
 app.listen(3000, () => {

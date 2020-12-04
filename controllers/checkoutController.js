@@ -2,9 +2,8 @@ const path = require("path");
 
 const controller = {
     checkout: (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../views/checkout.html"));
+        res.render("checkout");
     },
 };
-
 
 module.exports = controller;

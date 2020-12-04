@@ -2,10 +2,8 @@ const path = require("path");
 
 const controller = {
     register: (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../views/register.html"));
+        res.render("register");
     },
 };
-
-
 
 module.exports = controller;

@@ -1,52 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
-    
 <%- include("partials/head") %>
 
-
 <body>
-    <header>
-        <nav class="background_dark_grey">
-            <div class="navbar container">
-                <a href=" /"><img src="images/logo_header.png" alt="Logo CompumundoHiperMegaRed" /></a>
-                <ul class="menu_nav">
-                    <li><a href="/productDetail">Productos</a></li>
-                    <li><a href="/productDetail">PC de escritorio</a></li>
-                    <li><a href="/productDetail">Notebook</a></li>
-                    <li><a href="/productDetail">Perifericos</a></li>
-                    <li><a href="/productDetail">Configura tu PC</a></li>
-                </ul>
-                <ul>
-                    <li id="search">
-                        <a href=""><i class="fas fa-search"></i></a>
-                    </li>
-                    <li id="account">
-                        <a href="/login"><i class="fas fa-user-circle"></i></a>
-                    </li>
-                    <li id="register">
-                        <a href="/register"><i class="fas fa-address-card"></i></a>
-                    </li>
-
-                    <li id="checkout">
-                        <a href="/checkout"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <%- include("partials/header") %>
     <main>
         <section id="slider ">
-            <a href="#"><img class="width_100" src="/images/brands/play5.png" alt="banner playstation 5" /></a>
+            <a href="#"
+                ><img
+                    class="width_100"
+                    src="/images/brands/play5.png"
+                    alt="banner playstation 5"
+            /></a>
         </section>
         <div id="" class="container">
-            <h2 class="padding_y_15 text_align_center">
-                Ofertas destacadas
-            </h2>
+            <h2 class="padding_y_15 text_align_center">Ofertas destacadas</h2>
             <section id="ofertas_destacadas">
                 <div class="card_container">
                     <div class="card_product">
                         <div>
-                            <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            <img
+                                src="/images/products/geforce-rtx-3090.jpg"
+                                alt=""
+                            />
                         </div>
                         <div class="card_description">
                             <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
@@ -55,14 +29,20 @@
                             <h2 class="color_primary strong_font">$1500</h2>
                         </div>
                         <div class="card_button">
-                            <button value="VER PRODUCTO" class="button background_primary button_hover">
+                            <button
+                                value="VER PRODUCTO"
+                                class="button background_primary button_hover"
+                            >
                                 Ver producto
                             </button>
                         </div>
                     </div>
                     <div class="card_product">
                         <div>
-                            <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            <img
+                                src="/images/products/geforce-rtx-3090.jpg"
+                                alt=""
+                            />
                         </div>
                         <div class="card_description">
                             <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
@@ -71,14 +51,20 @@
                             <h2 class="color_primary strong_font">$1500</h2>
                         </div>
                         <div class="card_button">
-                            <button value="VER PRODUCTO" class="button background_primary button_hover">
+                            <button
+                                value="VER PRODUCTO"
+                                class="button background_primary button_hover"
+                            >
                                 Ver producto
                             </button>
                         </div>
                     </div>
                     <div class="card_product">
                         <div>
-                            <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            <img
+                                src="/images/products/geforce-rtx-3090.jpg"
+                                alt=""
+                            />
                         </div>
                         <div class="card_description">
                             <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
@@ -87,14 +73,20 @@
                             <h2 class="color_primary strong_font">$1500</h2>
                         </div>
                         <div class="card_button">
-                            <button value="VER PRODUCTO" class="button background_primary button_hover">
+                            <button
+                                value="VER PRODUCTO"
+                                class="button background_primary button_hover"
+                            >
                                 Ver producto
                             </button>
                         </div>
                     </div>
                     <div class="card_product">
                         <div>
-                            <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            <img
+                                src="/images/products/geforce-rtx-3090.jpg"
+                                alt=""
+                            />
                         </div>
                         <div class="card_description">
                             <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
@@ -103,7 +95,10 @@
                             <h2 class="color_primary strong_font">$1500</h2>
                         </div>
                         <div class="card_button">
-                            <button value="VER PRODUCTO" class="button background_primary button_hover">
+                            <button
+                                value="VER PRODUCTO"
+                                class="button background_primary button_hover"
+                            >
                                 Ver producto
                             </button>
                         </div>
@@ -112,10 +107,18 @@
             </section>
 
             <section id="configura_tu_pc">
-                <img src="/images/brands/gaming-desktops.jpg" alt="Configura tu PC" />
+                <img
+                    src="/images/brands/gaming-desktops.jpg"
+                    alt="Configura tu PC"
+                />
                 <div id="z_index">
-                    <p class="lightgrey background_dark_grey">Lorem ipsum dolor sit amet consectetur.</p>
-                    <button value="CONFIGURAR AHORA" class="button background_primary button_hover">
+                    <p class="lightgrey background_dark_grey">
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                    <button
+                        value="CONFIGURAR AHORA"
+                        class="button background_primary button_hover"
+                    >
                         CONFIGURAR AHORA
                     </button>
                 </div>
@@ -124,78 +127,114 @@
             <section id="cartas_productos" class="card_container">
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
                 </div>
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
                 </div>
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
                 </div>
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
                 </div>
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
                 </div>
                 <div class="card_product_small">
                     <div>
-                        <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                        <img
+                            src="/images/products/geforce-rtx-3090.jpg"
+                            alt=""
+                        />
                     </div>
                     <div class="card_description">
                         <h3>Producto</h3>
                     </div>
                     <div class="card_button">
-                        <button value="VER PRODUCTO" class="button background_secondary button_hover_secondary">
+                        <button
+                            value="VER PRODUCTO"
+                            class="button background_secondary button_hover_secondary"
+                        >
                             Ver producto
                         </button>
                     </div>
@@ -215,7 +254,10 @@
                     <img src="/images/brands/lenovo-logo-10.png" alt="" />
                 </div>
                 <div>
-                    <img src="/images/brands/western-digital-logo-4-1.png" alt="" />
+                    <img
+                        src="/images/brands/western-digital-logo-4-1.png"
+                        alt=""
+                    />
                 </div>
                 <div>
                     <img src="/images/brands/nvidia-logo-10-1.png" alt="" />
@@ -223,64 +265,6 @@
             </section>
         </div>
     </main>
-    <footer class="background_dark_grey">
-        <section id="elements_footer" class="container">
-            <div>
-                <h3>Suscribite a nuestro newsletter</h3>
-                <p>Recibí nuestras ofertas y novedades antes que nadie.</p>
-                <form>
-                    <input type="text" class="newsletter_send" name="newsletter" placeholder="Ingrese sus email" />
-                    <button class="button_small background_primary" value="ENVIAR">ENVIAR</button>
-                </form>
-            </div>
-            <div>
-                <h3>Contacto</h3>
-                <ul>
-                    <li>11 2345 6789</li>
-                    <li><a href="">info@compumundohipermegared.com</a></li>
-                    <li><a href="">Encontrar un local</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Productos</h3>
-                <ul>
-                    <li><a href="">Microprocesadores</a></li>
-                    <li><a href="">Motherboards</a></li>
-                    <li><a href="">Memorias ram</a></li>
-                    <li><a href="">Placas de video</a></li>
-                    <li><a href="">Discos rigidos</a></li>
-                    <li><a href="">Ver todos</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Perifericos</h3>
-                <ul>
-                    <li><a href="">Teclados</a></li>
-                    <li><a href="">Mouses</a></li>
-                    <li><a href="">Pads</a></li>
-                    <li><a href="">Auriculares</a></li>
-                    <li><a href="">Parlantes</a></li>
-                    <li><a href="">Ver todos</a></li>
-                </ul>
-            </div>
-        </section>
-        <section class="background_black ">
-            <div class="social_footer container">
-                <img src="images/logo_footer.png" alt="" />
-                <ul>
-                    <li>
-                        <a href=""><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </footer>
-</body>
 
-</html>
+    <%- include("partials/footer") %>
+</body>

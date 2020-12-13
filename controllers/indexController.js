@@ -1,8 +1,13 @@
-const path = require("path");
+const getProducts = require("../utils/getProducts");
+const toThousand = require("../utils/toThousand");
 
 const controller = {
     index: (req, res) => {
-        res.render("index");
+        const products = getProducts();
+        res.render("index", {
+            products: products,
+            toThousand: toThousand,
+        });
     },
 };
 

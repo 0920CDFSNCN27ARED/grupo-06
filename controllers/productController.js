@@ -15,8 +15,9 @@ const productsController = {
         res.render("products/create");
     },
     createProd: (req, res, next) => {
+        //llamo al array de productos y lo guardo en database
         const database = getProducts();
-
+        //tomo la data del formulario de create.ejs
         const productCreate = {
             id: database.length + 1,
             name: req.body.name,
@@ -26,13 +27,13 @@ const productsController = {
             image: req.files[0].filename,
             category: req.body.category,
         };
-
+        //lo agrego al final del array database
         database.push(productCreate);
-
+        //convierto el array a JSON
         const databaseJSON = JSON.stringify(database);
-
+        //sobre escribo el JSON dB.json
         fs.writeFileSync("dB.json", databaseJSON);
-
+        //redirigo al listado
         res.redirect("../products/");
     },
     detail: (req, res) => {

@@ -1,270 +1,135 @@
 <%- include("partials/head") %>
 
-<body>
-    <%- include("partials/header") %>
-    <main>
-        <section id="slider ">
-            <a href="#"
-                ><img
-                    class="width_100"
-                    src="/images/brands/play5.png"
-                    alt="banner playstation 5"
-            /></a>
-        </section>
-        <div id="" class="container">
-            <h2 class="padding_y_15 text_align_center">Ofertas destacadas</h2>
-            <section id="ofertas_destacadas">
-                <div class="card_container">
-                    <div class="card_product">
-                        <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
+    <body>
+        <%- include("partials/header") %>
+            <main>
+                <section id="slider ">
+                    <a href="#"><img class="width_100" src="/images/brands/play5.png" alt="banner playstation 5" /></a>
+                </section>
+                <div id="" class="container">
+                    <h2 class="padding_y_15 text_align_center">Ofertas destacadas</h2>
+                    <section id="ofertas_destacadas">
+                        <div class="card_container">
+                            <% for (let i=0; i < 4; i++) { %>
+                                <%- include ("products/product_card", {product:products[i]}) %>
+                                    <% }%>
                         </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
+                    </section>
 
-                            <h2 class="color_primary strong_font">$1500</h2>
-                        </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary button_hover"
-                            >
-                                Ver producto
+                    <section id="configura_tu_pc">
+                        <img src="/images/brands/gaming-desktops.jpg" alt="Configura tu PC" />
+                        <div id="z_index">
+                            <p class="lightgrey background_dark_grey">
+                                Lorem ipsum dolor sit amet consectetur.
+                            </p>
+                            <button value="CONFIGURAR AHORA" class="button background_primary button_hover">
+                                CONFIGURAR AHORA
                             </button>
                         </div>
-                    </div>
-                    <div class="card_product">
+                    </section>
+
+                    <section id="cartas_productos" class="card_container">
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card_product_small">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div class="card_description">
+                                <h3>Producto</h3>
+                            </div>
+                            <div>
+                                <button value="VER PRODUCTO" class="button background_primary">
+                                    Ver producto
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h2 class="text_align_center">Marcas con las que trabajamos</h2>
+
+                    <section class="cards_brands">
                         <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
+                            <img src="/images/brands/amd-logo-5.png" alt="" />
                         </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
-
-                            <h2 class="color_primary strong_font">$1500</h2>
-                        </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary button_hover"
-                            >
-                                Ver producto
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card_product">
                         <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
+                            <img src="/images/brands/intel-logo-8.png" alt="" />
                         </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
-
-                            <h2 class="color_primary strong_font">$1500</h2>
-                        </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary button_hover"
-                            >
-                                Ver producto
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card_product">
                         <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
+                            <img src="/images/brands/lenovo-logo-10.png" alt="" />
                         </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
-
-                            <h2 class="color_primary strong_font">$1500</h2>
+                        <div>
+                            <img src="/images/brands/western-digital-logo-4-1.png" alt="" />
                         </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary button_hover"
-                            >
-                                Ver producto
-                            </button>
+                        <div>
+                            <img src="/images/brands/nvidia-logo-10-1.png" alt="" />
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
+            </main>
 
-            <section id="configura_tu_pc">
-                <img
-                    src="/images/brands/gaming-desktops.jpg"
-                    alt="Configura tu PC"
-                />
-                <div id="z_index">
-                    <p class="lightgrey background_dark_grey">
-                        Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                    <button
-                        value="CONFIGURAR AHORA"
-                        class="button background_primary button_hover"
-                    >
-                        CONFIGURAR AHORA
-                    </button>
-                </div>
-            </section>
-
-            <section id="cartas_productos" class="card_container">
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-                <div class="card_product_small">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card_description">
-                        <h3>Producto</h3>
-                    </div>
-                    <div class="card_button">
-                        <button
-                            value="VER PRODUCTO"
-                            class="button background_secondary button_hover_secondary"
-                        >
-                            Ver producto
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <h2 class="text_align_center">Marcas con las que trabajamos</h2>
-
-            <section class="cards_brands">
-                <div>
-                    <img src="/images/brands/amd-logo-5.png" alt="" />
-                </div>
-                <div>
-                    <img src="/images/brands/intel-logo-8.png" alt="" />
-                </div>
-                <div>
-                    <img src="/images/brands/lenovo-logo-10.png" alt="" />
-                </div>
-                <div>
-                    <img
-                        src="/images/brands/western-digital-logo-4-1.png"
-                        alt=""
-                    />
-                </div>
-                <div>
-                    <img src="/images/brands/nvidia-logo-10-1.png" alt="" />
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <%- include("partials/footer") %>
-</body>
+            <%- include("partials/footer") %>
+    </body>

@@ -11,12 +11,12 @@
         </p>
 
         <h2 class="color_primary strong_font">
-            $<%=product.price%>
+            $<%=toThousand(product.price)%>
         </h2>
     </div>
     <div class="card_button">
         <button value="VER PRODUCTO" class="button background_primary">
-            <a href="/products/<%= product.id%>" class="white">Ver producto</a>
+            <a href="/products/<%= product.id%>/detail" class="white">Ver producto</a>
         </button>
     </div>
 </div>

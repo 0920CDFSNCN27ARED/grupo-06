@@ -70,5 +70,32 @@
         "discount": 12,
         "image": "geforce-rtx-3090.jpg",
         "category": "Placa de video"
+    },
+    {
+        "id": 9,
+        "name": "",
+        "description": "",
+        "price": 0,
+        "discount": 0,
+        "image": "",
+        "category": ""
+    },
+    {
+        "id": 10,
+        "name": "",
+        "description": "",
+        "price": 0,
+        "discount": 0,
+        "image": "",
+        "category": ""
+    },
+    {
+        "id": 11,
+        "name": "",
+        "description": "",
+        "price": 0,
+        "discount": 0,
+        "image": "",
+        "category": ""
     }
 ]

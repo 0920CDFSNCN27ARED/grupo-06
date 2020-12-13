@@ -5,28 +5,23 @@
             <main>
                 <div class="container">
                     <section class="breadcrumb padding_y_15">
-                        Inicio > Categoria > Marca > Producto
+                        Inicio > <%= product.category%> > <%= product.name%>
                     </section>
 
                     <section class="product">
                         <articles class="product-gallery padding_20 width_50 box_sizing_border_box"><img
-                                src="/images/products/micro-intel-core-i9-9900k.jpg" alt="intel i9 9900k" /></articles>
+                                src="/images/products/<%= product.image%>" alt="<%= product.name%>" /></articles>
                         <articles class="padding_20 width_50 box_sizing_border_box">
-                            <h3>Procesador</h3>
-                            <h1>Core i9-9900K</h1>
-                            <h2 class="padding_y_15 color_primary">$4000</h2>
+                            <h3>
+                                <%= product.category%>
+                            </h3>
+                            <h1>
+                                <%= product.name%>
+                            </h1>
+                            <h2 class="padding_y_15 color_primary">$<%=toThousand(product.price)%>
+                            </h2>
                             <p class="grey">
-                                Solo compatible con sus placas base basadas en chipset
-                                de la serie 300, el procesador Core i9-9900K 3.6 GHz
-                                Eight-Core LGA 1151 de Intel está diseñado para juegos,
-                                creación y productividad. Tiene una velocidad de reloj
-                                base de 3.6 GHz y viene con características como la
-                                compatibilidad con Intel Optane Memory, el cifrado
-                                AES-NI, la tecnología Intel vPro, Intel TXT, la
-                                Protección de dispositivos Intel con Boot Guard, la
-                                tecnología de virtualización Intel VT-d para E / S
-                                dirigida y la tecnología Intel Hyper-Threading para
-                                multitarea de 16 vías.
+                                <%= product.description%>
                             </p>
                             <label for="quantity">Cantidad:</label>
                             <select name="quantity" class="quantity_product">
@@ -283,70 +278,9 @@
                     <section id="related_products" class="margin_botton_30">
                         <h2 class="padding_y_15">Productos relacionados</h2>
                         <div class="card_container">
-                            <div class="card_product">
-                                <div>
-                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
-                                </div>
-                                <div class="card_description">
-                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                                    <p>Placa de video</p>
-
-                                    <h2 class="color_primary strong_font">$1500</h2>
-                                </div>
-                                <div class="card_button">
-                                    <button value="VER PRODUCTO" class="button background_primary">
-                                        Ver producto
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card_product">
-                                <div>
-                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
-                                </div>
-                                <div class="card_description">
-                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                                    <p>Placa de video</p>
-
-                                    <h2 class="color_primary strong_font">$1500</h2>
-                                </div>
-                                <div class="card_button">
-                                    <button value="VER PRODUCTO" class="button background_primary">
-                                        Ver producto
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card_product">
-                                <div>
-                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
-                                </div>
-                                <div class="card_description">
-                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                                    <p>Placa de video</p>
-
-                                    <h2 class="color_primary strong_font">$1500</h2>
-                                </div>
-                                <div class="card_button">
-                                    <button value="VER PRODUCTO" class="button background_primary">
-                                        Ver producto
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card_product">
-                                <div>
-                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
-                                </div>
-                                <div class="card_description">
-                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                                    <p>Placa de video</p>
-
-                                    <h2 class="color_primary strong_font">$1500</h2>
-                                </div>
-                                <div class="card_button">
-                                    <button value="VER PRODUCTO" class="button background_primary">
-                                        Ver producto
-                                    </button>
-                                </div>
-                            </div>
+                            <% for (let i=0; i < 4; i++) { %>
+                                <%- include ("../products/product_card", {product:products[i]}) %>
+                                    <% }%>
                         </div>
                     </section>
                 </div>

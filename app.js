@@ -7,7 +7,7 @@ const path = require("path");
 const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
 const loginRouter = require("./routes/loginRouter");
-const productDetailRouter = require("./routes/productDetailRouter");
+const product = require("./routes/productRouter");
 const registerRouter = require("./routes/registerRouter");
 
 app.set("view engine", "ejs");
@@ -25,6 +25,6 @@ app.use("/login", loginRouter);
 
 app.use("/register", registerRouter);
 
-app.use("/productDetail", productDetailRouter);
+app.use("/product", product);
 
 app.use("/checkout", checkoutRouter);

@@ -1,412 +1,355 @@
 <%- include("partials/head") %>
-<body>
-    <%- include("partials/header") %>
-    <main>
-        <div class="container">
-            <section class="breadcrumb padding_y_15">
-                Inicio > Categoria > Marca > Producto
-            </section>
 
-            <section class="product">
-                <articles
-                    class="product-gallery padding_20 width_50 box_sizing_border_box"
-                    ><img
-                        src="/images/products/micro-intel-core-i9-9900k.jpg"
-                        alt="intel i9 9900k"
-                /></articles>
-                <articles class="padding_20 width_50 box_sizing_border_box">
-                    <h3>Procesador</h3>
-                    <h1>Core i9-9900K</h1>
-                    <h2 class="padding_y_15 color_primary">$4000</h2>
-                    <p class="grey">
-                        Solo compatible con sus placas base basadas en chipset
-                        de la serie 300, el procesador Core i9-9900K 3.6 GHz
-                        Eight-Core LGA 1151 de Intel está diseñado para juegos,
-                        creación y productividad. Tiene una velocidad de reloj
-                        base de 3.6 GHz y viene con características como la
-                        compatibilidad con Intel Optane Memory, el cifrado
-                        AES-NI, la tecnología Intel vPro, Intel TXT, la
-                        Protección de dispositivos Intel con Boot Guard, la
-                        tecnología de virtualización Intel VT-d para E / S
-                        dirigida y la tecnología Intel Hyper-Threading para
-                        multitarea de 16 vías.
-                    </p>
-                    <label for="quantity">Cantidad:</label>
-                    <select name="quantity" class="quantity_product">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <button class="button background_primary">
-                        AGREGAR AL CARRITO
-                    </button>
-                </articles>
-            </section>
-            <section id="configuration margin_botton_30">
-                <h2 class="padding_y_15">Productos Combinables</h2>
-                <div class="product_combo">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
-                    </div>
-                    <div>
-                        <p class="item_description_combo">
-                            Memoria 1 GB 5010 Mhz DDR5
-                        </p>
-                    </div>
+    <body>
+        <%- include("partials/header") %>
+            <main>
+                <div class="container">
+                    <section class="breadcrumb padding_y_15">
+                        Inicio > Categoria > Marca > Producto
+                    </section>
 
-                    <div>
-                        <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" class="quantity_product">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p class="color_primary strong_font item_pricen_combo">
-                            $1500
-                        </p>
-                    </div>
-                    <div>
-                        <button
-                            class="button_small background_primary"
-                            value="AGREGAR AL CARRITO"
-                        >
-                            AGREGAR AL CARRITO
-                        </button>
-                    </div>
-                </div>
-                <div class="product_combo">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
-                    </div>
-                    <div>
-                        <p class="item_description_combo">
-                            Memoria 1 GB 5010 Mhz DDR5
-                        </p>
-                    </div>
-
-                    <div>
-                        <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" class="quantity_product">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p class="color_primary strong_font item_pricen_combo">
-                            $1500
-                        </p>
-                    </div>
-                    <div>
-                        <button
-                            class="button_small background_primary"
-                            value="AGREGAR AL CARRITO"
-                        >
-                            AGREGAR AL CARRITO
-                        </button>
-                    </div>
-                </div>
-                <div class="product_combo">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
-                    </div>
-                    <div>
-                        <p class="item_description_combo">
-                            Memoria 1 GB 5010 Mhz DDR5
-                        </p>
-                    </div>
-
-                    <div>
-                        <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" class="quantity_product">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p class="color_primary strong_font item_pricen_combo">
-                            $1500
-                        </p>
-                    </div>
-                    <div>
-                        <button
-                            class="button_small background_primary"
-                            value="AGREGAR AL CARRITO"
-                        >
-                            AGREGAR AL CARRITO
-                        </button>
-                    </div>
-                </div>
-                <div class="product_combo">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
-                    </div>
-                    <div>
-                        <p class="item_description_combo">
-                            Memoria 1 GB 5010 Mhz DDR5
-                        </p>
-                    </div>
-
-                    <div>
-                        <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" class="quantity_product">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p class="color_primary strong_font item_pricen_combo">
-                            $1500
-                        </p>
-                    </div>
-                    <div>
-                        <button
-                            class="button_small background_primary"
-                            value="AGREGAR AL CARRITO"
-                        >
-                            AGREGAR AL CARRITO
-                        </button>
-                    </div>
-                </div>
-                <div class="product_combo">
-                    <div>
-                        <img
-                            src="/images/products/geforce-rtx-3090.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <div>
-                        <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
-                    </div>
-                    <div>
-                        <p class="item_description_combo">
-                            Memoria 1 GB 5010 Mhz DDR5
-                        </p>
-                    </div>
-
-                    <div>
-                        <label for="cantidad">Cantidad:</label>
-                        <select name="cantidad" class="quantity_product">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p class="color_primary strong_font item_pricen_combo">
-                            $1500
-                        </p>
-                    </div>
-                    <div>
-                        <button
-                            class="button_small background_primary"
-                            value="AGREGAR AL CARRITO"
-                        >
-                            AGREGAR AL CARRITO
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section class="margin_botton_30">
-                <h2 class="padding_y_15">Descripcion de producto</h2>
-                <div class="product_info">
-                    <article class="product_description">
-                        <h3>General</h3>
-                        <table>
-                            <tr>
-                                <th class="label_type">Modelo:</th>
-                                <td class="label_description">
-                                    Micro Intel I9-10900
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">Familia:</th>
-                                <td class="label_description">Intel I9</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">Nucleos:</th>
-                                <td class="label_description">10</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">Hilos:</th>
-                                <td class="label_description">20</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">Frecuencia:</th>
-                                <td class="label_description">2.8 GHz</td>
-                            </tr>
-                        </table>
-                    </article>
-                    <article class="product_description">
-                        <h3>Coolers Y Disipadores</h3>
-                        <table>
-                            <tr>
-                                <th class="label_type">Incluye Cooler CPU:</th>
-                                <td class="label_description">si</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">TDP:</th>
-                                <td class="label_description">65W</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">Overclockeable:</th>
-                                <td class="label_description">no</td>
-                            </tr>
-                        </table>
-                    </article>
-                    <article class="product_description">
-                        <h3>Memoria</h3>
-                        <table>
-                            <tr>
-                                <th class="label_type">L1:</th>
-                                <td class="label_description">640 KB</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">L":</th>
-                                <td class="label_description">2.5 MB</td>
-                            </tr>
-                            <tr>
-                                <th class="label_type">L3:</th>
-                                <td class="label_description">20 MB</td>
-                            </tr>
-                        </table>
-                    </article>
-                </div>
-            </section>
-            <section id="related_products" class="margin_botton_30">
-                <h2 class="padding_y_15">Productos relacionados</h2>
-                <div class="card_container">
-                    <div class="card_product">
-                        <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
-
-                            <h2 class="color_primary strong_font">$1500</h2>
-                        </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary"
-                            >
-                                Ver producto
+                    <section class="product">
+                        <articles class="product-gallery padding_20 width_50 box_sizing_border_box"><img
+                                src="/images/products/micro-intel-core-i9-9900k.jpg" alt="intel i9 9900k" /></articles>
+                        <articles class="padding_20 width_50 box_sizing_border_box">
+                            <h3>Procesador</h3>
+                            <h1>Core i9-9900K</h1>
+                            <h2 class="padding_y_15 color_primary">$4000</h2>
+                            <p class="grey">
+                                Solo compatible con sus placas base basadas en chipset
+                                de la serie 300, el procesador Core i9-9900K 3.6 GHz
+                                Eight-Core LGA 1151 de Intel está diseñado para juegos,
+                                creación y productividad. Tiene una velocidad de reloj
+                                base de 3.6 GHz y viene con características como la
+                                compatibilidad con Intel Optane Memory, el cifrado
+                                AES-NI, la tecnología Intel vPro, Intel TXT, la
+                                Protección de dispositivos Intel con Boot Guard, la
+                                tecnología de virtualización Intel VT-d para E / S
+                                dirigida y la tecnología Intel Hyper-Threading para
+                                multitarea de 16 vías.
+                            </p>
+                            <label for="quantity">Cantidad:</label>
+                            <select name="quantity" class="quantity_product">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button class="button background_primary">
+                                AGREGAR AL CARRITO
                             </button>
-                        </div>
-                    </div>
-                    <div class="card_product">
-                        <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
+                        </articles>
+                    </section>
+                    <section id="configuration margin_botton_30">
+                        <h2 class="padding_y_15">Productos Combinables</h2>
+                        <div class="product_combo">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div>
+                                <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
+                            </div>
+                            <div>
+                                <p class="item_description_combo">
+                                    Memoria 1 GB 5010 Mhz DDR5
+                                </p>
+                            </div>
 
-                            <h2 class="color_primary strong_font">$1500</h2>
+                            <div>
+                                <label for="cantidad">Cantidad:</label>
+                                <select name="cantidad" class="quantity_product">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="color_primary strong_font item_pricen_combo">
+                                    $1500
+                                </p>
+                            </div>
+                            <div>
+                                <button class="button_small background_primary" value="AGREGAR AL CARRITO">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </div>
                         </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary"
-                            >
-                                Ver producto
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card_product">
-                        <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
+                        <div class="product_combo">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div>
+                                <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
+                            </div>
+                            <div>
+                                <p class="item_description_combo">
+                                    Memoria 1 GB 5010 Mhz DDR5
+                                </p>
+                            </div>
 
-                            <h2 class="color_primary strong_font">$1500</h2>
+                            <div>
+                                <label for="cantidad">Cantidad:</label>
+                                <select name="cantidad" class="quantity_product">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="color_primary strong_font item_pricen_combo">
+                                    $1500
+                                </p>
+                            </div>
+                            <div>
+                                <button class="button_small background_primary" value="AGREGAR AL CARRITO">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </div>
                         </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary"
-                            >
-                                Ver producto
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card_product">
-                        <div>
-                            <img
-                                src="/images/products/geforce-rtx-3090.jpg"
-                                alt=""
-                            />
-                        </div>
-                        <div class="card_description">
-                            <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
-                            <p>Placa de video</p>
+                        <div class="product_combo">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div>
+                                <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
+                            </div>
+                            <div>
+                                <p class="item_description_combo">
+                                    Memoria 1 GB 5010 Mhz DDR5
+                                </p>
+                            </div>
 
-                            <h2 class="color_primary strong_font">$1500</h2>
+                            <div>
+                                <label for="cantidad">Cantidad:</label>
+                                <select name="cantidad" class="quantity_product">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="color_primary strong_font item_pricen_combo">
+                                    $1500
+                                </p>
+                            </div>
+                            <div>
+                                <button class="button_small background_primary" value="AGREGAR AL CARRITO">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </div>
                         </div>
-                        <div class="card_button">
-                            <button
-                                value="VER PRODUCTO"
-                                class="button background_primary"
-                            >
-                                Ver producto
-                            </button>
+                        <div class="product_combo">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div>
+                                <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
+                            </div>
+                            <div>
+                                <p class="item_description_combo">
+                                    Memoria 1 GB 5010 Mhz DDR5
+                                </p>
+                            </div>
+
+                            <div>
+                                <label for="cantidad">Cantidad:</label>
+                                <select name="cantidad" class="quantity_product">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="color_primary strong_font item_pricen_combo">
+                                    $1500
+                                </p>
+                            </div>
+                            <div>
+                                <button class="button_small background_primary" value="AGREGAR AL CARRITO">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                        <div class="product_combo">
+                            <div>
+                                <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                            </div>
+                            <div>
+                                <h3 class="item_name_combo">Nvidia Geforce GT 710</h3>
+                            </div>
+                            <div>
+                                <p class="item_description_combo">
+                                    Memoria 1 GB 5010 Mhz DDR5
+                                </p>
+                            </div>
+
+                            <div>
+                                <label for="cantidad">Cantidad:</label>
+                                <select name="cantidad" class="quantity_product">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <p class="color_primary strong_font item_pricen_combo">
+                                    $1500
+                                </p>
+                            </div>
+                            <div>
+                                <button class="button_small background_primary" value="AGREGAR AL CARRITO">
+                                    AGREGAR AL CARRITO
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="margin_botton_30">
+                        <h2 class="padding_y_15">Descripcion de producto</h2>
+                        <div class="product_info">
+                            <article class="product_description">
+                                <h3>General</h3>
+                                <table>
+                                    <tr>
+                                        <th class="label_type">Modelo:</th>
+                                        <td class="label_description">
+                                            Micro Intel I9-10900
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">Familia:</th>
+                                        <td class="label_description">Intel I9</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">Nucleos:</th>
+                                        <td class="label_description">10</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">Hilos:</th>
+                                        <td class="label_description">20</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">Frecuencia:</th>
+                                        <td class="label_description">2.8 GHz</td>
+                                    </tr>
+                                </table>
+                            </article>
+                            <article class="product_description">
+                                <h3>Coolers Y Disipadores</h3>
+                                <table>
+                                    <tr>
+                                        <th class="label_type">Incluye Cooler CPU:</th>
+                                        <td class="label_description">si</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">TDP:</th>
+                                        <td class="label_description">65W</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">Overclockeable:</th>
+                                        <td class="label_description">no</td>
+                                    </tr>
+                                </table>
+                            </article>
+                            <article class="product_description">
+                                <h3>Memoria</h3>
+                                <table>
+                                    <tr>
+                                        <th class="label_type">L1:</th>
+                                        <td class="label_description">640 KB</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">L":</th>
+                                        <td class="label_description">2.5 MB</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label_type">L3:</th>
+                                        <td class="label_description">20 MB</td>
+                                    </tr>
+                                </table>
+                            </article>
+                        </div>
+                    </section>
+                    <section id="related_products" class="margin_botton_30">
+                        <h2 class="padding_y_15">Productos relacionados</h2>
+                        <div class="card_container">
+                            <div class="card_product">
+                                <div>
+                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                                </div>
+                                <div class="card_description">
+                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
+                                    <p>Placa de video</p>
+
+                                    <h2 class="color_primary strong_font">$1500</h2>
+                                </div>
+                                <div class="card_button">
+                                    <button value="VER PRODUCTO" class="button background_primary">
+                                        Ver producto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card_product">
+                                <div>
+                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                                </div>
+                                <div class="card_description">
+                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
+                                    <p>Placa de video</p>
+
+                                    <h2 class="color_primary strong_font">$1500</h2>
+                                </div>
+                                <div class="card_button">
+                                    <button value="VER PRODUCTO" class="button background_primary">
+                                        Ver producto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card_product">
+                                <div>
+                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                                </div>
+                                <div class="card_description">
+                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
+                                    <p>Placa de video</p>
+
+                                    <h2 class="color_primary strong_font">$1500</h2>
+                                </div>
+                                <div class="card_button">
+                                    <button value="VER PRODUCTO" class="button background_primary">
+                                        Ver producto
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card_product">
+                                <div>
+                                    <img src="/images/products/geforce-rtx-3090.jpg" alt="" />
+                                </div>
+                                <div class="card_description">
+                                    <h3>Nvidia Geforce GT 710 1Gb Ddr5</h3>
+                                    <p>Placa de video</p>
+
+                                    <h2 class="color_primary strong_font">$1500</h2>
+                                </div>
+                                <div class="card_button">
+                                    <button value="VER PRODUCTO" class="button background_primary">
+                                        Ver producto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
-        </div>
-    </main>
-    <%- include("partials/footer") %>
-</body>
+            </main>
+            <%- include("partials/footer") %>
+    </body>

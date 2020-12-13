@@ -1,7 +1,10 @@
 const path = require("path");
 
 const controller = {
-    productDetail: (req, res) => {
+    productList: (req, res) => {
+        res.render("product_list");
+    },
+    productId: (req, res) => {
         res.render("productDetail");
     },
 };

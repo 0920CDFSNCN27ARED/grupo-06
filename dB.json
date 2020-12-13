@@ -55,11 +55,20 @@
     },
     {
         "id": 7,
-        "name": "Aire Acondicionado 3200w Frio / Calor",
-        "description": "AIRE SPLIT 3200W TACA-3200WCHSA/KC FC TCL. Capacidad frio 3200 Watts. Capacidad calor 3300 Watts. Potencia Electrica(W)frio 996. Potencia Electrica(W)calor 1028. Eficiencia energética calor C. Eficiencia energética frio A. Frigorias 2750 UNIDAD INTERIOR. Peso Bruto 10kg. Peso Neto 7 kg",
+        "name": "ROG STRIX B550-F GAMING",
+        "description": "Las placas base de la serie ROG Strix B550 Gaming ofrecen un conjunto de características que generalmente se encuentran en la serie ROG Strix X570 Gaming de gama alta, incluida la última PCIe® 4.0. ",
         "price": 20999,
         "discount": 12,
-        "image": "img-aire-acondicionado.jpg",
-        "category": "Procesadores"
+        "image": "ASUS_ROG_Strix_B550.jpg",
+        "category": "Motherboards "
+    },
+    {
+        "id": 8,
+        "name": "Placa de Video NVIDIA GeForce RTX3090 24Gb GDDR6",
+        "description": "Estas nuevas tarjetas gráficas son colosalmente poderosas en todo sentido, brindando un nuevo nivel de rendimiento. Están basadas en la nueva arquitectura NVIDIA® Ampere, la cual mejora increíblemente el rendimiento en Ray-Tracing e IA gracias a RT Cores y Tensor Cores mejorados junto a nuevos multiprocesadores de streaming.",
+        "price": 250000,
+        "discount": 12,
+        "image": "geforce-rtx-3090.jpg",
+        "category": "Motherboards "
     }
 ]

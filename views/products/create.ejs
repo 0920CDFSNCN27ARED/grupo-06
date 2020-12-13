@@ -10,27 +10,34 @@
                     <section id="related_products" class="margin_botton_30">
                         <h2 class="padding_y_15">Productos</h2>
                         <div class="card_container">
-                            <form action="/products/create" method="POST">
-                                <label for="">Nombre prodcuto</label>
-                                <input type="text" name="name">
-                                <br>
-                                <label for="">Descripción</label>
-                                <input type="text" name="description">
-                                <br>
-                                <label for="">Precio</label>
-                                <input type="text" name="price">
-                                <br>
-                                <label for="">Descuento</label>
-                                <input type="text" name="discount">
-                                <br>
-                                <label for="">Imagen</label>
-                                <input type="text" name="image">
-                                <br>
-                                <label for="">Categoria</label>
-                                <input type="text" name="category">
-                                <br>
-                                <input type="submit" value="Crear">
-                            </form>
+                            <div class="login">
+                                <form action="/products/create" method="POST" enctype="multipart/form-data"
+                                    class="mt-14">
+                                    <label for="">Nombre prodcuto</label>
+                                    <input type="text" name="name">
+                                    <br>
+                                    <label for="">Descripción</label>
+                                    <input type="text" name="description">
+                                    <br>
+                                    <label for="">Precio</label>
+                                    <input type="text" name="price">
+                                    <br>
+                                    <label for="">Descuento</label>
+                                    <input type="text" name="discount">
+                                    <br>
+                                    <label for="">Imagen</label>
+                                    <input type="file" name="image">
+                                    <br>
+                                    <label for="">Categoria</label>
+                                    <select type="text" name="category">
+                                        <option value="Motherboards">Motherboards</option>
+                                        <option value="Procesadores">Procesador</option>
+                                        <option value="Placa de video">placa de video</option>
+                                    </select>
+                                    <br>
+                                    <input type="submit" value="Crear">
+                                </form>
+                            </div>
                         </div>
                     </section>
                 </div>

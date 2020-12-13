@@ -73,29 +73,11 @@
     },
     {
         "id": 9,
-        "name": "",
-        "description": "",
-        "price": 0,
-        "discount": 0,
-        "image": "",
-        "category": ""
-    },
-    {
-        "id": 10,
-        "name": "",
-        "description": "",
-        "price": 0,
-        "discount": 0,
-        "image": "",
-        "category": ""
-    },
-    {
-        "id": 11,
-        "name": "",
-        "description": "",
-        "price": 0,
-        "discount": 0,
-        "image": "",
-        "category": ""
+        "name": "Nvidia Asus GeForce 700 Series GT 710",
+        "description": "Nvidia es el fabricante líder de placas de video, su calidad asegura una experiencia positiva en el desarrollo del motor gráfico de tu computadora. Además, sus procesadores usan tecnología de punta para que puedas disfrutar de un producto veloz y duradero.",
+        "price": 5500,
+        "discount": 12,
+        "image": "image-1607886809404.jpg",
+        "category": "Placa de video"
     }
 ]

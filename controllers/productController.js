@@ -14,7 +14,7 @@ const productsController = {
     create: (req, res) => {
         res.render("products/create");
     },
-    createProd: (req, res) => {
+    createProd: (req, res, next) => {
         const database = getProducts();
 
         const productCreate = {
@@ -23,7 +23,7 @@ const productsController = {
             description: req.body.description,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
-            image: req.body.image,
+            image: req.files[0].filename,
             category: req.body.category,
         };
 

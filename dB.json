@@ -64,11 +64,11 @@
     },
     {
         "id": 8,
-        "name": "Placa de Video NVIDIA GeForce RTX3090 24Gb GDDR6",
+        "name": "NVIDIA GeForce RTX3090 24Gb GDDR6",
         "description": "Estas nuevas tarjetas gráficas son colosalmente poderosas en todo sentido, brindando un nuevo nivel de rendimiento. Están basadas en la nueva arquitectura NVIDIA® Ampere, la cual mejora increíblemente el rendimiento en Ray-Tracing e IA gracias a RT Cores y Tensor Cores mejorados junto a nuevos multiprocesadores de streaming.",
         "price": 250000,
         "discount": 12,
         "image": "geforce-rtx-3090.jpg",
-        "category": "Motherboards "
+        "category": "Placa de video"
     }
 ]

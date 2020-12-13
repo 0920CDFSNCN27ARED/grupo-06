@@ -1,0 +1,22 @@
+<div class="card_product">
+    <div>
+        <img src="/images/products/<%= product.image%>" alt="" />
+    </div>
+    <div class="card_description">
+        <h3>
+            <%= product.name%>
+        </h3>
+        <p>
+            <%= product.category%>
+        </p>
+
+        <h2 class="color_primary strong_font">
+            $<%=product.price%>
+        </h2>
+    </div>
+    <div class="card_button">
+        <button value="VER PRODUCTO" class="button background_primary">
+            <a href="/products/<%= product.id%>" class="white">Ver producto</a>
+        </button>
+    </div>
+</div>

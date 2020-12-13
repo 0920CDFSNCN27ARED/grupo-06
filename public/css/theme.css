@@ -24,6 +24,14 @@ a:hover {
     background-color: #da8300;
 }
 
+.white {
+    color: #ffffff;
+}
+
+.white:hover {
+    color: #ffffff;
+}
+
 .grey {
     color: #757575;
 }

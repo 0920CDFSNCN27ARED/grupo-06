@@ -1,0 +1,21 @@
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main>
+                <div class="container">
+                    <section class="breadcrumb padding_y_15">
+                        Inicio > Producto
+                    </section>
+                    <section id="related_products" class="margin_botton_30">
+                        <h2 class="padding_y_15">Productos</h2>
+                        <div class="card_container">
+                            <% for (let i=0; i < products.length; i++) { %>
+                                <%- include ("../products/product_card", {product:products[i]}) %>
+                                    <% }%>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>

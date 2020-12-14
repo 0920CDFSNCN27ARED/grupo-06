@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 
 //app.use(express.static("public"));
 
@@ -10,11 +11,13 @@ const loginRouter = require("./routes/loginRouter");
 const product = require("./routes/productRouter");
 const registerRouter = require("./routes/registerRouter");
 
+
+
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
 
 app.use(express.static(__dirname + "/public"));
-
+app.use(methodOverride("_method"));
 //Capturar informacion de POST
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

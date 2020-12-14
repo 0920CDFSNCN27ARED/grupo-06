@@ -68,11 +68,19 @@ const productsController = {
             description: req.body.description,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
-            image: req.files[0].filename,
             category: req.body.category,
         };
         //busco el producto en la dataBase y lo modifico
-        database.replace(productEdited, product.req.body.id)
+        for (const i of database) { 
+           if (i.id == productEdited.id){
+            i.id= productEdited.id;
+            i.name= productEdited.name;
+            i.description= productEdited.description;
+            i.price= Number(productEdited.price);
+            i.discount= Number(productEdited.discount);
+            i.category= productEdited.category;
+           };
+        };
         //convierto el array a JSON
         const databaseJSON = JSON.stringify(database);
         //sobre escribo el JSON dB.json

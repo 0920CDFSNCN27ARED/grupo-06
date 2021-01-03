@@ -32,7 +32,7 @@ const productsController = {
         //convierto el array a JSON
         const databaseJSON = JSON.stringify(database);
         //sobre escribo el JSON dB.json
-        fs.writeFileSync("dB.json", databaseJSON);
+        fs.writeFileSync("dB.json", databaseJSON, null, 2);
         //redirigo al listado
         res.redirect("../products/");
     },
@@ -52,41 +52,29 @@ const productsController = {
         });
     },
     edit: (req, res) => {
-         const products = getProducts();
+        const products = getProducts();
         const product_edit = products.find((prod) => {
             return prod.id == req.params.id;
         });
-        res.render("products/product_edit", {product: product_edit})
+        res.render("products/product_edit", { product: product_edit });
     },
-    editProd: (req, res, next) => {
+    editProd: (req, res) => {
         //llamo al array de productos y lo guardo en database
-        const database = getProducts();
-        //tomo la data del formulario de create.ejs
-        const productEdited = {
-            id: req.body.id,
-            name: req.body.name,
-            description: req.body.description,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            category: req.body.category,
-        };
-        //busco el producto en la dataBase y lo modifico
-        for (const i of database) { 
-           if (i.id == productEdited.id){
-            i.id= productEdited.id;
-            i.name= productEdited.name;
-            i.description= productEdited.description;
-            i.price= Number(productEdited.price);
-            i.discount= Number(productEdited.discount);
-            i.category= productEdited.category;
-           };
-        };
+        const products = getProducts();
+        //tomo el producto cargado
+        const requiredProduct = products.find((prod) => {
+            return prod.id == req.params.id;
+        });
+        //modifico cada item
+
+        requiredProduct.name = req.body.name;
+        console.log(requiredProduct);
         //convierto el array a JSON
-        const databaseJSON = JSON.stringify(database);
+        const productsJSON = JSON.stringify(products, null, 2);
         //sobre escribo el JSON dB.json
-        fs.writeFileSync("dB.json", databaseJSON);
+        fs.writeFileSync("dB.json", productsJSON);
         //redirigo al listado
-        res.redirect("../products/");
+        res.redirect(`../products/${req.params.id}/detail`);
     },
 };
 

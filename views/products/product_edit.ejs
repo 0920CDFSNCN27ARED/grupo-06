@@ -11,16 +11,16 @@
                         <h2 class="padding_y_15">Productos</h2>
                         <div class="card_container">
                             <div class="login">
-                                <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
-                                    class="mt-14">
+                                <form action="/products/<%= product.id %>?_method=PUT" method="POST"
+                                    enctype="multipart/form-data" class="mt-14">
                                     <label for="">Nombre prodcuto</label>
                                     <input type="text" name="name" value="<%= product.name %>">
                                     <br>
                                     <label for="">Descripción</label>
-                                    <input type="text" name="description" value= "<%= product.description %>">
+                                    <input type="text" name="description" value="<%= product.description %>">
                                     <br>
                                     <label for="">Precio</label>
-                                    <input type="text" name="price"value="<%= product.price %>">
+                                    <input type="text" name="price" value="<%= product.price %>">
                                     <br>
                                     <label for="">Descuento</label>
                                     <input type="text" name="discount" value="<%= product.discount %>">
@@ -35,7 +35,7 @@
                                         <option value="Placa de video">placa de video</option>
                                     </select>
                                     <br>
-                                    <input type="submit" value="Editar">
+                                    <input type="submit" value="Guardar">
                                 </form>
                             </div>
                         </div>

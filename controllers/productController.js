@@ -68,6 +68,11 @@ const productsController = {
         //modifico cada item
 
         requiredProduct.name = req.body.name;
+        requiredProduct.description = req.body.description;
+        requiredProduct.price = req.body.price;
+        requiredProduct.discount = req.body.discount;
+        //requiredProduct.image = req.body.image;
+
         console.log(requiredProduct);
         //convierto el array a JSON
         const productsJSON = JSON.stringify(products, null, 2);

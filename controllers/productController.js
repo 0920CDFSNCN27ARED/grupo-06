@@ -24,7 +24,7 @@ const productsController = {
             description: req.body.description,
             price: Number(req.body.price),
             discount: Number(req.body.discount),
-            image: req.files[0].filename,
+            image: req.files[0].filename, //[0] es porque es el primer archivo subido.
             category: req.body.category,
         };
         //lo agrego al final del array database

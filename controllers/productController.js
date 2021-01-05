@@ -71,9 +71,8 @@ const productsController = {
         requiredProduct.description = req.body.description;
         requiredProduct.price = req.body.price;
         requiredProduct.discount = req.body.discount;
-        //requiredProduct.image = req.body.image;
-
-        console.log(requiredProduct);
+        (requiredProduct.image = req.files[0].filename), //[0] es porque es el primer archivo subido.
+            console.log(requiredProduct);
         //convierto el array a JSON
         const productsJSON = JSON.stringify(products, null, 2);
         //sobre escribo el JSON dB.json

@@ -3,9 +3,9 @@
     "id": 1,
     "name": "Core I9 9900K OctaCore HT 9va Gen S1151",
     "description": "Siendo el Tope de linea de la Gama intel, el i9 10900, tiene un rendimiento nunca antes visto, con un consumo energetico Increible.",
-    "price": 59000,
-    "discount": 10,
-    "image": "micro-intel-core-i9-9900k.jpg",
+    "price": "59000",
+    "discount": "10",
+    "image": "image-1609807287988.jpg",
     "category": "Procesadores"
   },
   {

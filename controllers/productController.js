@@ -77,8 +77,35 @@ const productsController = {
         const productsJSON = JSON.stringify(products, null, 2);
         //sobre escribo el JSON dB.json
         fs.writeFileSync("dB.json", productsJSON);
-        //redirigo al listado
+        //redirigo al producto
         res.redirect(`../products/${req.params.id}/detail`);
+    },
+    deleteShow: (req, res) => {
+        const products = getProducts();
+        const product_delete = products.find((prod) => {
+            return prod.id == req.params.id;
+        });
+        res.render("products/product_delete", {
+            toThousand: toThousand,
+            products: products,
+            product: product_delete,
+        });
+    },
+    delete: (req, res) => {
+        const products = getProducts();
+        const reqProductIndex = products.findIndex((prod) => {
+            return prod.id == req.params.id;
+        });
+
+        products.splice(reqProductIndex, 1);
+
+        //convierto el array a JSON
+        const productsJSON = JSON.stringify(products, null, 2);
+        //sobre escribo el JSON dB.json
+        fs.writeFileSync("dB.json", productsJSON);
+        //redirigo al listado
+
+        res.redirect("/products");
     },
 };
 

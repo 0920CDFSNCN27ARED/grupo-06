@@ -30,4 +30,8 @@ router.get("/edit/:id", productController.edit);
 
 router.put("/:id", upload.any(), productController.editProd);
 
+router.get("/:id/delete", productController.deleteShow);
+
+router.delete("/:id/delete", productController.delete);
+
 module.exports = router;

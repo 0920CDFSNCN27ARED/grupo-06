@@ -1,0 +1,38 @@
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main>
+                <div class="container">
+                    <section class="breadcrumb padding_y_15">
+                        Inicio > <%= product.category%> > <%= product.name%>
+                    </section>
+
+                    <section class="product">
+                        <articles class="product-gallery padding_20 width_50 box_sizing_border_box"><img
+                                src="/images/products/<%= product.image%>" alt="<%= product.name%>" /></articles>
+                        <articles class="padding_20 width_50 box_sizing_border_box">
+                            <h3>
+                                <%= product.category%>
+                            </h3>
+                            <h1>
+                                <%= product.name%>
+                            </h1>
+                            <h2 class="padding_y_15 color_primary">$<%=toThousand(product.price)%>
+                            </h2>
+                            <p class="grey">
+                                <%= product.description%>
+                            </p>
+
+                            <form method="POST" action="?_method=DELETE">
+                                <button class="button_small background_primary" type="submit">
+                                    Borrar
+                                </button>
+                            </form>
+                        </articles>
+                    </section>
+
+                </div>
+            </main>
+            <%- include("../partials/footer") %>
+    </body>

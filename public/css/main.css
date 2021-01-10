@@ -26,3 +26,8 @@
     height: 50%;
     object-fit: contain;
 }
+
+/* fa avatar register */
+.fs-20 {
+    font-size: 20vh;
+}

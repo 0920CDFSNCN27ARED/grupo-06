@@ -1,19 +1,14 @@
-<div class="card" style="width: 18rem">
-    <img
-        src="/images/products/<%= product.image%>"
-        class="card-img-top"
-        alt="Card image cap"
-    />
+<div class="card col-sm ms-2">
+    <img src="/images/products/<%= product.image%>" class="card-img-top" alt="Card image cap" />
     <div class="card-body text-center">
-        <h5 class="card-title"><%= product.name%></h5>
+        <h5 class="card-title">
+            <%= product.name%>
+        </h5>
         <h6 class="card-subtitle mb-2 text-muted text-center">
             <%= product.category%>
         </h6>
-        <h2 class="pricing-card-title">$<%=toThousand(product.price)%></h2>
-        <a
-            href="/products/<%= product.id%>/detail"
-            class="btn w-100 btn-warning"
-            >Ver producto</a
-        >
+        <h2 class="pricing-card-title">$<%=toThousand(product.price)%>
+        </h2>
+        <a href="/products/<%= product.id%>/detail" class="btn w-100 btn-warning">Ver producto</a>
     </div>
 </div>

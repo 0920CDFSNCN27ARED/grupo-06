@@ -3,3 +3,17 @@
 -More Of: Sin duda en este punto volvemos a mencionar "pair-programming", como mejor practica que posee el equipo. 
 -Start Doing: Utilizar WhatsApp como canal principial de comunicacion.
 -Stop Doing: No realizar mas "git init" al clonar un repo.
+
+Sprint 4:
+Keep Doing: Nuestra fortaleza como en los sprints anteriores siempre ha sido el "pair-programming" y venir a las reuniones ya con propuestas anotadas o problemas que no se hayan podido resolver de forma individual para poder debatir y solucionar en equipo. 
+Creamos un grupo en WhatsApp como habiamos anotado en Start Doing del sprint anterior que fue muy beneficioso para la comunicacion del equipo resultando asi en menos perdida de tiempo o desinformacion como nos ocurria con el canal Discord. 
+Crear ramas para trabajar de forma individual por si no se tiene mucha seguridad de lo que se esta realizando.
+
+Less of: Uso del canal Discord para consultas importantes.
+
+More Of: La utilizacion del grupo de WhatsApp como nuevo canal de comunicacion.
+
+Start Doing: Si bien el tablero de trello es muy util, nos propusimos escribir por el grupo lo que hizo cada uno de forma individual o en conjunto para que el equipo tenga una mejor vision de como se estan llevando a cabo las cosas y el tiempo que tenemos para terminarlas, ya que en el sprint anterior nos paso que intentamos de hacer cosas que eran para el sprint siguiente y nos olvidamos algunas cosas que eran bastante basicas por no estar del todo informados.
+
+Stop Doing: No realizar mas commits sin estar seguros de que lo que se hizo esta bien, si eso pasa se debe trabajar en una rama aparte.
+No hacer algo del sprint siguiente si todavia no esta terminado aun el actual.

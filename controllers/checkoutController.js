@@ -1,8 +1,14 @@
 const path = require("path");
+const getProducts = require("../utils/getProducts");
+const toThousand = require("../utils/toThousand");
 
 const controller = {
     checkout: (req, res) => {
-        res.render("checkout");
+        const products = getProducts();
+        res.render("checkout", {
+            products: products,
+            toThousand: toThousand,
+        });
     },
 };
 

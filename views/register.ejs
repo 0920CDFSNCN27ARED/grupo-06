@@ -2,22 +2,24 @@
 
 <body>
     <%- include("partials/header") %>
-    <div
-        class="display_flex display_flex_register register_space_evenly container"
-    >
-        <div class="display_flex flex_column content_register">
-            <h1 class="text_center mt-14 mb-14">Registrate</h1>
-            <button class="button_small background_primary">
-                <i class="fab fa-google"></i> INGRESAR CON GOOGLE
-            </button>
-            <button class="button_small background_primary">
-                <i class="fab fa-facebook"></i> INGRESAR CON FACEBOOK
-            </button>
-            <div class="login mt-14">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1 class="text-center my-3">Registrate</h1>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-warning text-center my-1">
+                        <i class="fab fa-google"></i> INGRESAR CON GOOGLE
+                    </button>
+                    <button class="btn btn-warning text-center my-1">
+                        <i class="fab fa-facebook"></i> INGRESAR CON FACEBOOK
+                    </button>
+                </div>
+
                 <form action="/" method="POST">
                     <label for="name">Nombre y Apellido:</label>
                     <input
                         type="text"
+                        class="form-control"
                         name="name"
                         id="name"
                         placeholder="Nombre y Apellido"
@@ -26,6 +28,7 @@
                     <input
                         type="email"
                         name="email"
+                        class="form-control"
                         id="email"
                         placeholder="mail@gmail.com"
                     />
@@ -33,6 +36,7 @@
                     <input
                         type="password"
                         name="password"
+                        class="form-control"
                         id="password"
                         placeholder="Elegí tu contraseña"
                     />
@@ -40,42 +44,43 @@
                     <input
                         type="password"
                         name="password"
+                        class="form-control"
                         id="passwordconfirm"
                         placeholder="Repetir contraseña"
                     />
                     <button
-                        class="button_large background_primary"
+                        class="btn btn-warning text-center my-1 w-100"
                         type="submit"
                         value="CREAR_CUENTA"
                     >
                         CREAR CUENTA
                     </button>
                 </form>
-            </div>
-            <div class="text_center margin_10">
-                <a class="color_primary" href="#"
-                    >No estas registrado? Registrate acá</a
-                >
-            </div>
-        </div>
 
-        <div class="display_flex flex_column content_register">
-            <i class="fas fa-user-circle avatar_register"></i>
-            <h3 class="text_center">¿Que vas a hacer con tu cuenta?</h3>
-            <ul>
-                <li>Consultar el estado de tus compras</li>
-                <li>Administrar tus productos favoritos</li>
-                <li>Descargar las facturas</li>
-                <li>Consultar manuales de los productos comprados</li>
-                <li>Definir tus preferencias e intereses</li>
-                <li>Acceder al historial de productos vistos</li>
-                <li>Retomar tus compras incompletas</li>
-            </ul>
-            <h6 class="text_center">
-                Recibi notificaciones de tus compras, ofertas y descuentos
-                exclusivos.
-            </h6>
-            <h6 class="text_center">Ver politicas de privacidad</h6>
+                <div class="text-center my-2">
+                    <a class="text-warning" href="#"
+                        >No estas registrado? Registrate acá</a
+                    >
+                </div>
+            </div>
+            <div class="col-sm text-center">
+                <i class="fas fa-user-circle fs-20 mt-3"></i>
+                <h3 class="fw-bold">¿Que vas a hacer con tu cuenta?</h3>
+                <ul>
+                    <li>Consultar el estado de tus compras</li>
+                    <li>Administrar tus productos favoritos</li>
+                    <li>Descargar las facturas</li>
+                    <li>Consultar manuales de los productos comprados</li>
+                    <li>Definir tus preferencias e intereses</li>
+                    <li>Acceder al historial de productos vistos</li>
+                    <li>Retomar tus compras incompletas</li>
+                </ul>
+                <h6 class="">
+                    Recibi notificaciones de tus compras, ofertas y descuentos
+                    exclusivos.
+                </h6>
+                <h6 class="">Ver politicas de privacidad</h6>
+            </div>
         </div>
     </div>
     <%- include("partials/footer") %>

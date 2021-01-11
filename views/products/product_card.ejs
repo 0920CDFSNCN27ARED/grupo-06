@@ -1,22 +1,19 @@
-<div class="card_product">
-    <div>
-        <img src="/images/products/<%= product.image%>" alt="" />
-    </div>
-    <div class="card_description">
-        <h3>
-            <%= product.name%>
-        </h3>
-        <p>
+<div class="card" style="width: 18rem">
+    <img
+        src="/images/products/<%= product.image%>"
+        class="card-img-top"
+        alt="Card image cap"
+    />
+    <div class="card-body text-center">
+        <h5 class="card-title"><%= product.name%></h5>
+        <h6 class="card-subtitle mb-2 text-muted text-center">
             <%= product.category%>
-        </p>
-
-        <h2 class="color_primary strong_font">
-            $<%=toThousand(product.price)%>
-        </h2>
-    </div>
-    <div class="card_button">
-        <button value="VER PRODUCTO" class="button background_primary">
-            <a href="/products/<%= product.id%>/detail" class="white">Ver producto</a>
-        </button>
+        </h6>
+        <h2 class="pricing-card-title">$<%=toThousand(product.price)%></h2>
+        <a
+            href="/products/<%= product.id%>/detail"
+            class="btn w-100 btn-warning"
+            >Ver producto</a
+        >
     </div>
 </div>

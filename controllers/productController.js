@@ -30,9 +30,9 @@ const productsController = {
         //lo agrego al final del array database
         database.push(productCreate);
         //convierto el array a JSON
-        const databaseJSON = JSON.stringify(database);
+        const databaseJSON = JSON.stringify(database, null, 2);
         //sobre escribo el JSON dB.json
-        fs.writeFileSync("dB.json", databaseJSON, null, 2);
+        fs.writeFileSync("dB.json", databaseJSON);
         //redirigo al listado
         res.redirect("../products/");
     },

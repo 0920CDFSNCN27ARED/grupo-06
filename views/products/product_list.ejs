@@ -1,20 +1,14 @@
 <%- include("../partials/head") %>
 
-    <body class="d-flex flex-column min-vh-100">
-        <%- include("../partials/header") %>
-            <main>
-
-
-                <div class="container">
-                    <div class="row row-cols-4">
-
-                        <% for (let i=0; i < 9; i++) { %>
-                            <%- include ("../products/product_card", {product:products[i]}) %>
-                                <% }%>
-
-                    </div>
-                </div>
-
-            </main>
-            <%- include("../partials/footer") %>
-    </body>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <div class="container">
+            <div class="row mt-4">
+                <% for (let i=0; i < 9; i++) { %> <%- include
+                ("../products/product_card", {product:products[i]}) %> <% }%>
+            </div>
+        </div>
+    </main>
+    <%- include("../partials/footer") %>
+</body>

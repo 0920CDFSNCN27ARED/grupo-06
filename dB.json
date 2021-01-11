@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "name": "AMD Ryzen 3 3200G Wraith Stealth ZEN2 AM4 ",
+        "name": "AMD Ryzen 3 3200G Wraith Stealth ",
         "description": "Armá tu Pc con Ryzen y jugá desde League Of Legends a Fortnite sin gastar de más. Entrá de lleno el mundo del gaming y disfrutá tus títulos favoritos.",
         "price": 12899,
         "discount": 10,
@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "name": "AMD Ryzen 5 2600 3.9Ghz AM4 C/COOLER S/GRAPHICS ",
+        "name": "AMD Ryzen 5 2600 3.9Ghz AM4 C/COOLER ",
         "description": "La nueva generación de procesadores Ryzen de AMD está fabricada bajo tecnología de 12 nanómetros. La eficiencia en consumo y rendimiento óptimas para tu configuración destinada a juegos.",
         "price": "23220",
         "discount": "10",
@@ -46,7 +46,7 @@
     },
     {
         "id": 6,
-        "name": "AMD Ryzen 7 3700X 4.4Ghz Wraith Prism RGB S/G ZEN2",
+        "name": "AMD Ryzen 7 3700X 4.4Ghz Wraith Prism",
         "description": "Armá la PC de alto rendimiento que querés con Ryzen 7. La séptima serie de Ryzen está pensada para el uso intensivo de alta exigencia.",
         "price": 46124,
         "discount": 10,

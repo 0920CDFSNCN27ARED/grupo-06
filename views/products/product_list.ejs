@@ -5,7 +5,7 @@
     <main>
         <div class="container">
             <div class="row mt-4">
-                <% for (let i=0; i < 9; i++) { %> <%- include
+                <% for (let i=0; i < products.length; i++) { %> <%- include
                 ("../products/product_card", {product:products[i]}) %> <% }%>
             </div>
         </div>

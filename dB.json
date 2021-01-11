@@ -79,5 +79,14 @@
         "discount": 12,
         "image": "image-1607886809404.jpg",
         "category": "Placa de video"
+    },
+    {
+        "id": 10,
+        "name": "MSI GeForce GTX 1650 D6 GAMING X ",
+        "description": "Disfrute jugando sus juegos favoritos con altas velocidades de cuadro instalando la tarjeta gráfica MSI GeForce GTX 1650 D6 GAMING X en una ranura PCIe 3.0 x16 disponible. Con la arquitectura NVIDIA Turing y una velocidad de reloj aumentable de 1710 MHz, la GeForce GTX 1650 D6 GAMING X está diseñada para brindar experiencias fluidas y rápidas al jugar y crear contenido. Sus ventiladores dobles incluyen dos diseños de aletas diferentes para proporcionar un enfriamiento silencioso y eficiente, trabajando junto con el disipador de calor construido a medida mantiene temperaturas óptimas.",
+        "price": 65000,
+        "discount": 10,
+        "image": "image-1610383806475.jpg",
+        "category": "Placa de video"
     }
 ]

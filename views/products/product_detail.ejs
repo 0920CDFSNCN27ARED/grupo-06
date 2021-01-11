@@ -1,87 +1,128 @@
 <%- include("../partials/head") %>
 
-    <body>
-        <%- include("../partials/header") %>
-            <main>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <div class="container">
+            <div class="mt-1">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">Home</li>
+                        <li class="breadcrumb-item"><%= product.category%></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <%= product.name%>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <section class="product mt-4">
                 <div class="container">
-                    <section class="breadcrumb padding_y_15">
-                        Inicio > <%= product.category%> > <%= product.name%>
-                    </section>
-
-                    <section class="product">
-                        <div class="container">
-                            <div class="row">
-                                <div id="carouselControls" class="carousel slide col-sm" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="/images/products/<%= product.image%>" alt="<%= product.name%>"
-                                                class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="/images/products/<%= product.image%>" alt="<%= product.name%>"
-                                                class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="/images/products/<%= product.image%>" alt="<%= product.name%>"
-                                                class="d-block w-100" alt="...">
-                                        </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselControls" role="button"
-                                        data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselControls" role="button"
-                                        data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </a>
+                    <div class="row">
+                        <div
+                            id="carouselControls"
+                            class="carousel slide col-sm"
+                            data-bs-ride="carousel"
+                        >
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img
+                                        src="/images/products/<%= product.image%>"
+                                        alt="<%= product.name%>"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
                                 </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/images/products/<%= product.image%>"
+                                        alt="<%= product.name%>"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="/images/products/<%= product.image%>"
+                                        alt="<%= product.name%>"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                            </div>
+                            <a
+                                class="carousel-control-prev"
+                                href="#carouselControls"
+                                role="button"
+                                data-bs-slide="prev"
+                            >
+                                <span
+                                    class="carousel-control-prev-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a
+                                class="carousel-control-next"
+                                href="#carouselControls"
+                                role="button"
+                                data-bs-slide="next"
+                            >
+                                <span
+                                    class="carousel-control-next-icon"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
 
-                                <articles class="padding_20 width_50 box_sizing_border_box col-sm">
-                                    <h3>
-                                        <%= product.category%>
-                                    </h3>
-                                    <h1>
-                                        <%= product.name%>
-                                    </h1>
-                                    <h2 class="padding_y_15 color_primary">$<%=toThousand(product.price)%>
-                                    </h2>
-                                    <p class="grey">
-                                        <%= product.description%>
-                                    </p>
-                                    <label for="quantity">Cantidad:</label>
-                                    <select name="quantity" class="quantity_product">
+                        <articles
+                            class="padding_20 width_50 box_sizing_border_box col-sm"
+                        >
+                            <h3><%= product.category%></h3>
+                            <h1><%= product.name%></h1>
+                            <h2 class="padding_y_15 color_primary">
+                                $<%=toThousand(product.price)%>
+                            </h2>
+                            <p class="grey"><%= product.description%></p>
+                            <label for="quantity">Cantidad:</label>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <select
+                                        name="quantity"
+                                        class="form-select form-select-sm form-control-lg"
+                                    >
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                     </select>
-                                    <button class="button background_primary">
+                                </div>
+                                <div class="col-lg-10">
+                                    <button
+                                        type="button"
+                                        class="btn btn-warning"
+                                    >
                                         AGREGAR AL CARRITO
                                     </button>
-                                </articles>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-
-
-                    <section id="related_products" class="margin_botton_30">
-
-
-                        <h2 class="padding_y_15">Productos relacionados</h2>
-                        <div class="container">
-                            <div class="row row-cols-4">
-                                <% for (let i=0; i < 4; i++) { %>
-                                    <%- include ("../products/product_card", {product:products[i]}) %>
-                                        <% }%>
-                            </div>
-                        </div>
-
-
-                    </section>
+                        </articles>
+                    </div>
                 </div>
-            </main>
-            <%- include("../partials/footer") %>
-    </body>
+            </section>
+
+            <section id="related_products" class="margin_botton_30">
+                <h2 class="padding_y_15">Productos relacionados</h2>
+                <div class="container">
+                    <div class="row row-cols-4">
+                        <% for (let i=0; i < 4; i++) { %> <%- include
+                        ("../products/product_card", {product:products[i]}) %>
+                        <% }%>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <%- include("../partials/footer") %>
+</body>

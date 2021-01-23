@@ -2,16 +2,13 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
-
+const session = require("express-session");
 //app.use(express.static("public"));
 
 const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
-const loginRouter = require("./routes/loginRouter");
 const product = require("./routes/productRouter");
-const registerRouter = require("./routes/registerRouter");
-
-
+const usersRouter = require("./routes/usersRouter");
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views"));
@@ -23,6 +20,7 @@ app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({ secret: "secretoGrupo6" }));
 
 app.listen(3000, () => {
     console.log("Servidor funcionando");
@@ -30,9 +28,7 @@ app.listen(3000, () => {
 
 app.use("/", indexRouter);
 
-app.use("/login", loginRouter);
-
-app.use("/register", registerRouter);
+app.use("/users", usersRouter);
 
 app.use("/products", product);
 

@@ -9,26 +9,14 @@
                             <h1 class="fw-bold my-4">Ingresar</h1>
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-warning text-center my-1">
-                                <i class="fab fa-google"></i> INGRESAR CON GOOGLE
-                            </button>
-
-                            <button class="btn btn-warning text-center my-1">
-                                <i class="fab fa-facebook"></i> INGRESAR CON FACEBOOK
-                            </button>
                         </div>
-                        <form action="/" method="POST" class="my-2">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">E-mail:</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-                                <div id="email" class="form-text">
-                                    Tu información no será compartida.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña:</label>
-                                <input type="password" class="form-control" id="password" />
-                            </div>
+                        <form action="/users/login" method="POST" class="my-2">
+                            <label for="">E-mail:</label>
+                            <input type="email" name="email" class="form-control" id="email"
+                                placeholder="mail@gmail.com" />
+                            <label for="">Contraseña:</label>
+                            <input type="password" name="password" class="form-control" id="password"
+                                placeholder="ingresar contraseña" />
                             <div class="d-grid gap-1">
                                 <button type="submit" class="btn btn-warning text-center">
                                     INGRESAR

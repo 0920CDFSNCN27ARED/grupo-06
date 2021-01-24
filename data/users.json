@@ -41,5 +41,14 @@
     "password": "$2b$10$NSSQKkohp/CSM9OqObViTu02qi/uZl5ngK9ptnFgvIfFcDrhXImwq",
     "image": "image-1611516970409.png",
     "category": "user"
+  },
+  {
+    "id": 6,
+    "first_name": "Lucas",
+    "last_name": "Aranda",
+    "email": "lucas212123121231882@gmail.com",
+    "password": "$2b$10$q2GYDd0Omn5JdOPF16ZfeeWISUlwMNH.4v1JI.ON0CCNz6tUmPyzS",
+    "image": "image-1611517971667.png",
+    "category": "user"
   }
 ]

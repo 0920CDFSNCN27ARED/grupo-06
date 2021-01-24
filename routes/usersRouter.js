@@ -4,6 +4,8 @@ const usersController = require("../controllers/usersController");
 const multer = require("multer");
 const path = require("path");
 const { check, validationResult, body } = require("express-validator");
+const fs = require("fs");
+const getUsers = require("../utils/getUsers");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,6 +37,17 @@ router.post(
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
+        body("email")
+            .custom(function (value) {
+                const database = getUsers();
+                const user = database.find((user) => {
+                    return user.email == value;
+                });
+                if (!user) return true;
+
+                return false;
+            })
+            .withMessage("usuario ya existente"),
     ],
     usersController.create
 );

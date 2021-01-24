@@ -7,7 +7,7 @@ const session = require("express-session");
 
 const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
-const product = require("./routes/productRouter");
+const productRouter = require("./routes/productRouter");
 const usersRouter = require("./routes/usersRouter");
 
 app.set("view engine", "ejs");
@@ -30,6 +30,6 @@ app.use("/", indexRouter);
 
 app.use("/users", usersRouter);
 
-app.use("/products", product);
+app.use("/products", productRouter);
 
 app.use("/checkout", checkoutRouter);

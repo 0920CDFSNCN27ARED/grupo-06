@@ -2,6 +2,7 @@ const fs = require("fs");
 const getUsers = require("../utils/getUsers");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const { check, validationResult, body } = require("express-validator");
 
 const usersController = {
     login: (req, res) => {
@@ -25,25 +26,31 @@ const usersController = {
         res.render("users/register");
     },
     create: (req, res, next) => {
-        const database = getUsers();
+        const errors = validationResult(req);
 
-        const newUser = {
-            id: database.length + 1,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            image: req.files[0].filename, //[0] es porque es el primer archivo subido.
-            category: req.body.category,
-        };
+        if (errors.isEmpty()) {
+            const database = getUsers();
 
-        database.push(newUser);
+            const newUser = {
+                id: database.length + 1,
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                image: req.files[0].filename, //[0] es porque es el primer archivo subido.
+                category: req.body.category,
+            };
 
-        const usuarioJSON = JSON.stringify(database, null, 2);
+            database.push(newUser);
 
-        fs.writeFileSync("data/users.json", usuarioJSON);
+            const usuarioJSON = JSON.stringify(database, null, 2);
 
-        res.redirect("../");
+            fs.writeFileSync("data/users.json", usuarioJSON);
+
+            res.redirect("../");
+        } else {
+            res.render("users/register", { errors: errors.errors });
+        }
     },
 };
 

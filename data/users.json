@@ -25,5 +25,21 @@
     "password": "$2b$10$YwtFzptjGpJH8xQnP0QlJO6BA5KMY0v27ESNsEbolRgHJ9f/mrxTm",
     "image": "image-1611467056373.png",
     "category": "admin"
+  },
+  {
+    "id": 4,
+    "first_name": "Lucas",
+    "last_name": "Arandaaa",
+    "email": "lucas1aaaaaa82@gmail.com",
+    "password": "$2b$10$pD/Rvf8ToPs6t86jap17ruBlKZFsPcurTW.hTjRkrcVY2s7oYJX8y"
+  },
+  {
+    "id": 5,
+    "first_name": "jorge",
+    "last_name": "rew",
+    "email": "jotrge@gmail.com",
+    "password": "$2b$10$NSSQKkohp/CSM9OqObViTu02qi/uZl5ngK9ptnFgvIfFcDrhXImwq",
+    "image": "image-1611516970409.png",
+    "category": "user"
   }
 ]

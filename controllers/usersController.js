@@ -9,25 +9,33 @@ const usersController = {
         res.render("users/login");
     },
     processLogin: (req, res) => {
-        const database = getUsers();
-        const user = database.find((user) => {
-            return (
-                user.email == req.body.email &&
-                bcrypt.compareSync(req.body.password, user.password)
-            );
-        });
-        if (!user) return res.redirect("/users/login");
-
-        console.log(user);
-
-        return res.redirect("/");
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const database = getUsers();
+            const user = database.find((user) => {
+                return (
+                    user.email == req.body.email &&
+                    bcrypt.compareSync(req.body.password, user.password)
+                );
+            });
+            if (user) {
+                console.log(user);
+                req.session.usuarioLogueado = user;
+                return res.redirect("/");
+            } else {
+                return res.render("/users/login", {
+                    errors: [{ msg: "Credenciales invalidas" }],
+                });
+            }
+        } else {
+            res.render("users/login", { errors: errors.errors });
+        }
     },
     register: (req, res) => {
         res.render("users/register");
     },
     create: (req, res, next) => {
         const errors = validationResult(req);
-
         if (errors.isEmpty()) {
             const database = getUsers();
 

@@ -23,7 +23,16 @@ var upload = multer({ storage: storage });
 
 router.get("/login", usersController.login);
 
-router.post("/login", usersController.processLogin);
+router.post(
+    "/login",
+    [
+        check("email").isEmail().withMessage("debe ser un email valido"),
+        check("password")
+            .isLength({ min: 2 })
+            .withMessage("la contraseña debe tener mas de 2 caracteres"),
+    ],
+    usersController.processLogin
+);
 
 router.get("/register", usersController.register);
 
@@ -51,5 +60,13 @@ router.post(
     ],
     usersController.create
 );
+
+router.get("/check", function (req, res) {
+    if (req.session.usuarioLogueado == undefined) {
+        res.send("No estas logueado");
+    } else {
+        res.send("el usuario logueado es:" + req.session.usuarioLogueado.email);
+    }
+});
 
 module.exports = router;

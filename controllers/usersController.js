@@ -18,15 +18,8 @@ const usersController = {
                     bcrypt.compareSync(req.body.password, user.password)
                 );
             });
-            if (user) {
-                console.log(user);
-                req.session.usuarioLogueado = user;
-                return res.redirect("/");
-            } else {
-                return res.render("/users/login", {
-                    errors: [{ msg: "Credenciales invalidas" }],
-                });
-            }
+
+            return res.redirect("/");
         } else {
             res.render("users/login", { errors: errors.errors });
         }

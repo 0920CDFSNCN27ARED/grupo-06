@@ -6,6 +6,7 @@ const path = require("path");
 const { check, validationResult, body } = require("express-validator");
 const fs = require("fs");
 const getUsers = require("../utils/getUsers");
+const bcrypt = require("bcrypt");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -30,6 +31,17 @@ router.post(
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
+        body("password")
+            .custom(function (value) {
+                const database = getUsers();
+                const user = database.find((user) => {
+                    return bcrypt.compareSync(value, user.password);
+                });
+                if (!user) return false;
+
+                return true;
+            })
+            .withMessage("contraseña incorrecta"),
     ],
     usersController.processLogin
 );

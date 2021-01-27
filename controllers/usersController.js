@@ -11,14 +11,28 @@ const usersController = {
     processLogin: (req, res) => {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            const database = getUsers();
-            const user = database.find((user) => {
-                return (
-                    user.email == req.body.email &&
-                    bcrypt.compareSync(req.body.password, user.password)
-                );
-            });
+            const user = getUsers();
+            console.log(req.body.email);
+            const usuarioaLoguearse = [];
+            for (let i = 0; i < user.length; i++) {
+                if (user[i].email == req.body.email) {
+                    if (
+                        bcrypt.compareSync(req.body.password, user[i].password)
+                    ) {
+                        const usuarioaLoguearse = user[i];
+                        console.log(usuarioaLoguearse);
+                        break;
+                    }
+                }
+            }
+            if (usuarioaLoguearse == undefined) {
+                console.loh("USUARIO NO ENCONTRADO**");
+                return res.render("/users/login", {
+                    errors: [{ msg: "Credenciales Inválidas" }],
+                });
+            }
 
+            req.session.usuarioLogueado = usuarioaLoguearse;
             return res.redirect("/");
         } else {
             res.render("users/login", { errors: errors.errors });

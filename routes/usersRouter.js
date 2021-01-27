@@ -31,17 +31,6 @@ router.post(
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
-        body("password")
-            .custom(function (value) {
-                const database = getUsers();
-                const user = database.find((user) => {
-                    return bcrypt.compareSync(value, user.password);
-                });
-                if (!user) return false;
-
-                return true;
-            })
-            .withMessage("contraseña incorrecta"),
     ],
     usersController.processLogin
 );

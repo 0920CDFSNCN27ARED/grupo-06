@@ -1,5 +1,6 @@
 function guestMiddleware(req, res, next) {
-    if (req.session.usuarioLoguado != undefined) {
+    console.log("guest " + req.session.usuarioLogueado);
+    if (req.session.usuarioLogueado == undefined) {
         next();
     } else {
         res.send("Esta página es solo para invitados");

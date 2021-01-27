@@ -13,7 +13,7 @@ const usersController = {
         if (errors.isEmpty()) {
             const user = getUsers();
             console.log(req.body.email);
-            const usuarioaLoguearse = [];
+            const usuarioaLoguearse = undefined;
             for (let i = 0; i < user.length; i++) {
                 if (user[i].email == req.body.email) {
                     if (
@@ -21,18 +21,18 @@ const usersController = {
                     ) {
                         const usuarioaLoguearse = user[i];
                         console.log(usuarioaLoguearse);
+                        req.session.usuarioLogueado = usuarioaLoguearse;
                         break;
                     }
                 }
             }
             if (usuarioaLoguearse == undefined) {
-                console.loh("USUARIO NO ENCONTRADO**");
-                return res.render("/users/login", {
-                    errors: [{ msg: "Credenciales Inválidas" }],
+                console.log("USUARIO NO ENCONTRADO**");
+                return res.render("users/login", {
+                    errors: [{ msg: "Credenciales o mail inválido" }],
                 });
             }
-
-            req.session.usuarioLogueado = usuarioaLoguearse;
+            console.log(usuarioaLoguearse);
             return res.redirect("/");
         } else {
             res.render("users/login", { errors: errors.errors });

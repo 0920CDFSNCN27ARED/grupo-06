@@ -7,6 +7,7 @@ const { check, validationResult, body } = require("express-validator");
 const fs = require("fs");
 const getUsers = require("../utils/getUsers");
 const bcrypt = require("bcrypt");
+const guestMiddleware = require("../middlewares/guestMiddleware");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -35,7 +36,7 @@ router.post(
     usersController.processLogin
 );
 
-router.get("/register", usersController.register);
+router.get("/register", guestMiddleware, usersController.register);
 
 router.post(
     "/register",

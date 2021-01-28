@@ -3,6 +3,9 @@ const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const recordameMiddleware = require("./middlewares/recordameMiddleware");
+const authenticateMiddleware = require("./middlewares/authenticateMiddleware");
 //app.use(express.static("public"));
 
 const indexRouter = require("./routes/indexRouter");
@@ -17,10 +20,14 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(methodOverride("_method"));
 //Capturar informacion de POST
-
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(session({ secret: "secretoGrupo6" }));
+
+//Middlewares
+app.use(recordameMiddleware);
+app.use(authenticateMiddleware);
 
 app.listen(3000, () => {
     console.log("Servidor funcionando");

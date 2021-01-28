@@ -7,6 +7,7 @@ const controller = {
         res.render("index", {
             products: products,
             toThousand: toThousand,
+            user: req.loggedUser,
         });
     },
 };

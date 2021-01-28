@@ -1,6 +1,13 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
+            <ul>
+                <li>
+                    <h5 class="text-muted text-center">
+                        <%= user? user.first_name : "Inciá sessión" %>
+                    </h5>
+                </li>
+            </ul>
             <a class="navbar-brand" href=" /"
                 ><img
                     src="/images/logo_header.png"
@@ -105,11 +112,6 @@
                         <a class="nav-link" href="/checkout"
                             ><i class="fas fa-shopping-cart"></i
                         ></a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <h5 class="text-muted text-center"></h5>
                     </li>
                 </ul>
             </div>

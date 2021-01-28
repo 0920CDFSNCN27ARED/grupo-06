@@ -8,6 +8,7 @@ const fs = require("fs");
 const getUsers = require("../utils/getUsers");
 const bcrypt = require("bcrypt");
 const guestMiddleware = require("../middlewares/guestMiddleware");
+const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -23,7 +24,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-router.get("/login", usersController.login);
+router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
     "/login",
@@ -64,10 +65,14 @@ router.post(
 );
 
 router.get("/check", function (req, res) {
-    if (req.session.usuarioLogueado == undefined) {
+    if (
+        req.session.usuarioLogueado == undefined &&
+        req.loggedUser == undefined
+    ) {
+        //console.log(req.session.usuarioLogueado);
         res.send("No estas logueado");
     } else {
-        res.send("el usuario logueado es:" + req.session.usuarioLogueado.email);
+        res.send("el usuario logueado es:" + req.loggedUser.email);
     }
 });
 

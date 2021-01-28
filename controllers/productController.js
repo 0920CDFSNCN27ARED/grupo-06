@@ -9,6 +9,7 @@ const productsController = {
         res.render("products/product_list", {
             products: products,
             toThousand: toThousand,
+            user: req.loggedUser,
         });
     },
     create: (req, res) => {

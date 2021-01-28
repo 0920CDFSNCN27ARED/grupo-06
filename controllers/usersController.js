@@ -6,43 +6,51 @@ const { check, validationResult, body } = require("express-validator");
 
 const usersController = {
     login: (req, res) => {
-        res.render("users/login");
+        res.render("users/login", { user: req.loggedUser });
     },
     processLogin: (req, res) => {
         const errors = validationResult(req);
-        let usuarioaLoguearse = {};
+        let usuarioALoguearse = undefined;
         if (errors.isEmpty()) {
             const user = getUsers();
-            console.log(req.body.email);
 
             for (let i = 0; i < user.length; i++) {
                 if (user[i].email == req.body.email) {
                     if (
                         bcrypt.compareSync(req.body.password, user[i].password)
                     ) {
-                        usuarioaLoguearse = user[i];
-                        console.log(usuarioaLoguearse);
-                        req.session.usuarioLogueado = usuarioaLoguearse;
+                        usuarioALoguearse = user[i];
                         break;
                     }
                 }
             }
-            if (req.session.usuarioLogueado == undefined) {
-                console.log("USUARIO NO ENCONTRADO**");
+            //console.log(usuarioALoguearse);
+            if (usuarioALoguearse == undefined) {
+                //console.log("USUARIO NO ENCONTRADO**");
                 return res.render("users/login", {
                     errors: [{ msg: "Credenciales o mail inválido" }],
                 });
             }
-            console.log(usuarioaLoguearse);
-            console.log(req.session.usuarioLogueado);
 
+            req.session.usuarioLogueado = usuarioALoguearse;
+            req.session.loggedUserId = usuarioALoguearse.id;
+            //console.log(req.session.loggedUserId);
+
+            if (req.body.recordame != undefined) {
+                res.cookie("recordame", usuarioALoguearse.email, {
+                    maxAge: 6000000,
+                });
+            }
+            //console.log(res.cookie.email);
             return res.redirect("/");
         } else {
-            res.render("users/login", { errors: errors.errors });
+            res.render("users/login", {
+                errors: errors.errors,
+            });
         }
     },
     register: (req, res) => {
-        res.render("users/register");
+        res.render("users/register", { user: req.loggedUser });
     },
     create: (req, res, next) => {
         const errors = validationResult(req);

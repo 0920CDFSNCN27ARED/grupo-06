@@ -4,6 +4,7 @@ const productController = require("../controllers/productController");
 const multer = require("multer");
 const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
+const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -19,7 +20,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-router.get("/", productController.productList);
+router.get("/", authenticateMiddleware, productController.productList);
 
 router.get("/:id/detail", productController.detail);
 

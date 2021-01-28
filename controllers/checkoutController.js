@@ -8,6 +8,7 @@ const controller = {
         res.render("checkout", {
             products: products,
             toThousand: toThousand,
+            user: req.loggedUser,
         });
     },
 };

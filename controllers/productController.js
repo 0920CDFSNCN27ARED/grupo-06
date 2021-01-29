@@ -13,7 +13,7 @@ const productsController = {
         });
     },
     create: (req, res) => {
-        res.render("products/create");
+        res.render("products/create", { user: req.loggedUser });
     },
     createProd: (req, res, next) => {
         //llamo al array de productos y lo guardo en database
@@ -50,6 +50,7 @@ const productsController = {
             product: requiredProduct,
             toThousand: toThousand,
             products: products,
+            user: req.loggedUser,
         });
     },
     edit: (req, res) => {
@@ -57,7 +58,10 @@ const productsController = {
         const product_edit = products.find((prod) => {
             return prod.id == req.params.id;
         });
-        res.render("products/product_edit", { product: product_edit });
+        res.render("products/product_edit", {
+            product: product_edit,
+            user: req.loggedUser,
+        });
     },
     editProd: (req, res) => {
         //llamo al array de productos y lo guardo en database

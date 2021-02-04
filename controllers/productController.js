@@ -94,6 +94,7 @@ const productsController = {
             toThousand: toThousand,
             products: products,
             product: product_delete,
+            user: req.loggedUser,
         });
     },
     delete: (req, res) => {

@@ -59,5 +59,14 @@
     "password": "$2b$10$mqh9W26d2796ue1ZOAn.B.zAFpLC4bKRyk6DUtLXZXHw2jGuKCAXm",
     "image": "image-1611636711955.png",
     "category": "admin"
+  },
+  {
+    "id": 8,
+    "first_name": "Juan Igancio",
+    "last_name": "Guastello",
+    "email": "jiguastello@gmail.com",
+    "password": "$2b$10$hpOYU0fOviE.7QhkxIQxUOuW9MlmFY6XcmiKxRAAdtyo4ZPkggd3q",
+    "image": "image-1612465663310.png",
+    "category": "user"
   }
 ]

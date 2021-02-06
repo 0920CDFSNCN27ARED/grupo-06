@@ -23,7 +23,7 @@ Sprint 5:
     .Armamos el tablero en Trello.
     .Se agrego el registro de usuarios, el modulo bcrypt y el metodo compareSync al loguearse
     .Se modificaron las rutas y los controllers del login y register, para que todo lo que tenga que ver con usuarios se maneje desde users.
-    .Se agrego exoress validator
+    .Se agrego express validator
 
 Semana dos:
 

@@ -9,6 +9,8 @@ const getUsers = require("../utils/getUsers");
 const bcrypt = require("bcrypt");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
+const recordameMiddleware = require("../middlewares/recordameMiddleware");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -37,7 +39,13 @@ router.post(
     usersController.processLogin
 );
 
-router.get("/register", guestMiddleware, usersController.register);
+router.get(
+    "/register",
+    recordameMiddleware,
+    authenticateMiddleware,
+    guestMiddleware,
+    usersController.register
+);
 
 router.post(
     "/register",

@@ -34,3 +34,18 @@ Semana dos:
 .Implementamos la funcion checkbox en el caso de que el usuario quiera ser recordado.
 .Terminamos de armar la retro.
 .Hicimos el ultimo commit para agregar la retro y la weekly.
+
+Sequelize
+Una Category tiene Muchos Prdoducts
+Un Product tiene una Category
+
+Un Disconunt tiene Muchos Prdoducts
+Un Product tiene un Discount
+
+Un Product tiene Muchas UserProductEdited
+Un UserProductEdited tiene Muchos Productos
+Un User tiene Muchos UserProductEdited
+Un UserProductEdited tiene Users
+
+Un User tiene un Group
+Un Group tiene Muchos usuarios

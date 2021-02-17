@@ -12,7 +12,7 @@ function authenticateMiddleware(req, res, next) {
     });
 
     if (!loggedUser) {
-        delete req.session.loggedUserid;
+        delete req.session.loggedUserId;
         return next();
     }
 

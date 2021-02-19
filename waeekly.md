@@ -45,7 +45,7 @@ Un Product tiene un Discount
 Un Product tiene Muchas UserProductEdited
 Un UserProductEdited tiene Muchos Productos
 Un User tiene Muchos UserProductEdited
-Un UserProductEdited tiene Users
+Un UserProductEdited tiene Muchos Users
 
 Un User tiene un Group
 Un Group tiene Muchos usuarios

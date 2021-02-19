@@ -5,19 +5,23 @@ module.exports = (sequelize, DataTypes) => {
             email: DataTypes.STRING(45),
             password: DataTypes.STRING(300),
             image: DataTypes.STRING(100),
-            group_id: DataTypes.INTERGER,
+            group_id: DataTypes.INTEGER,
         },
         { timestaps: false }
     );
-};
-User.associate = function (models) {
-    User.belongsTo(models.Group, {
-        as: "group",
-        foreignKey: "group_id",
-    });
-    Users.belongsToMany(models.UserProductEdited, {
-        as: "UserProduct",
-        through: models.UserProductEdited,
-        foreignKey: "users_id",
-    });
+
+    User.associate = function (models) {
+        User.belongsTo(models.Group, {
+            as: "group",
+            foreignKey: "group_id",
+        });
+        User.belongsToMany(models.Product, {
+            as: "Products",
+            through: "users_products_edited",
+            foreignKey: "user_id",
+            otherKey: "product_id",
+            timestaps: false,
+        });
+    };
+    return User;
 };

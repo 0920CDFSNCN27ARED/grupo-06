@@ -2,18 +2,32 @@ const fs = require("fs");
 const getProducts = require("../utils/getProducts");
 const toThousand = require("../utils/toThousand");
 const path = require("path");
+const { debug } = require("console");
+const db = require("../database/models");
 
 const productsController = {
     productList: (req, res) => {
-        const products = getProducts();
+        db.Product.findAll().then(function (products) {
+            return res.render("products/product_list", {
+                products: products,
+                toThousand: toThousand,
+                user: req.loggedUser,
+            });
+        });
+        /*const products = getProducts();
         res.render("products/product_list", {
             products: products,
             toThousand: toThousand,
             user: req.loggedUser,
-        });
+    
+        }); */
     },
+
     create: (req, res) => {
-        res.render("products/create", { user: req.loggedUser });
+        db.Product.findAll().then(function (products) {
+            return res.render("products/create", { user: req.loggedUser });
+        });
+        //res.render("products/create", { user: req.loggedUser });
     },
     createProd: (req, res, next) => {
         //llamo al array de productos y lo guardo en database

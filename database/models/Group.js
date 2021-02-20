@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             group: DataTypes.STRING(45),
         },
-        { timestaps: false }
+        { timestamps: false }
     );
 
     Group.associate = function (models) {

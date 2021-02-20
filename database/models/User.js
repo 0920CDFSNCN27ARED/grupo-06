@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             through: "users_products_edited",
             foreignKey: "user_id",
             otherKey: "product_id",
-            timestaps: false,
+            timestamps: false,
         });
     };
     return User;

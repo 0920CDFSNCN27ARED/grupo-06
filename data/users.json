@@ -68,5 +68,32 @@
     "password": "$2b$10$hpOYU0fOviE.7QhkxIQxUOuW9MlmFY6XcmiKxRAAdtyo4ZPkggd3q",
     "image": "image-1612465663310.png",
     "category": "user"
+  },
+  {
+    "id": 9,
+    "first_name": "pedro",
+    "last_name": "patas",
+    "email": "silvestrenovarohueyo@gmail.com",
+    "password": "$2b$10$4fVlexFOHOTmixtwaxOK6O0pcVLGk3PpvZHF9/.WgwReT782pUCGW",
+    "image": "image-1613581040021.png",
+    "category": "user"
+  },
+  {
+    "id": 10,
+    "first_name": "silvestre3",
+    "last_name": "patas",
+    "email": "silvestre.novaro@gmail.com",
+    "password": "$2b$10$t9VnQV024qwuxeZrKPx/fODTVo15G1nv.kbbq3MdlDMpL.5x4LS9S",
+    "image": "image-1613661901647.png",
+    "category": "user"
+  },
+  {
+    "id": 11,
+    "first_name": "silvestre",
+    "last_name": "asara",
+    "email": "a@gmail.com",
+    "password": "$2b$10$/KO5x3MTklGT8QXYaYbqku17t9ssKjxg3TdQYDWCz29NVWLKfyFxu",
+    "image": "image-1613772429104.png",
+    "category": "user"
   }
 ]

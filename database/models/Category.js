@@ -4,9 +4,14 @@ module.exports = (sequelize, DataTypes) => {
         category: {
             type: DataTypes.STRING(15),
         },
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        }
     };
     const config = {
-        tableName: "Categories",
+        tableName: "Categorys",
         timestamps: false,
     };
 

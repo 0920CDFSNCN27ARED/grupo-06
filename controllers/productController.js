@@ -29,28 +29,40 @@ const productsController = {
         });
         //res.render("products/create", { user: req.loggedUser });
     },
-    createProd: (req, res, next) => {
-        //llamo al array de productos y lo guardo en database
-        const database = getProducts();
-        //tomo la data del formulario de create.ejs
-        const productCreate = {
-            id: database.length + 1,
+    createProd: function(req, res) {
+        db.Product.create({
+            id: req.body.id,
             name: req.body.name,
             description: req.body.description,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            image: req.files[0].filename, //[0] es porque es el primer archivo subido.
-            category: req.body.category,
-        };
-        //lo agrego al final del array database
-        database.push(productCreate);
-        //convierto el array a JSON
-        const databaseJSON = JSON.stringify(database, null, 2);
-        //sobre escribo el JSON dB.json
-        fs.writeFileSync("dB.json", databaseJSON);
-        //redirigo al listado
-        res.redirect("../products/");
+            price: req.body.price,
+            img: req.body.image,
+            discount_id: req.body.discount,//[0] es porque es el primer archivo subido.
+            category_id: req.body.category,
+        });
+        res.redirect("/products")
     },
+    //createProd: (req, res, next) => {
+        //llamo al array de productos y lo guardo en database
+        //const database = getProducts();
+        //tomo la data del formulario de create.ejs
+        //const productCreate = {
+          //  id: database.length + 1,
+            //name: req.body.name,
+            //description: req.body.description,
+            //price: Number(req.body.price),
+            //discount: Number(req.body.discount),
+            //image: req.files[0].filename, //[0] es porque es el primer archivo subido.
+            //category: req.body.category,
+       // };
+        //lo agrego al final del array database
+        //database.push(productCreate);
+        //convierto el array a JSON
+        //const databaseJSON = JSON.stringify(database, null, 2);
+        //sobre escribo el JSON dB.json
+        //fs.writeFileSync("dB.json", databaseJSON);
+        //redirigo al listado
+       // res.redirect("../products/");
+    //},
     detail: (req, res) => {
         const products = getProducts();
         const requiredProduct = products.find((prod) => {

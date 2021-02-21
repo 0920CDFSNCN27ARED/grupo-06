@@ -45,7 +45,15 @@ Un Product tiene un Discount
 Un Product tiene Muchas UserProductEdited
 Un UserProductEdited tiene Muchos Productos
 Un User tiene Muchos UserProductEdited
-Un UserProductEdited tiene Muchos Users
+Un UserProductEdited tiene Users
 
 Un User tiene un Group
 Un Group tiene Muchos usuarios
+
+EN PRODUCT ASSOSI: LA FK estaba mal escrita
+Puse timestamps false de forma global
+Agregue la columna ID en category.js
+La table name de categorys.js decia "Categories" en la config pero la tabla en mysql era categorys (deberiamos cambiar la tabla del mysql y volver a cambiar aca xq la cambie solo en categorys.js para ver si funciona)
+La ruta que mostraba los productos no era la misma que estaba en el metodo mostrar productos, y en el controlador la parte que actualmente los mostraba estaba comentada.
+
+Create, read, update, delete. 

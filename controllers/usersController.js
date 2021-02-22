@@ -10,6 +10,25 @@ const usersController = {
         res.render("users/login", { user: req.loggedUser });
     },
     processLogin: (req, res) => {
+        /*
+login: (req, res) => {
+        res.render("users/login", { user: req.loggedUser });
+    },
+    processLogin: (req, res) => {
+        let users = db.User.findAll();
+        Promise.all([users]).then(function ([users]) {
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    res.redirect("/");
+                }
+            }
+            return res.render("users/login", {
+                user: req.loggedUser,
+            });
+        });
+    },
+*/
+
         const errors = validationResult(req);
         let usuarioALoguearse = undefined;
         if (errors.isEmpty()) {
@@ -51,32 +70,31 @@ const usersController = {
         }
     },
     register: (req, res) => {
-        res.render("users/register", { user: req.loggedUser });
+        db.Group.findAll().then(function (groups) {
+            return res.render("users/register", {
+                user: req.loggedUser,
+                groups: groups,
+            });
+        });
     },
     create: (req, res, next) => {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            const database = getUsers();
-
-            const newUser = {
-                id: database.length + 1,
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
+            db.User.create({
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                image: req.files[0].filename, //[0] es porque es el primer archivo subido.
-                category: req.body.category,
-            };
-
-            database.push(newUser);
-
-            const usuarioJSON = JSON.stringify(database, null, 2);
-
-            fs.writeFileSync("data/users.json", usuarioJSON);
+                group_id: req.body.group,
+            });
 
             res.redirect("../");
         } else {
-            res.render("users/register", { errors: errors.errors });
+            db.Group.findAll().then(function (groups) {
+                res.render("users/register", {
+                    user: req.loggedUser,
+                    errors: errors.errors,
+                    groups: groups,
+                });
+            });
         }
     },
     detail: (req, res) => {
@@ -84,7 +102,7 @@ const usersController = {
             include: [{ association: "group" }],
         }).then(function (user) {
             res.render("users/detail", {
-                user : user,
+                user: user,
                 user: req.loggedUser,
             });
         });
@@ -92,13 +110,10 @@ const usersController = {
     edit: (req, res) => {
         let pedidoUser = db.User.findByPk(req.params.id);
         let pedidoGroup = db.Group.findAll();
-        Promise.all([pedidoUser, pedidoGroup]).then(function ([
-            user,
-            group,
-        ]) {
+        Promise.all([pedidoUser, pedidoGroup]).then(function ([user, group]) {
             res.render("users/edit", {
-                user : user,
-                group : group,
+                user: user,
+                group: group,
                 user: req.loggedUser,
             });
         });
@@ -110,7 +125,6 @@ const usersController = {
                 name: req.body.last_name,
                 email: req.body.email,
                 password: req.body.password,
-               
             },
             {
                 where: {
@@ -119,7 +133,6 @@ const usersController = {
             }
         );
         res.redirect(`../users/${req.params.id}/detail`);
-   
-}
+    },
 };
 module.exports = usersController;

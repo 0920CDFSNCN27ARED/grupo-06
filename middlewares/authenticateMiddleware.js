@@ -1,13 +1,11 @@
-const getUsers = require("../utils/getUsers");
+const db = require("../database/models");
 
 function authenticateMiddleware(req, res, next) {
     const id = req.session.loggedUserId;
     //console.log(id);
     if (!id) return next();
 
-    const users = getUsers();
-
-    const loggedUser = users.find((user) => {
+    const loggedUser = db.User.findAll((user) => {
         return user.id == id;
     });
 

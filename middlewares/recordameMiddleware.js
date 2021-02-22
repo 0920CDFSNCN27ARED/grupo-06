@@ -1,4 +1,4 @@
-const getUsers = require("../utils/getUsers");
+const db = require("../database/models");
 
 function recordameMiddleware(req, res, next) {
     //console.log(req.cookies.recordame);
@@ -8,7 +8,7 @@ function recordameMiddleware(req, res, next) {
         req.cookies.recordame != undefined &&
         req.session.usuarioLogueado == undefined
     ) {
-        const user = getUsers();
+        const user = db.User.findAll();
         for (let i = 0; i < user.length; i++) {
             if (user[i].email == req.cookies.recordame) {
                 usuarioALoguearse = user[i];

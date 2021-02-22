@@ -51,23 +51,10 @@ router.post(
     "/register",
     upload.any(),
     [
-        check("first_name").isLength({ min: 2 }).withMessage("falta el nombre"),
-        check("last_name").isLength({ min: 2 }).withMessage("falta apellido"),
         check("email").isEmail().withMessage("debe ser un email valido"),
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
-        body("email")
-            .custom(function (value) {
-                const database = getUsers();
-                const user = database.find((user) => {
-                    return user.email == value;
-                });
-                if (!user) return true;
-
-                return false;
-            })
-            .withMessage("usuario ya existente"),
     ],
     usersController.create
 );

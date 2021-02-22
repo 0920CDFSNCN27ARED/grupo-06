@@ -3,6 +3,7 @@ const getUsers = require("../utils/getUsers");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
+const db = require("../database/models");
 
 const usersController = {
     login: (req, res) => {
@@ -78,6 +79,47 @@ const usersController = {
             res.render("users/register", { errors: errors.errors });
         }
     },
+    detail: (req, res) => {
+        db.User.findByPk(req.params.id, {
+            include: [{ association: "group" }],
+        }).then(function (user) {
+            res.render("users/detail", {
+                user : user,
+                user: req.loggedUser,
+            });
+        });
+    },
+    edit: (req, res) => {
+        let pedidoUser = db.User.findByPk(req.params.id);
+        let pedidoGroup = db.Group.findAll();
+        Promise.all([pedidoUser, pedidoGroup]).then(function ([
+            user,
+            group,
+        ]) {
+            res.render("users/edit", {
+                user : user,
+                group : group,
+                user: req.loggedUser,
+            });
+        });
+    },
+    editUser: (req, res) => {
+        db.User.update(
+            {
+                name: req.body.first_name,
+                name: req.body.last_name,
+                email: req.body.email,
+                password: req.body.password,
+               
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
+        res.redirect(`../users/${req.params.id}/detail`);
+   
+}
 };
-
 module.exports = usersController;

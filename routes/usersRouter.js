@@ -84,4 +84,10 @@ router.get("/check", function (req, res) {
     }
 });
 
+router.get("/:id/detail", authenticateMiddleware, usersController.detail);
+
+router.get("/edit/:id", authMiddleware, usersController.edit);
+
+router.put("/:id", upload.any(), usersController.editUser);
+
 module.exports = router;

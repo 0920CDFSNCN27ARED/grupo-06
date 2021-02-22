@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             name: DataTypes.STRING(45),
             description: DataTypes.STRING(45),
-            img: DataTypes.STRING(100),
+            // img: DataTypes.STRING(100),
             price: DataTypes.FLOAT,
             category_id: DataTypes.INTEGER,
         },

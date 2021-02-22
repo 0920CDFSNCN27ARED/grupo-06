@@ -22,7 +22,6 @@ var upload = multer({ storage: storage });
 
 router.get("/", authenticateMiddleware, productController.productList);
 
-
 router.get("/:id/detail", authenticateMiddleware, productController.detail);
 
 router.get(
@@ -33,8 +32,6 @@ router.get(
 );
 
 router.post("/create", upload.any(), productController.createProd);
-
-
 
 router.get("/edit/:id", authMiddleware, productController.edit);
 

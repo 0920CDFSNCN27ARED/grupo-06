@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
-        }
+            autoIncrement: true,
+        },
     };
     const config = {
-        tableName: "Categorys",
+        tableName: "Categories",
         timestamps: false,
     };
 

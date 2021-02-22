@@ -1,46 +1,70 @@
 <%- include("../partials/head") %>
 
-    <body>
-        <%- include("../partials/header") %>
-            <main>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <div class="container">
+            <section class="breadcrumb my3">Inicio > Producto</section>
+            <section id="related_products" class="mb3">
+                <h2 class="p3">Productos</h2>
                 <div class="container">
-                    <section class="breadcrumb padding_y_15">
-                        Inicio > Producto
-                    </section>
-                    <section id="related_products" class="margin_botton_30">
-                        <h2 class="padding_y_15">Productos</h2>
-                        <div class="card_container">
-                            <div class="login">
-                                <form action="/products/<%= product.id %>?_method=PUT" method="POST"
-                                    enctype="multipart/form-data" class="mt-14">
-                                    <label for="">Nombre prodcuto</label>
-                                    <input type="text" name="name" value="<%= product.name %>">
-                                    <br>
-                                    <label for="">Descripción</label>
-                                    <input type="text" name="description" value="<%= product.description %>">
-                                    <br>
-                                    <label for="">Precio</label>
-                                    <input type="text" name="price" value="<%= product.price %>">
-                                    <br>
-                                    <label for="">Descuento</label>
-                                    <input type="text" name="discount" value="<%= product.discount %>">
-                                    <br>
-                                    <label for="">Imagen</label>
-                                    <input type="file" name="image" value="<%= product.image %>">
-                                    <br>
-                                    <label for="">Categoria</label>
-                                    <select type="text" name="category">
-                                        <option value="Motherboards">Motherboards</option>
-                                        <option value="Procesadores">Procesador</option>
-                                        <option value="Placa de video">placa de video</option>
-                                    </select>
-                                    <br>
-                                    <input type="submit" value="Guardar">
-                                </form>
-                            </div>
-                        </div>
-                    </section>
+                    <div class="">
+                        <form
+                            action="/products/<%= product.id %>?_method=PUT"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            class="mt2"
+                        >
+                            <label for="" class="form-label"
+                                >Nombre prodcuto</label
+                            >
+                            <input
+                                type="text"
+                                name="name"
+                                value="<%= product.name %>"
+                            />
+                            <br />
+                            <label for="" class="form-label">Descripción</label>
+                            <input
+                                type="text"
+                                name="description"
+                                value="<%= product.description %>"
+                            />
+                            <br />
+                            <label for="" class="form-label">Precio</label>
+                            <input
+                                type="text"
+                                name="price"
+                                value="<%= product.price %>"
+                            />
+                            <br />
+                            <!---<label for="">Imagen</label>
+                            <input
+                                type="file"
+                                name="image"
+                                value="<%= product.image %>"
+                            />
+                            <br />
+                            ----->
+                            <label for="" class="form-label">Categoria</label>
+                            <select
+                                type="text"
+                                name="category"
+                                class="form-select"
+                            >
+                                <% for( let i = 0; i < categories.length; i++ )
+                                { %>
+                                <option value="<%=categories[i].id %> ">
+                                    <%=categories[i].category%> <% } %>
+                                </option>
+                            </select>
+                            <br />
+                            <input type="submit" value="Guardar" />
+                        </form>
+                    </div>
                 </div>
-            </main>
-            <%- include("../partials/footer") %>
-    </body>
+            </section>
+        </div>
+    </main>
+    <%- include("../partials/footer") %>
+</body>

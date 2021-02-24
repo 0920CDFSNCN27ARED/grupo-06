@@ -1,5 +1,4 @@
 const fs = require("fs");
-const getUsers = require("../utils/getUsers");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
@@ -9,25 +8,31 @@ const usersController = {
     login: (req, res) => {
         res.render("users/login", { user: req.loggedUser });
     },
-    processLogin: (req, res) => {
-        /*
-login: (req, res) => {
-        res.render("users/login", { user: req.loggedUser });
-    },
-    processLogin: (req, res) => {
-        let users = db.User.findAll();
-        Promise.all([users]).then(function ([users]) {
-            for (let i = 0; i < users.length; i++) {
-                if (users[i].email == req.body.email) {
-                    res.redirect("/");
-                }
-            }
-            return res.render("users/login", {
-                user: req.loggedUser,
+    processLogin: async (req, res) => {
+        const errors = validationResult(req);
+        let usuarioALoguearse;
+        if (errors.isEmpty()) {
+            let user = await db.User.findOne({
+                where: {
+                    email: req.body.email,
+                },
             });
-        });
+            console.log(user);
+
+            if (user) {
+                req.session.loggedUserId = user.id;
+                req.session.loggedUserEmail = user.email;
+                return res.redirect("/");
+            }
+            return res.redirect("../users/login");
+        } else {
+            res.render("users/login", {
+                errors: errors.errors,
+            });
+        }
     },
-*/
+
+    /*
 
         const errors = validationResult(req);
         let usuarioALoguearse = undefined;
@@ -68,7 +73,7 @@ login: (req, res) => {
                 errors: errors.errors,
             });
         }
-    },
+    },*/
     register: (req, res) => {
         db.Group.findAll().then(function (groups) {
             return res.render("users/register", {
@@ -97,15 +102,15 @@ login: (req, res) => {
             });
         }
     },
-    detail: (req, res) => {
-        db.User.findByPk(req.params.id, {
+    detail: async (req, res) => {
+        let user = await db.User.findByPk(req.params.id, {
             include: [{ association: "group" }],
-        }).then(function (user) {
+        });
+        if (user) {
             res.render("users/detail", {
                 user: user,
-                user: req.loggedUser,
             });
-        });
+        }
     },
     edit: (req, res) => {
         let pedidoUser = db.User.findByPk(req.params.id);
@@ -114,16 +119,13 @@ login: (req, res) => {
             res.render("users/edit", {
                 user: user,
                 group: group,
-                user: req.loggedUser,
+                //user: req.loggedUser,
             });
         });
     },
     editUser: (req, res) => {
         db.User.update(
             {
-                name: req.body.first_name,
-                name: req.body.last_name,
-                email: req.body.email,
                 password: req.body.password,
             },
             {
@@ -132,7 +134,7 @@ login: (req, res) => {
                 },
             }
         );
-        res.redirect(`../users/${req.params.id}/detail`);
+        res.redirect(`../detail/${req.params.id}`);
     },
 };
 module.exports = usersController;

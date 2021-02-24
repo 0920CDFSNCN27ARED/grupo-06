@@ -1,9 +1,13 @@
 <%- include("../partials/head") %>
 
-<body class="container">
+<body>
     <%- include("../partials/header") %>
-
-    <div class="">
-        <h1 class="">Usuario:<%=user.email%></h1>
-    </div>
+    <main>
+        <div class="container">
+            <h2 class="my-5">Usuario:<%=user.email%></h2>
+            <h2 class="my-5">Password:<%=user.password%></h2>
+            <h2 class="my-5">Grupo:<%=user.group.group%></h2>
+        </div>
+    </main>
+    <%- include("../partials/footer") %>
 </body>

@@ -20,9 +20,9 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-router.get("/", authenticateMiddleware, productController.productList);
+router.get("/", productController.productList);
 
-router.get("/:id/detail", authenticateMiddleware, productController.detail);
+router.get("/:id/detail", productController.detail);
 
 router.get(
     "/create",
@@ -33,11 +33,11 @@ router.get(
 
 router.post("/create", upload.any(), productController.createProd);
 
-router.get("/edit/:id", authMiddleware, productController.edit);
+router.get("/:id/edit/", productController.edit);
 
 router.put("/:id", upload.any(), productController.editProd);
 
-router.get("/:id/delete", authMiddleware, productController.deleteShow);
+router.get("/:id/delete/", productController.deleteShow);
 
 router.delete("/:id/delete", productController.delete);
 

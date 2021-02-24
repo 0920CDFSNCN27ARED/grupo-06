@@ -1,14 +1,16 @@
 const db = require("../database/models");
 
-function recordameMiddleware(req, res, next) {
+//Pasaría los datos de la cookie a session
+
+async function recordameMiddleware(req, res, next) {
     //console.log(req.cookies.recordame);
     //console.log(req.session.usuarioLogueado);
     let usuarioALoguearse;
     if (
         req.cookies.recordame != undefined &&
-        req.session.usuarioLogueado == undefined
+        req.session.loggedUserId == undefined
     ) {
-        const user = db.User.findAll();
+        const user = await db.User.findAll();
         for (let i = 0; i < user.length; i++) {
             if (user[i].email == req.cookies.recordame) {
                 usuarioALoguearse = user[i];

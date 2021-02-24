@@ -5,7 +5,6 @@ const multer = require("multer");
 const path = require("path");
 const { check, validationResult, body } = require("express-validator");
 const fs = require("fs");
-const getUsers = require("../utils/getUsers");
 const bcrypt = require("bcrypt");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
@@ -71,10 +70,10 @@ router.get("/check", function (req, res) {
     }
 });
 
-router.get("/:id/detail", authenticateMiddleware, usersController.detail);
+router.get("/detail/:id", usersController.detail);
 
-router.get("/edit/:id", authMiddleware, usersController.edit);
+router.get("/edit/:id", usersController.edit);
 
-router.put("/:id", upload.any(), usersController.editUser);
+router.put("/edit/:id", upload.any(), usersController.editUser);
 
 module.exports = router;

@@ -1,13 +1,13 @@
 const db = require("../database/models");
 
-function authenticateMiddleware(req, res, next) {
+// Comprueba que el usuario previamente logueado esté en la db
+
+async function authenticateMiddleware(req, res, next) {
     const id = req.session.loggedUserId;
     //console.log(id);
     if (!id) return next();
 
-    const loggedUser = db.User.findAll((user) => {
-        return user.id == id;
-    });
+    const loggedUser = await db.User.findByPk(id);
 
     if (!loggedUser) {
         delete req.session.loggedUserId;

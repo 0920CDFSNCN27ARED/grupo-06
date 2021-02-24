@@ -1,0 +1,64 @@
+<%- include("../partials/head") %>
+
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../partials/header") %>
+    <div class="container">
+        <div class="">
+            <h1 class="text-center my-3">Editar Usuario</h1>
+
+            <% if(typeof errors !="undefined" ){ %>
+            <p style="color: red">Error</p>
+            <ul>
+                <% for (let i=0; i < errors.length; i++){ %>
+                <li><%=errors[i].msg %></li>
+
+                <% } %>
+            </ul>
+            <% } %>
+            <form
+                action="/users/edit/<%= user.id %>?_method=PUT"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+                <label for="">Nombre:</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Nombre"
+                />
+                <label for="">Apellido:</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Apellido"
+                />
+                <label for=""><%= user.email %> </label>
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="email"
+                />
+                <label for="">Contraseña:</label>
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Elegí tu contraseña"
+                />
+
+                <button
+                    class="btn btn-warning text-center my-1 w-100"
+                    type="submit"
+                    value="EDITAR"
+                >
+                    EDITAR
+                </button>
+            </form>
+        </div>
+    </div>
+    <%- include("../partials/footer") %>
+</body>

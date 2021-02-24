@@ -44,7 +44,7 @@ const productsController = {
                 //product: requiredProduct,
                 toThousand: toThousand,
                 products: products,
-                user: req.loggedUser,
+                //user: req.loggedUser,
             });
         });
     },
@@ -59,7 +59,7 @@ const productsController = {
             res.render("products/product_edit", {
                 product: product,
                 categories: categories,
-                user: req.loggedUser,
+                // user: req.loggedUser,
             });
         });
     },

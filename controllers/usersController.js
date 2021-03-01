@@ -22,9 +22,14 @@ const usersController = {
             if (user) {
                 req.session.loggedUserId = user.id;
                 req.session.loggedUserEmail = user.email;
-                return res.redirect("/");
+                if (req.body.recordame != undefined) {
+                    res.cookie("recordame", req.session.loggedUserId, {
+                        maxAge: 6000000,
+                    });
+                    return res.redirect("/");
+                }
+                return res.redirect("../users/login");
             }
-            return res.redirect("../users/login");
         } else {
             res.render("users/login", {
                 errors: errors.errors,

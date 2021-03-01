@@ -8,6 +8,7 @@ const recordameMiddleware = require("./middlewares/recordameMiddleware");
 const authenticateMiddleware = require("./middlewares/authenticateMiddleware");
 //app.use(express.static("public"));
 
+//Routers call
 const indexRouter = require("./routes/indexRouter");
 const checkoutRouter = require("./routes/checkoutRouter");
 const productRouter = require("./routes/productRouter");
@@ -29,6 +30,7 @@ app.use(session({ secret: "secretoGrupo6" }));
 app.use(recordameMiddleware);
 app.use(authenticateMiddleware);
 
+//Routes
 app.listen(3000, () => {
     console.log("Servidor funcionando");
 });

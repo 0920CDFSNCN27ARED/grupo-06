@@ -1,6 +1,6 @@
 function authMiddleware(req, res, next) {
-    console.log("guest " + req.session.usuarioLogueado);
-    if (req.session.usuarioLogueado != undefined) {
+    console.log("guest " + req.session.loggedUserId);
+    if (req.session.loggedUserId != undefined) {
         next();
     } else {
         res.send("Esta página es solo usuarios registrados");

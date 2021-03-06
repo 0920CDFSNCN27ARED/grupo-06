@@ -25,12 +25,12 @@ const productsController = {
             });
         });
     },
-    createProd: function (req, res) {
+    createProd: function (req, res, next) {
         db.Product.create({
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
-            //img: req.body.img,
+            img: req.body.img,
             category_id: req.body.category,
         });
         res.redirect("/products");

@@ -19,17 +19,17 @@ const usersController = {
             });
             console.log(user);
 
-            if (user) {
+            if (user && bcrypt.compareSync(req.body.password, user.password)) {
                 req.session.loggedUserId = user.id;
                 req.session.loggedUserEmail = user.email;
                 if (req.body.recordame != undefined) {
                     res.cookie("recordame", req.session.loggedUserId, {
                         maxAge: 6000000,
                     });
-                    return res.redirect("/");
                 }
-                return res.redirect("../users/login");
+                return res.redirect("/");
             }
+            return res.redirect("../users/login");
         } else {
             res.render("users/login", {
                 errors: errors.errors,
@@ -131,7 +131,7 @@ const usersController = {
     editUser: (req, res) => {
         db.User.update(
             {
-                password: req.body.password,
+                password: bcrypt.hashSync(req.body.password, 10),
             },
             {
                 where: {

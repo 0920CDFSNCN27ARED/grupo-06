@@ -1,54 +1,47 @@
 <%- include("../partials/head") %>
 
-<body>
-    <%- include("../partials/header") %>
-    <main>
-        <div class="container">
-            <section class="breadcrumb py2">Inicio > Producto</section>
-            <section id="related_products" class="my3">
-                <h2 class="py2">Productos</h2>
-                <div class="container col-sm-10 col-md-6 col-lg-6">
-                    <form
-                        action="/products/create"
-                        method="POST"
-                        enctype="multipart/form-data"
-                        class="mb-3"
-                    >
-                        <label for="" class="form-label">Nombre prodcuto</label>
-                        <input type="text" class="form-control" name="name" />
-                        <br />
-                        <label for="" class="form-label">Descripción</label>
-                        <input
-                            type="text"
-                            class="form-control"
-                            name="description"
-                        />
-                        <br />
-                        <label for="" class="form-label">Precio</label>
-                        <input type="text" class="form-control" name="price" />
-                        <br />
-                        <label for="" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" name="img" />
-                        <br />
-                        <label for="" class="form-label">Categoria</label>
+    <body>
+        <%- include("../partials/header") %>
+            <main>
+                <div class="container">
+                    <section class="breadcrumb py2">Inicio > Producto</section>
+                    <section id="related_products" class="my3">
+                        <h2 class="py2">Productos</h2>
+                        <div class="container col-sm-10 col-md-6 col-lg-6">
+                            <div class="errores">
+                                <ul></ul>
+                            </div>
+                            <form action="/products/create" method="POST" enctype="multipart/form-data"
+                                class="mb-3 products-form">
+                                <label for="" class="form-label">Nombre prodcuto</label>
+                                <input type="text" class="form-control nameform" name="name" />
+                                <br />
+                                <label for="" class="form-label">Descripción</label>
+                                <input type="text" class="form-control descriptionform" name="description" />
+                                <br />
+                                <label for="" class="form-label">Precio</label>
+                                <input type="text" class="form-control" name="price" />
+                                <br />
+                                <label for="" class="form-label">Imagen</label>
+                                <input type="file" class="form-control" name="img" />
+                                <br />
+                                <label for="" class="form-label">Categoria</label>
 
-                        <select type="text" name="category" class="form-select">
-                            <% for( let i = 0; i < categories.length; i++ ) { %>
-                            <option value="<%=categories[i].id %> ">
-                                <%=categories[i].category%> <% } %>
-                            </option>
-                        </select>
+                                <select type="text" name="category" class="form-select">
+                                    <% for( let i=0; i < categories.length; i++ ) { %>
+                                        <option value="<%=categories[i].id %> ">
+                                            <%=categories[i].category%>
+                                                <% } %>
+                                        </option>
+                                </select>
 
-                        <br />
-                        <input
-                            type="submit"
-                            value="Crear"
-                            class="btn btn-primary"
-                        />
-                    </form>
+                                <br />
+                                <input type="submit" value="Crear" class="btn btn-primary" />
+                            </form>
+                        </div>
+                    </section>
                 </div>
-            </section>
-        </div>
-    </main>
-    <%- include("../partials/footer") %>
-</body>
+            </main>
+            <script src="/js/validator_products.js"></script>
+            <%- include("../partials/footer") %>
+    </body>

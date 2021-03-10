@@ -1,100 +1,80 @@
 <%- include("../partials/head") %>
 
-<body class="d-flex flex-column min-vh-100">
-    <%- include("../partials/header") %>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <h1 class="text-center my-3">Registrate</h1>
+    <body class="d-flex flex-column min-vh-100">
+        <%- include("../partials/header") %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h1 class="text-center my-3">Registrate</h1>
 
-                <% if(typeof errors !="undefined" ){ %>
-                <p style="color: red">Error</p>
-                <ul>
-                    <% for (let i=0; i < errors.length; i++){ %>
-                    <li><%=errors[i].msg %></li>
+                        <% if(typeof errors !="undefined" ){ %>
+                            <p style="color: red">Error</p>
+                            <ul>
+                                <% for (let i=0; i < errors.length; i++){ %>
+                                    <li>
+                                        <%=errors[i].msg %>
+                                    </li>
 
-                    <% } %>
-                </ul>
-                <% } %>
-                <form
-                    action="/users/register"
-                    method="POST"
-                    enctype="multipart/form-data"
-                >
-                    <label for="">Nombre:</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Nombre"
-                    />
-                    <label for="">Apellido:</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Apellido"
-                    />
-                    <label for="">E-mail:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="mail@gmail.com"
-                    />
-                    <label for="">Contraseña:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        class="form-control"
-                        id="password"
-                        placeholder="Elegí tu contraseña"
-                    />
+                                    <% } %>
+                            </ul>
+                            <% } %>
 
-                    <label for="">Grupo</label>
+                                <div class="errores">
+                                    <ul></ul>
+                                </div>
+                                <form action="/users/register" method="POST" enctype="multipart/form-data"
+                                    class="register-form">
+                                    <label for="">Nombre:</label>
+                                    <input type="text" class="form-control name" id="name" placeholder="Nombre" />
+                                    <label for="">Apellido:</label>
+                                    <input type="text" class="form-control lastname" id="name" placeholder="Apellido" />
+                                    <label for="">E-mail:</label>
+                                    <input type="email" name="email" class="form-control emailform" id="email"
+                                        placeholder="mail@gmail.com" />
+                                    <label for="">Contraseña:</label>
+                                    <input type="password" name="password" class="form-control passwordform"
+                                        id="password" placeholder="Elegí tu contraseña" />
 
-                    <select type="text" name="group" class="form-select">
-                        <% for( let i = 0; i < groups.length; i++ ) { %>
-                        <option value="<%=groups[i].id %> ">
-                            <%=groups[i].group%> <% } %>
-                        </option>
-                    </select>
+                                    <label for="">Grupo</label>
 
-                    <button
-                        class="btn btn-warning text-center my-1 w-100"
-                        type="submit"
-                        value="CREAR_CUENTA"
-                    >
-                        CREAR CUENTA
-                    </button>
-                </form>
+                                    <select type="text" name="group" class="form-select">
+                                        <% for( let i=0; i < groups.length; i++ ) { %>
+                                            <option value="<%=groups[i].id %> ">
+                                                <%=groups[i].group%>
+                                                    <% } %>
+                                            </option>
+                                    </select>
 
-                <div class="text-center my-2">
-                    <a class="text-warning" href="#"
-                        >No estas registrado? Registrate acá</a
-                    >
+                                    <button class="btn btn-warning text-center my-1 w-100" type="submit"
+                                        value="CREAR_CUENTA">
+                                        CREAR CUENTA
+                                    </button>
+                                </form>
+
+                                <div class="text-center my-2">
+                                    <a class="text-warning" href="#">No estas registrado? Registrate acá</a>
+                                </div>
+                    </div>
+                    <div class="col-sm text-center">
+                        <i class="fas fa-user-circle fs-20 mt-3"></i>
+                        <h3 class="fw-bold">¿Que vas a hacer con tu cuenta?</h3>
+                        <ul>
+                            <li>Consultar el estado de tus compras</li>
+                            <li>Administrar tus productos favoritos</li>
+                            <li>Descargar las facturas</li>
+                            <li>Consultar manuales de los productos comprados</li>
+                            <li>Definir tus preferencias e intereses</li>
+                            <li>Acceder al historial de productos vistos</li>
+                            <li>Retomar tus compras incompletas</li>
+                        </ul>
+                        <h6 class="">
+                            Recibi notificaciones de tus compras, ofertas y descuentos
+                            exclusivos.
+                        </h6>
+                        <h6 class="">Ver politicas de privacidad</h6>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm text-center">
-                <i class="fas fa-user-circle fs-20 mt-3"></i>
-                <h3 class="fw-bold">¿Que vas a hacer con tu cuenta?</h3>
-                <ul>
-                    <li>Consultar el estado de tus compras</li>
-                    <li>Administrar tus productos favoritos</li>
-                    <li>Descargar las facturas</li>
-                    <li>Consultar manuales de los productos comprados</li>
-                    <li>Definir tus preferencias e intereses</li>
-                    <li>Acceder al historial de productos vistos</li>
-                    <li>Retomar tus compras incompletas</li>
-                </ul>
-                <h6 class="">
-                    Recibi notificaciones de tus compras, ofertas y descuentos
-                    exclusivos.
-                </h6>
-                <h6 class="">Ver politicas de privacidad</h6>
-            </div>
-        </div>
-    </div>
-    <%- include("../partials/footer") %>
-</body>
+            <script src="/js/validator_users.js"></script>
+            <%- include("../partials/footer") %>
+    </body>

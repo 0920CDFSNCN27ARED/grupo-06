@@ -1,78 +1,50 @@
 <%- include("../partials/head") %>
 
-<body>
-    <%- include("../partials/header") %>
-    <main>
-        <div class="container">
-            <section class="breadcrumb my3">Inicio > Producto</section>
-            <section id="related_products" class="mb3">
-                <h2 class="p3">Productos</h2>
+    <body>
+        <%- include("../partials/header") %>
+            <main>
                 <div class="container">
-                    <div class="row">
-                        <img
-                            src="<%= product.img  %>"
-                            class="rounded float-start"
-                            alt="ImagenProdudcto"
-                            style="width: 400px"
-                        />
-                        <form
-                            action="/products/<%= product.id %>?_method=PUT"
-                            method="POST"
-                            enctype="multipart/form-data"
-                            class="my-3 col-sm"
-                        >
-                            <label for="" class="form-label"
-                                >Nombre prodcuto</label
-                            >
-                            <input
-                                type="text"
-                                name="name"
-                                value="<%= product.name %>"
-                            />
-                            <br />
-                            <label for="" class="form-label">Descripción</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="description"
-                                value="<%= product.description %>"
-                            />
-                            <br />
-                            <label for="" class="form-label">Precio</label>
-                            <input
-                                class="form-control"
-                                type="text"
-                                name="price"
-                                value="<%= product.price %>"
-                            />
-                            <br />
-                            <label for="">Imagen</label>
-                            <input
-                                class="form-control"
-                                type="file"
-                                name="image"
-                                value="<%= product.img %>"
-                            />
-                            <br />
-                            <label for="" class="form-label">Categoria</label>
-                            <select
-                                type="text"
-                                name="category"
-                                class="form-select"
-                            >
-                                <% for( let i = 0; i < categories.length; i++ )
-                                { %>
-                                <option value="<%=categories[i].id %> ">
-                                    <%=categories[i].category%> <% } %>
-                                </option>
-                            </select>
-                            <br />
-                            <input type="submit" value="Guardar" class="btn btn-primary"/>
-                        </form>
-                    </div>
+                    <section class="breadcrumb my3">Inicio > Producto</section>
+                    <section id="related_products" class="mb3">
+                        <h2 class="p3">Productos</h2>
+                        <div class="container">
+                            <div class="row">
+                                <img src="<%= product.img  %>" class="rounded float-start" alt="ImagenProdudcto"
+                                    style="width: 400px" />
+                                <div class="errores">
+                                    <ul></ul>
+                                </div>
+                                <form action="/products/<%= product.id %>?_method=PUT" method="POST"
+                                    enctype="multipart/form-data" class="my-3 col-sm products-form">
+                                    <label for="" class="form-label">Nombre prodcuto</label>
+                                    <input type="text" name="name" class="nameform" value="<%= product.name %>" />
+                                    <br />
+                                    <label for="" class="form-label">Descripción</label>
+                                    <input class="form-control descriptionform" type="text" name="description"
+                                        value="<%= product.description %>" />
+                                    <br />
+                                    <label for="" class="form-label">Precio</label>
+                                    <input class="form-control" type="text" name="price" value="<%= product.price %>" />
+                                    <br />
+                                    <label for="">Imagen</label>
+                                    <input class="form-control" type="file" name="image" value="<%= product.img %>" />
+                                    <br />
+                                    <label for="" class="form-label">Categoria</label>
+                                    <select type="text" name="category" class="form-select">
+                                        <% for( let i=0; i < categories.length; i++ ) { %>
+                                            <option value="<%=categories[i].id %> ">
+                                                <%=categories[i].category%>
+                                                    <% } %>
+                                            </option>
+                                    </select>
+                                    <br />
+                                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                                </form>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
-        </div>
-    </main>
-    <%- include("../partials/footer") %>
-</body>
+            </main>
+            <script src="/js/validator_products.js"></script>
+            <%- include("../partials/footer") %>
+    </body>

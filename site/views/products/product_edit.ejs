@@ -8,12 +8,18 @@
             <section id="related_products" class="mb3">
                 <h2 class="p3">Productos</h2>
                 <div class="container">
-                    <div class="">
+                    <div class="row">
+                        <img
+                            src="<%= product.img  %>"
+                            class="rounded float-start"
+                            alt="ImagenProdudcto"
+                            style="width: 400px"
+                        />
                         <form
                             action="/products/<%= product.id %>?_method=PUT"
                             method="POST"
                             enctype="multipart/form-data"
-                            class="mt2"
+                            class="my-3 col-sm"
                         >
                             <label for="" class="form-label"
                                 >Nombre prodcuto</label
@@ -26,6 +32,7 @@
                             <br />
                             <label for="" class="form-label">Descripción</label>
                             <input
+                                class="form-control"
                                 type="text"
                                 name="description"
                                 value="<%= product.description %>"
@@ -33,19 +40,20 @@
                             <br />
                             <label for="" class="form-label">Precio</label>
                             <input
+                                class="form-control"
                                 type="text"
                                 name="price"
                                 value="<%= product.price %>"
                             />
                             <br />
-                            <!---<label for="">Imagen</label>
+                            <label for="">Imagen</label>
                             <input
+                                class="form-control"
                                 type="file"
                                 name="image"
-                                value="<%= product.image %>"
+                                value="<%= product.img %>"
                             />
                             <br />
-                            ----->
                             <label for="" class="form-label">Categoria</label>
                             <select
                                 type="text"
@@ -59,7 +67,7 @@
                                 </option>
                             </select>
                             <br />
-                            <input type="submit" value="Guardar" />
+                            <input type="submit" value="Guardar" class="btn btn-primary"/>
                         </form>
                     </div>
                 </div>

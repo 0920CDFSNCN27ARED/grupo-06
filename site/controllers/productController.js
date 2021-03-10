@@ -1,5 +1,4 @@
 const fs = require("fs");
-const getProducts = require("../utils/getProducts");
 const toThousand = require("../utils/toThousand");
 const path = require("path");
 const { debug } = require("console");
@@ -39,12 +38,12 @@ const productsController = {
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
             include: [{ association: "category" }],
-        }).then(function (products) {
+        }).then(function (product) {
             res.render("products/product_detail", {
-                //product: requiredProduct,
+                
                 toThousand: toThousand,
-                products: products,
-                //user: req.loggedUser,
+                product: product,
+                user: req.loggedUser,
             });
         });
     },
@@ -59,7 +58,7 @@ const productsController = {
             res.render("products/product_edit", {
                 product: product,
                 categories: categories,
-                // user: req.loggedUser,
+                user: req.loggedUser,
             });
         });
     },
@@ -70,7 +69,7 @@ const productsController = {
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
-                //img: req.body.img,
+                img: req.body.img,
                 category_id: req.body.category,
             },
             {

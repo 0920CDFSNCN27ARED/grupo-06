@@ -25,9 +25,9 @@
                                 <form action="/users/register" method="POST" enctype="multipart/form-data"
                                     class="register-form">
                                     <label for="">Nombre:</label>
-                                    <input type="text" class="form-control name" id="name" placeholder="Nombre" />
+                                    <input type="text" class="form-control name" id="name" placeholder="Nombre" name="name" />
                                     <label for="">Apellido:</label>
-                                    <input type="text" class="form-control lastname" id="name" placeholder="Apellido" />
+                                    <input type="text" class="form-control lastname" id="name" placeholder="Apellido" name="lastname" />
                                     <label for="">E-mail:</label>
                                     <input type="email" name="email" class="form-control emailform" id="email"
                                         placeholder="mail@gmail.com" />
@@ -75,6 +75,6 @@
                     </div>
                 </div>
             </div>
-            <script src="/js/validator_users.js"></script>
+           <!--- <script src="/js/validator_users.js"></script> -->
             <%- include("../partials/footer") %>
     </body>

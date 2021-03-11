@@ -1,5 +1,5 @@
 function authMiddleware(req, res, next) {
-    console.log("guest " + req.session.loggedUserId);
+    //console.log("guest " + req.session.loggedUserId);
     if (req.session.loggedUserId != undefined) {
         next();
     } else {

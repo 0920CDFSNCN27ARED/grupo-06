@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
+const { check, validationResult, body } = require("express-validator");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -31,7 +32,20 @@ router.get(
     productController.create
 );
 
-router.post("/create", upload.any(), productController.createProd);
+router.post(
+    "/create",
+    upload.any(),
+    [
+        check("name")
+            .isLength({ min: 5 })
+            .withMessage("Debe tener más de 5 caracteres"),
+        check("name").isEmpty().withMessage("No debe estar vacio"),
+        check("description")
+            .isLength({ min: 20 })
+            .withMessage("Debe tener más de 20 caracteres"),
+    ],
+    productController.createProd
+);
 
 router.get("/:id/edit/", productController.edit);
 

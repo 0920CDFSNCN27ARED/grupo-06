@@ -4,7 +4,7 @@ const db = require("../database/models");
 
 async function authenticateMiddleware(req, res, next) {
     const id = req.session.loggedUserId;
-    console.log(id);
+    //console.log(id);
     if (!id) return next();
 
     const loggedUser = await db.User.findByPk(id);

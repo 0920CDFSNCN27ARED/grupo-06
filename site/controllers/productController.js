@@ -3,6 +3,7 @@ const toThousand = require("../utils/toThousand");
 const path = require("path");
 const { debug } = require("console");
 const db = require("../database/models");
+const { check, validationResult, body } = require("express-validator");
 const { defaultMaxListeners } = require("stream");
 
 const productsController = {
@@ -25,14 +26,22 @@ const productsController = {
         });
     },
     createProd: function (req, res, next) {
-        db.Product.create({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            img: req.body.img,
-            category_id: req.body.category,
-        });
-        res.redirect("/products");
+        const errors = validationResult(req);
+         if (errors.isEmpty()) {
+             db.Product.create({
+                 name: req.body.name,
+                 description: req.body.description,
+                 price: req.body.price,
+                 img: req.body.img,
+                 category_id: req.body.category,
+             });
+             res.redirect("/products");
+         } else {
+             res.render("users/login", {
+                 errors: errors.errors,
+                 user: req.loggedUser,
+             });
+         }
     },
 
     detail: (req, res) => {

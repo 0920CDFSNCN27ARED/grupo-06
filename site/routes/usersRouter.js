@@ -10,6 +10,7 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const recordameMiddleware = require("../middlewares/recordameMiddleware");
+const db = require("../database/models");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -29,11 +30,29 @@ router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
     "/login",
-    [
-        check("email").isEmail().withMessage("debe ser un email valido"),
+    [   check("email").isEmail().withMessage("debe ser un email valido"),
+        check("email").isEmpty().withMessage("No debe estar vacio"),
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
+        /*body("password")
+            .custom(async function (value) {
+                let EncryptValue = bcrypt.hashSync(value, 10);
+                let user = await db.User.findOne({
+                    where: {
+                        password: EncryptValue,
+                    },
+                });
+                console.log(user);
+                console.log("value= "+user.password);
+                if (
+                    bcrypt.compareSync(value, user.password)
+                ) {
+                    return false;
+                }
+                return true;
+            })
+            .withMessage("la contraseña es incorrecta"),*/
     ],
     usersController.processLogin
 );
@@ -50,7 +69,28 @@ router.post(
     "/register",
     upload.any(),
     [
-        check("email").isEmail().withMessage("debe ser un email valido"),
+        check("name")
+            .isLength({ min: 2 })
+            .withMessage("debe ser un nombre con al menos 2 caracteres"),
+        check("lastname")
+            .isLength({ min: 2 })
+            .withMessage("debe ser un apellido con al menos 2 caracteres"),
+        //check("email").isEmail().withMessage("debe ser un email valido"),
+        body("email").custom(async function (value) {
+                let isEmail = await db.User.findOne({
+                    where: {
+                        email: value,
+                    },
+                }); 
+                console.log("FindOne "+isEmail.email);      
+                console.log("value= " + value);   
+                if (isEmail.email){
+                    console.log("retorno false");
+                    return false;
+                }
+                console.log("salió del if");
+                return true;                
+            }).withMessage("debe ser un email que no esté en uso"),
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),

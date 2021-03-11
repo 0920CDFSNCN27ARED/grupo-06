@@ -17,7 +17,7 @@ const usersController = {
                     email: req.body.email,
                 },
             });
-            console.log(user);
+            //console.log(user);
 
             if (user && bcrypt.compareSync(req.body.password, user.password)) {
                 req.session.loggedUserId = user.id;
@@ -33,6 +33,7 @@ const usersController = {
         } else {
             res.render("users/login", {
                 errors: errors.errors,
+                user: req.loggedUser,
             });
         }
     },

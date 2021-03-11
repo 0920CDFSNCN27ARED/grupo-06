@@ -30,7 +30,8 @@ router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
     "/login",
-    [   check("email").isEmail().withMessage("debe ser un email valido"),
+    [
+        check("email").isEmail().withMessage("debe ser un email valido"),
         check("email").isEmpty().withMessage("No debe estar vacio"),
         check("password")
             .isLength({ min: 2 })
@@ -76,21 +77,23 @@ router.post(
             .isLength({ min: 2 })
             .withMessage("debe ser un apellido con al menos 2 caracteres"),
         //check("email").isEmail().withMessage("debe ser un email valido"),
-        body("email").custom(async function (value) {
+        body("email")
+            .custom(async function (value) {
                 let isEmail = await db.User.findOne({
                     where: {
                         email: value,
                     },
-                }); 
-                console.log("FindOne "+isEmail.email);      
-                console.log("value= " + value);   
-                if (isEmail.email){
+                });
+                //console.log("FindOne " + isEmail.email);
+                //console.log("value= " + value);
+                if (isEmail.email) {
                     console.log("retorno false");
-                    return false;
+                    throw new Error("El email ya esta registrado");
                 }
-                console.log("salió del if");
-                return true;                
-            }).withMessage("debe ser un email que no esté en uso"),
+                return true;
+            })
+            .withMessage("debe ser un email que no esté en uso"),
+
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),

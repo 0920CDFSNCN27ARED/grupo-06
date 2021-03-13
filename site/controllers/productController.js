@@ -28,19 +28,23 @@ const productsController = {
     createProd: function (req, res, next) {
         const errors = validationResult(req);
          if (errors.isEmpty()) {
+             console.log(req.file);
              db.Product.create({
                  name: req.body.name,
                  description: req.body.description,
                  price: req.body.price,
-                 img: req.body.img,
+                 img: req.file.filename,
                  category_id: req.body.category,
              });
-             res.redirect("/products");
-         } else {
-             res.render("users/login", {
-                 errors: errors.errors,
-                 user: req.loggedUser,
-             });
+             return res.redirect("/");
+         } else {          
+            db.Category.findAll().then(function (categories) {
+                return res.render("products/create", {
+                    errors: errors.errors,
+                    user: req.loggedUser,
+                    categories: categories,
+                });
+            });
          }
     },
 

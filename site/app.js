@@ -30,6 +30,9 @@ app.use(session({ secret: "secretoGrupo6" }));
 app.use(recordameMiddleware);
 app.use(authenticateMiddleware);
 
+
+
+
 //Routes
 app.listen(3000, () => {
     console.log("Servidor funcionando");

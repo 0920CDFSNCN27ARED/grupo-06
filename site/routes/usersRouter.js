@@ -32,7 +32,7 @@ router.post(
     "/login",
     [
         check("email").isEmail().withMessage("debe ser un email valido"),
-        check("email").isEmpty().withMessage("No debe estar vacio"),
+        //check("email").isEmpty().withMessage("No debe estar vacio"),
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),

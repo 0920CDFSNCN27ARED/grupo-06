@@ -89,12 +89,14 @@ const usersController = {
         });
     },
     create: (req, res, next) => {
+             console.log(req)
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             db.User.create({
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 group_id: req.body.group,
+                imagen: req.files[0].filename
             });
 
             res.redirect("../");

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             email: DataTypes.STRING(45),
             password: DataTypes.STRING(300),
-            //image: DataTypes.STRING(100),
+            imagen: DataTypes.STRING(100),
             group_id: DataTypes.INTEGER,
         },
         { timestaps: false }

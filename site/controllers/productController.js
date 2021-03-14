@@ -6,6 +6,8 @@ const db = require("../database/models");
 const { check, validationResult, body } = require("express-validator");
 const { defaultMaxListeners } = require("stream");
 
+
+
 const productsController = {
     productList: (req, res) => {
         db.Product.findAll().then(function (products) {
@@ -27,12 +29,14 @@ const productsController = {
     },
     createProd: function (req, res, next) {
         const errors = validationResult(req);
+       console.log(req)
          if (errors.isEmpty()) {
+             console.log(req.file);
              db.Product.create({
                  name: req.body.name,
                  description: req.body.description,
                  price: req.body.price,
-                 img: req.body.img,
+                 img: req.files[0].filename,
                  category_id: req.body.category,
              });
              res.redirect("/products");

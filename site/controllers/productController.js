@@ -36,15 +36,22 @@ const productsController = {
                  name: req.body.name,
                  description: req.body.description,
                  price: req.body.price,
+<<<<<<< HEAD
                  img: req.files[0].filename,
+=======
+                 img: req.file.filename,
+>>>>>>> 1d707814d3e45a9d26133f10e34b251cd97e5895
                  category_id: req.body.category,
              });
-             res.redirect("/products");
-         } else {
-             res.render("users/login", {
-                 errors: errors.errors,
-                 user: req.loggedUser,
-             });
+             return res.redirect("/");
+         } else {          
+            db.Category.findAll().then(function (categories) {
+                return res.render("products/create", {
+                    errors: errors.errors,
+                    user: req.loggedUser,
+                    categories: categories,
+                });
+            });
          }
     },
 

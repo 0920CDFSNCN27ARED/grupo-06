@@ -1,25 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controllers/productController");
-const multer = require("multer");
 const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 const { check, validationResult, body } = require("express-validator");
 
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "public/images/products");
-    },
-    filename: function (req, file, cb) {
-        cb(
-            null,
-            file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-        );
-    },
+const multer = require("multer");
+const storage = multer.diskStorage({
+    filename: (req, file, cb) => cb(null,  file.fieldname + '-' + Date.now()),
 });
-
-var upload = multer({ storage: storage });
+const upload = multer({ storage: storage, dest: "public/images/products" });
 
 router.get("/", productController.productList);
 
@@ -34,8 +25,8 @@ router.get(
 
 router.post(
     "/create",
-    upload.any(),
-    [
+    upload.single("image"),
+    /*[
         check("name")
             .isLength({ min: 5 })
             .withMessage("Debe tener más de 5 caracteres"),
@@ -43,6 +34,7 @@ router.post(
         check("description")
             .isLength({ min: 20 })
             .withMessage("Debe tener más de 20 caracteres"),
+<<<<<<< HEAD
         body("img").custom(function(value, filename) {
             
         var extension = (path.extname(filename)).toLowerCase();
@@ -61,6 +53,9 @@ router.post(
         
         }).withMessage("Image type invalid")
     ],
+=======
+    ],*/
+>>>>>>> 1d707814d3e45a9d26133f10e34b251cd97e5895
     productController.createProd
 );
 

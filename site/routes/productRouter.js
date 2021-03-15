@@ -34,23 +34,6 @@ router.post(
         check("description")
             .isLength({ min: 20 })
             .withMessage("Debe tener más de 20 caracteres"),
-        body("img").custom(function(value, filename) {
-            
-        var extension = (path.extname(filename)).toLowerCase();
-        switch (extension) {
-            case '.jpg':
-                return '.jpg';
-            case '.jpeg':
-                return '.jpeg';
-            case  '.png':
-                return '.png';
-            case '.gif':
-                return '.gif';
-            default: 
-                return false;
-            
-        
-        }).withMessage("Image type invalid")
     ],*/
     productController.createProd
 );

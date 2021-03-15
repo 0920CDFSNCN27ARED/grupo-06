@@ -30,26 +30,12 @@ router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
     "/login",
-    [   
+    [
+        check("email").isEmail().withMessage("debe ser un email valido"),
         //check("email").isEmpty().withMessage("No debe estar vacio"),
         check("password")
             .isLength({ min: 2 })
             .withMessage("la contraseña debe tener mas de 2 caracteres"),
-        check("imagen")
-        /*.isImage, function(value, filename) {
-
-        var extension = (path.extname(filename)).toLowerCase();
-        switch (extension) {
-            case '.jpg':
-                return '.jpg';
-            case '.jpeg':
-                return '.jpeg';
-            case  '.png':
-                return '.png';
-            default:
-                return false;
-        }
-    },
         /*body("password")
             .custom(async function (value) {
                 let EncryptValue = bcrypt.hashSync(value, 10);

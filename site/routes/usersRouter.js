@@ -30,12 +30,7 @@ router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
     "/login",
-<<<<<<< HEAD
-    [   check("email").isEmail().withMessage("debe ser un email valido"),
-=======
-    [
-        check("email").isEmail().withMessage("debe ser un email valido"),
->>>>>>> 1d707814d3e45a9d26133f10e34b251cd97e5895
+    [   
         //check("email").isEmpty().withMessage("No debe estar vacio"),
         check("password")
             .isLength({ min: 2 })

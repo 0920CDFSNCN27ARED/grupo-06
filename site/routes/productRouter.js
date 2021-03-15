@@ -34,7 +34,6 @@ router.post(
         check("description")
             .isLength({ min: 20 })
             .withMessage("Debe tener más de 20 caracteres"),
-<<<<<<< HEAD
         body("img").custom(function(value, filename) {
             
         var extension = (path.extname(filename)).toLowerCase();
@@ -52,10 +51,7 @@ router.post(
             
         
         }).withMessage("Image type invalid")
-    ],
-=======
     ],*/
->>>>>>> 1d707814d3e45a9d26133f10e34b251cd97e5895
     productController.createProd
 );
 

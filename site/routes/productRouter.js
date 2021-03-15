@@ -8,9 +8,12 @@ const { check, validationResult, body } = require("express-validator");
 
 const multer = require("multer");
 const storage = multer.diskStorage({
-    filename: (req, file, cb) => cb(null,  file.fieldname + '-' + Date.now()),
+    destination: (req, file, cb) => {
+        cb (null, "public/images/products")
+    },
+    filename: (req, file, cb) => cb(null,  file.fieldname + '-' + Date.now() + path.extname(file.originalname)),
 });
-const upload = multer({ storage: storage, dest: "public/images/products" });
+const upload = multer({ storage: storage});
 
 router.get("/", productController.productList);
 
@@ -25,7 +28,7 @@ router.get(
 
 router.post(
     "/create",
-    upload.single("image"),
+    upload.any(),
     /*[
         check("name")
             .isLength({ min: 5 })

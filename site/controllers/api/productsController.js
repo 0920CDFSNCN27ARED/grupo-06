@@ -14,7 +14,7 @@ module.exports = {
                });
 
     },
-    products: (req,res) => {
+    products: async (req,res) => {
          const count = await Product.count();
          Product.findAll({include:[{association:"category"}]})
          .then(function (products) {

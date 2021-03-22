@@ -30,7 +30,11 @@ app.use(session({ secret: "secretoGrupo6" }));
 app.use(recordameMiddleware);
 app.use(authenticateMiddleware);
 
-
+// API Routes
+const apiProductsRouter = require("./routes/api/productsRouter");
+const apiUsersRouter = require("./routes/api/usersRouter");
+app.use("/api/products", apiProductsRouter);
+app.use("/api/users", apiUsersRouter);
 
 
 //Routes

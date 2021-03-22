@@ -7,6 +7,7 @@
             <h2 class="my-5">Usuario:<%=user.email%></h2>
             <h2 class="my-5">Password:<%=user.password%></h2>
             <h2 class="my-5">Grupo:<%=user.group.group%></h2>
+            <h2 class="my-5">Avatar:<img src="/images/users/<%= user.image  %>" class="rounded float-start" alt="ImagenAvatar" style="width: 400px;"></h2>
         </div>
     </main>
     <%- include("../partials/footer") %>

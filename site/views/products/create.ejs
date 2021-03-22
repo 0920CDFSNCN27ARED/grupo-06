@@ -9,7 +9,18 @@
                         <h2 class="py2">Productos</h2>
                         <div class="container col-sm-10 col-md-6 col-lg-6">
                             <div class="errores">
-                                <ul></ul>
+                                <ul>
+                                    <% if(typeof errors !="undefined" ){ %>
+                                    <p style="color: red">Error</p>
+                                        
+                                    <% for (let i=0; i < errors.length; i++){ %>
+                                    <li>
+                                        <%=errors[i].msg %>
+                                    </li>
+
+                                    <% } %>
+                                    </ul>
+                            <% } %></ul>
                             </div>
                             <form action="/products/create" method="POST" enctype="multipart/form-data"
                                 class="mb-3 products-form">

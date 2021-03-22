@@ -13,6 +13,7 @@ const productsController = {
                 products: products,
                 toThousand: toThousand,
                 user: req.loggedUser,
+                
             });
         });
     },
@@ -39,6 +40,7 @@ const productsController = {
              return res.redirect("/");
          } else {          
             db.Category.findAll().then(function (categories) {
+                console.log(errors)
                 return res.render("products/create", {
                     errors: errors.errors,
                     user: req.loggedUser,
@@ -82,7 +84,7 @@ const productsController = {
                 name: req.body.name,
                 description: req.body.description,
                 price: req.body.price,
-                img: req.body.img,
+                img: req.files[0].filename,
                 category_id: req.body.category,
             },
             {

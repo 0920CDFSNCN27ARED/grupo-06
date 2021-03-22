@@ -1,6 +1,6 @@
 function guestMiddleware(req, res, next) {
     //console.log("guest " + req.session.usuarioLogueado);
-    if (req.loggedUse == undefined) {
+    if (req.loggedUser == undefined) {
         // console.log(req.loggedUser);
         next();
     } else {

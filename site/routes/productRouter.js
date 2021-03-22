@@ -26,10 +26,12 @@ router.get(
     productController.create
 );
 
+
+
 router.post(
     "/create",
     upload.any(),
-    /*[
+    [
         check("name")
             .isLength({ min: 5 })
             .withMessage("Debe tener más de 5 caracteres"),
@@ -37,7 +39,23 @@ router.post(
         check("description")
             .isLength({ min: 20 })
             .withMessage("Debe tener más de 20 caracteres"),
-    ],*/
+        body("img").custom(async function(value, {req}){
+             var extension = (path.extname(req.files[0].filename)).toLowerCase();
+             switch (extension) {
+            case '.jpg':
+                return '.jpg';
+            case '.jpeg':
+                return '.jpeg';
+            case  '.png':
+                return '.png';
+            case  '.gif':
+                return '.gif'
+            default:
+                throw new Error("Formato invalido")
+        }
+    })
+
+    ],
     productController.createProd
 );
 

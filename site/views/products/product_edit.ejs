@@ -9,7 +9,7 @@
                         <h2 class="p3">Productos</h2>
                         <div class="container">
                             <div class="row">
-                                <img src="<%= product.img  %>" class="rounded float-start" alt="ImagenProdudcto"
+                                <img src="/images/products/<%= product.img  %>" class="rounded float-start" alt="ImagenProducto"
                                     style="width: 400px" />
                                 <div class="errores">
                                     <ul></ul>
@@ -27,7 +27,7 @@
                                     <input class="form-control" type="text" name="price" value="<%= product.price %>" />
                                     <br />
                                     <label for="">Imagen</label>
-                                    <input class="form-control" type="file" name="image" value="<%= product.img %>" />
+                                    <input class="form-control" type="file" name="img" value="<%= product.img %>" />
                                     <br />
                                     <label for="" class="form-label">Categoria</label>
                                     <select type="text" name="category" class="form-select">

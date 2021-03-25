@@ -1,6 +1,6 @@
 const {
     Product,
-    Categoty,
+    Category,
     Sequelize,
     sequelize,
 } = require("../../database/models");
@@ -31,7 +31,7 @@ module.exports = {
                 }
                 let response = {
                     count: { count },
-                    data: { products },
+                    data: products ,
                 };
 
                 res.send(response);

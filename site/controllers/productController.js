@@ -51,16 +51,29 @@ const productsController = {
     },
 
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id, {
+       /* db.Product.findByPk(req.params.id, {
             include: [{ association: "category" }],
         }).then(function (product) {
             res.render("products/product_detail", {
-                
                 toThousand: toThousand,
                 product: product,
                 user: req.loggedUser,
             });
-        });
+        });*/
+         let pedidoProducto = db.Product.findByPk(req.params.id, {
+             include: [{ association: "category" }]});
+         let pedidoUsuario =  db.User.findAll();
+         Promise.all([pedidoProducto, pedidoUsuario]).then(function ([
+            product,
+            usuarios,
+        ]) {
+             res.render("products/product_detail", {
+                 toThousand: toThousand,
+                 product: product,
+                 usuarios: usuarios,
+                 user: req.loggedUser,
+             });
+         });
     },
 
     edit: (req, res) => {

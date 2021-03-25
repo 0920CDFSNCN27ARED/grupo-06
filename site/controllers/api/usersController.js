@@ -5,7 +5,11 @@ const { QueryTypes } = Sequelize;
 module.exports = {
     countUsers: async (req, res) => {
         const count = await User.count();
-        const users = await User.findAll();
+        let users = await User.findAll();
+        for (let i = 0; i < users.length; i++) {
+            delete users[i].email;            
+        };
+        console.log(users[1].email)
         res.send({
             count,
             users,

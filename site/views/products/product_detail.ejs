@@ -1,26 +1,31 @@
 <%- include("../partials/head") %>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <%- include("../partials/header") %>
     <main>
         <div class="container">
-            <div class="mt-1">
+            <div class="my-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Home</li>
-                        <li class="breadcrumb-item"><%= product.category.category%></li>
+                        <li class="breadcrumb-item">
+                            <%= product.category.category%>
+                        </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <%= product.name%>
                         </li>
                     </ol>
                 </nav>
             </div>
-            <section class="product mt-4">
+            <section class="product my-5">
                 <div class="container">
                     <div class="row">
-                        
-                      <img src="/images/products/<%= product.img  %>" class="rounded float-start" alt="ImagenProducto" style="width: 400px;">
-                                                          
+                        <img
+                            src="/images/products/<%= product.img  %>"
+                            class="rounded float-start"
+                            alt="ImagenProducto"
+                            style="width: 400px"
+                        />
 
                         <articles
                             class="padding_20 width_50 box_sizing_border_box col-sm"
@@ -53,12 +58,26 @@
                                         AGREGAR AL CARRITO
                                     </button>
                                 </div>
+                                <% function EsAdmin(user,usuarios){ for (const i
+                                of usuarios) { if(user != undefined){ if
+                                (user.email == i.email && i.group_id == 1){
+                                return true; } } } } %> <% if (EsAdmin(user,
+                                usuarios)) { %>
+                                <div>
+                                    <a
+                                        class="btn btn-outline-warning"
+                                        href="/products/<%= product.id %>/edit "
+                                        role="button"
+                                        >EDITAR </a
+                                    >
+                                </div>
+
+                                <% } %>
                             </div>
                         </articles>
                     </div>
                 </div>
             </section>
-           
         </div>
     </main>
     <%- include("../partials/footer") %>

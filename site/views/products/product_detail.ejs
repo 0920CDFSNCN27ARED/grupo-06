@@ -63,12 +63,20 @@
                                 (user.email == i.email && i.group_id == 1){
                                 return true; } } } } %> <% if (EsAdmin(user,
                                 usuarios)) { %>
-                                <div>
+                                <div class="my-2">
                                     <a
                                         class="btn btn-outline-warning"
                                         href="/products/<%= product.id %>/edit "
                                         role="button"
                                         >EDITAR </a
+                                    >
+                                </div>
+                                         <div class="my-2">
+                                    <a
+                                        class="btn btn-outline-danger"
+                                        href="/products/<%= product.id %>/delete "
+                                        role="button"
+                                        >ELIMINAR</a
                                     >
                                 </div>
 

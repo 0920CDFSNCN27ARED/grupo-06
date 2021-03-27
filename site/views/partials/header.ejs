@@ -91,6 +91,16 @@
                             </li>
                         </ul>
                     </li>
+                     <% function EsAdmin(user,usuarios){ for (const i
+                                of usuarios) { if(user != undefined){ if
+                                (user.email == i.email && i.group_id == 1){
+                                return true; } } } } %> <% if (EsAdmin(user,
+                                usuarios)) { %>
+                                    
+                                    <a class="btn btn-outline-success mx-3" href="/products/create" role="button">Carga de productos</a>
+                                    
+
+                                <% } %>
 
                   
                 </ul>

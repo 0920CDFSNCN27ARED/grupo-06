@@ -5,10 +5,12 @@ const { check, validationResult, body } = require("express-validator");
 const db = require("../database/models");
 
 const usersController = {
-    login: (req, res) => {
-        res.render("users/login", { user: req.loggedUser });
+    login: async (req, res) => {
+        let usuarios = await db.User.findAll();
+        res.render("users/login", { user: req.loggedUser, usuarios: usuarios });
     },
     processLogin: async (req, res) => {
+        let usuarios = await db.User.findAll();
         const errors = validationResult(req);
         let usuarioALoguearse;
         if (errors.isEmpty()) {
@@ -34,6 +36,7 @@ const usersController = {
             res.render("users/login", {
                 errors: errors.errors,
                 user: req.loggedUser,
+                usuarios:usuarios,
             });
         }
     },
@@ -80,15 +83,18 @@ const usersController = {
             });
         }
     },*/
-    register: (req, res) => {
+    register: async (req, res) => {
+        let usuarios = await db.User.findAll();
         db.Group.findAll().then(function (groups) {
             return res.render("users/register", {
                 user: req.loggedUser,
                 groups: groups,
+                usuarios: usuarios,
             });
         });
     },
-    create: (req, res, next) => {
+    create: async (req, res, next) => {
+        let usuarios = await db.User.findAll();
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             db.User.create({
@@ -105,27 +111,32 @@ const usersController = {
                     user: req.loggedUser,
                     errors: errors.errors,
                     groups: groups,
+                    usuarios: usuarios,
                 });
             });
         }
     },
     detail: async (req, res) => {
+        let usuarios = await db.User.findAll();
         let user = await db.User.findByPk(req.params.id, {
             include: [{ association: "group" }],
         });
         if (user) {
             res.render("users/detail", {
                 user: user,
+                usuarios: usuarios,
             });
         }
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
+        let usuarios = await db.User.findAll();
         let pedidoUser = db.User.findByPk(req.params.id);
         let pedidoGroup = db.Group.findAll();
         Promise.all([pedidoUser, pedidoGroup]).then(function ([user, group]) {
             res.render("users/edit", {
                 user: user,
                 group: group,
+                usuarios:usuarios,
                 //user: req.loggedUser,
             });
         });

@@ -7,26 +7,30 @@ const { check, validationResult, body } = require("express-validator");
 const { defaultMaxListeners } = require("stream");
 
 const productsController = {
-    productList: (req, res) => {
+    productList: async (req, res) => {
+        let usuarios = await db.User.findAll();
         db.Product.findAll().then(function (products) {
             return res.render("products/product_list", {
                 products: products,
                 toThousand: toThousand,
                 user: req.loggedUser,
+                usuarios: usuarios,
                 
             });
         });
     },
 
-    create: (req, res) => {
+    create: async (req, res) => {
+        let usuarios = await db.User.findAll();
         db.Category.findAll().then(function (categories) {
             return res.render("products/create", {
                 user: req.loggedUser,
                 categories: categories,
+                usuarios: usuarios,
             });
         });
     },
-    createProd: function (req, res, next) {
+    createProd: async function (req, res, next) {
         const errors = validationResult(req);
          if (errors.isEmpty()) {
              console.log(req.file);
@@ -38,13 +42,15 @@ const productsController = {
                  category_id: req.body.category,
              });
              return res.redirect("/");
-         } else {          
+         } else {      
+             let usuarios = await db.User.findAll();    
             db.Category.findAll().then(function (categories) {
-                console.log(errors)
+                console.log("Errores de CreateProd"+errors)
                 return res.render("products/create", {
                     errors: errors.errors,
                     user: req.loggedUser,
                     categories: categories,
+                    usuarios, usuarios,
                 });
             });
          }
@@ -79,14 +85,17 @@ const productsController = {
     edit: (req, res) => {
         let pedidoProducto = db.Product.findByPk(req.params.id);
         let pedidoCategory = db.Category.findAll();
-        Promise.all([pedidoProducto, pedidoCategory]).then(function ([
+        let usuarios = db.User.findAll();
+        Promise.all([pedidoProducto, pedidoCategory, usuarios]).then(function ([
             product,
             categories,
+            usuarios,
         ]) {
             res.render("products/product_edit", {
                 product: product,
                 categories: categories,
                 user: req.loggedUser,
+                usuarios: usuarios,
             });
         });
     },

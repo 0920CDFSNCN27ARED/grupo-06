@@ -108,7 +108,7 @@ const productsController = {
         );
         res.redirect(`../products/${req.params.id}/detail`);
     },
-    deleteShow: (req, res) => {
+    /*deleteShow: (req, res) => {
         db.Product.findByPk(req.params.id, {
             include: [{ association: "category" }],
         }).then(function (product) {
@@ -116,6 +116,7 @@ const productsController = {
                 //product: requiredProduct,
                 toThousand: toThousand,
                 product: product,
+                
                 user: req.loggedUser,
             });
         });

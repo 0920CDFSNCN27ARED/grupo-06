@@ -8,19 +8,23 @@ const Op = Sequelize.Op;
 const { QueryTypes } = Sequelize;
 
 module.exports = {
-    CountByCategory: (req, res) => {
-        //→ objeto literal con una propiedad por categoría con el total de productos
-        Category.findAll({
-            include: [{ association: "products" }],
-        }).then(function (category) {
-            for (let i = 0; i < category.length; i++) {
-                const countProducts = category[i].count;                
-            }
-            res.send(category);
-        });
-    },
     products: async (req, res) => {
+        // Count
         const count = await Product.count();
+        //
+        // CountByCategory
+        //→ objeto literal con una propiedad por categoría con el total de productos
+        const category = await Category.findAll({
+            include: [{ association: "products" }],
+        });
+        const countByCategory = [];
+        for (let i = 0; i < category.length; i++) {
+            let obj = new Object();
+            obj.name = category[i].category;
+            obj.products = category[i].products.length;
+            countByCategory.push(obj);
+        }
+        //
         Product.findAll({ include: [{ association: "category" }] }).then(
             function (products) {
                 for (let i = 0; i < products.length; i++) {
@@ -31,7 +35,8 @@ module.exports = {
                 }
                 let response = {
                     count: { count },
-                    data: products ,
+                    countByCategory,
+                    data: products,
                 };
 
                 res.send(response);

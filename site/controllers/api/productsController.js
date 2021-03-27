@@ -50,4 +50,9 @@ module.exports = {
             res.send(product);
         });
     },
+
+    count: async (req, res) => {
+        const count = await Product.count();
+        res.send(count);
+    },
 };

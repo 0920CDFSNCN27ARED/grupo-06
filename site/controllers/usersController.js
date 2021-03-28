@@ -40,49 +40,6 @@ const usersController = {
             });
         }
     },
-
-    /*
-
-        const errors = validationResult(req);
-        let usuarioALoguearse = undefined;
-        if (errors.isEmpty()) {
-            const user = getUsers();
-
-            for (let i = 0; i < user.length; i++) {
-                if (user[i].email == req.body.email) {
-                    if (
-                        bcrypt.compareSync(req.body.password, user[i].password)
-                    ) {
-                        usuarioALoguearse = user[i];
-                        break;
-                    }
-                }
-            }
-            //console.log(usuarioALoguearse);
-            if (usuarioALoguearse == undefined) {
-                //console.log("USUARIO NO ENCONTRADO**");
-                return res.render("users/login", {
-                    errors: [{ msg: "Credenciales o mail inválido" }],
-                });
-            }
-
-            req.session.usuarioLogueado = usuarioALoguearse;
-            req.session.loggedUserId = usuarioALoguearse.id;
-            //console.log(req.session.loggedUserId);
-
-            if (req.body.recordame != undefined) {
-                res.cookie("recordame", usuarioALoguearse.email, {
-                    maxAge: 6000000,
-                });
-            }
-            //console.log(res.cookie.email);
-            return res.redirect("/");
-        } else {
-            res.render("users/login", {
-                errors: errors.errors,
-            });
-        }
-    },*/
     register: async (req, res) => {
         let usuarios = await db.User.findAll();
         db.Group.findAll().then(function (groups) {
@@ -94,18 +51,18 @@ const usersController = {
         });
     },
     create: async (req, res, next) => {
-        let usuarios = await db.User.findAll();
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             db.User.create({
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
                 group_id: req.body.group,
-                imagen: req.files[0].filename
+               // imagen: req.files[0].filename
             });
-
+            
             res.redirect("../");
         } else {
+            let usuarios = await db.User.findAll();
             db.Group.findAll().then(function (groups) {
                 res.render("users/register", {
                     user: req.loggedUser,

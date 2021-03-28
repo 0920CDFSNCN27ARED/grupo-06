@@ -76,9 +76,27 @@ router.post(
         check("lastname")
             .isLength({ min: 2 })
             .withMessage("debe ser un apellido con al menos 2 caracteres"),
-        check("password").isLength({ min: 8 }),
-
-        check("email").isEmail().withMessage("debe ser un email valido"),
+        check("password")
+            .isLength({ min: 8 })
+            .withMessage("debe ser una constraseña con al menos 8 caracteres"),
+        body("email", "Invalid email")            
+            .isEmail()
+            .trim()
+            .escape()
+            .custom((userEmail) => {
+                return new Promise((resolve, reject) => {
+                    db.User.findOne({ where: { email: userEmail } }).then(
+                        (emailExist) => {
+                            if (emailExist !== null) {
+                                reject(new Error("El email ya existe"));
+                            } else {
+                                resolve(true);
+                            }
+                        }
+                    );
+                });
+            }),
+        /*check("email").isEmail(),
         body("email")
             .custom(async function (value) {
                 let isEmail = await db.User.findOne({
@@ -86,19 +104,17 @@ router.post(
                         email: value,
                     },
                 });
-                //console.log("FindOne " + isEmail.email);
-                //console.log("value= " + value);
-                if (isEmail.email) {
+                console.log("FindOne " + isEmail.email);
+                console.log("value= " + value);
+                if (isEmail.email == value) {
                     console.log("retorno false");
-                    throw new Error("El email ya esta registrado");
-                }
-                return true;
-            })
-            .withMessage("debe ser un email que no esté en uso"),
+                     false;
+                }else{
+                     new Error("El email ya esta registrado");
 
-        check("password")
-            .isLength({ min: 2 })
-            .withMessage("la contraseña debe tener mas de 2 caracteres"),
+                };
+            })
+            .withMessage("debe ser un email que no esté en uso"),*/
     ],
     usersController.create
 );

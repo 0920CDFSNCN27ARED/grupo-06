@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
 
         if (campoPassword.value == "") {
             errores.push("El campo de contraseña tiene que estar completo");
-        } else if (campoPassword.value.length < 8) {
+        } else if (campoPassword.value.length < 6) {
             errores.push(
                 "El campo de contraseña tiene que tener al menos 8 carácteres"
             );

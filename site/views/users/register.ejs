@@ -1,85 +1,225 @@
 <%- include("../partials/head") %>
 
-    <body class="d-flex flex-column min-vh-100">
-        <%- include("../partials/header") %>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h1 class="text-center my-3">Registrate</h1>
+<body class="d-flex flex-column min-vh-100">
+    <%- include("../partials/header") %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1 class="text-center my-3">Registrate</h1>
 
-                        <% if(typeof errors !="undefined" ){ %>
-                            <p style="color: red">Error</p>
-                            <ul>
-                                <% for (let i=0; i < errors.length; i++){ %>
-                                    <li>
-                                        <%=errors[i].msg %>
-                                    </li>
+                <% if(typeof errors !="undefined" ){ %>
+                <p style="color: red">Error</p>
+                <ul>
+                    <% for (let i=0; i < errors.length; i++){ %>
+                    <li><%=errors[i].msg %></li>
 
-                                    <% } %>
-                            </ul>
-                            <% } %>
+                    <% } %>
+                </ul>
+                <% } %>
 
-                                <div class="errores">
-                                    <ul></ul>
-                                </div>
-                                <form action="/users/register" method="POST" enctype="multipart/form-data"
-                                    class="register-form">
-                                    <label for="">Nombre:</label>
-                                    <input type="text" class="form-control name" id="name" placeholder="Nombre"
-                                        name="name" />
-                                    <label for="">Apellido:</label>
-                                    <input type="text" class="form-control lastname" id="name" placeholder="Apellido"
-                                        name="lastname" />
-                                    <label for="">E-mail:</label>
-                                    <input type="email" name="email" class="form-control emailform" id="email"
-                                        placeholder="mail@gmail.com" />
-                                    <label for="">Contraseña:</label>
-                                    <input type="password" name="password" class="form-control passwordform"
-                                        id="password" placeholder="Elegí tu contraseña" />
-                                    <label for="">Avatar:</label>
-                                    <input type="file" class="form-control imagen" id="imagen" placeholder="Imagen"
-                                        name="imagen">
+                <div class="errores">
+                    <ul></ul>
+                </div>
+                <form
+                    action="/users/register"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    class="register-form"
+                >
+                    <label for="">Nombre:</label>
+                    <input
+                        type="text"
+                        class="form-control name"
+                        id="name"
+                        placeholder="Nombre"
+                        name="name"
+                    />
+                    <label for="">Apellido:</label>
+                    <input
+                        type="text"
+                        class="form-control lastname"
+                        id="name"
+                        placeholder="Apellido"
+                        name="lastname"
+                    />
+                    <label for="">E-mail:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control emailform"
+                        id="email"
+                        placeholder="mail@gmail.com"
+                    />
+                    <label for="">Contraseña:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        class="form-control passwordform"
+                        id="password"
+                        placeholder="Elegí tu contraseña"
+                    />
+                    <label for="">Avatar:</label>
+                    <input
+                        type="file"
+                        class="form-control imagen"
+                        id="imagen"
+                        placeholder="Imagen"
+                        name="imagen"
+                    />
 
-                                    <label for="">Grupo</label>
+                    <label for="">Grupo</label>
 
-                                    <select type="text" name="group" class="form-select">
-                                        <% for( let i=0; i < groups.length; i++ ) { %>
-                                            <option value="<%=groups[i].id %> ">
-                                                <%=groups[i].group%>
-                                                    <% } %>
-                                            </option>
-                                    </select>
+                    <select type="text" name="group" class="form-select">
+                        <% for( let i=0; i < groups.length; i++ ) { %>
+                        <option value="<%=groups[i].id %> ">
+                            <%=groups[i].group%> <% } %>
+                        </option>
+                    </select>
 
-                                    <button class="btn btn-warning text-center my-1 w-100" type="submit"
-                                        value="CREAR_CUENTA">
-                                        CREAR CUENTA
-                                    </button>
-                                </form>
+                    <button
+                        class="btn btn-warning text-center my-1 w-100"
+                        type="submit"
+                        value="CREAR_CUENTA"
+                    >
+                        CREAR CUENTA
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm text-center">
+                <i class="fas fa-user-circle fs-20 mt-3"></i>
+                <h3 class="fw-bold">¿Que vas a hacer con tu cuenta?</h3>
 
-                                <div class="text-center my-2">
-                                    <a class="text-warning" href="#">No estas registrado? Registrate acá</a>
-                                </div>
-                    </div>
-                    <div class="col-sm text-center">
-                        <i class="fas fa-user-circle fs-20 mt-3"></i>
-                        <h3 class="fw-bold">¿Que vas a hacer con tu cuenta?</h3>
-                        <ul>
-                            <li>Consultar el estado de tus compras</li>
-                            <li>Administrar tus productos favoritos</li>
-                            <li>Descargar las facturas</li>
-                            <li>Consultar manuales de los productos comprados</li>
-                            <li>Definir tus preferencias e intereses</li>
-                            <li>Acceder al historial de productos vistos</li>
-                            <li>Retomar tus compras incompletas</li>
-                        </ul>
-                        <h6 class="">
-                            Recibi notificaciones de tus compras, ofertas y descuentos
-                            exclusivos.
-                        </h6>
-                        <h6 class="">Ver politicas de privacidad</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Consultar el estado de tus compras
+                    </li>
+                    <li class="list-group-item">
+                        Administrar tus productos favoritos
+                    </li>
+                    <li class="list-group-item">Descargar las facturas</li>
+                    <li class="list-group-item">
+                        Consultar manuales de los productos comprados
+                    </li>
+                    <li class="list-group-item">
+                        Acceder al historial de productos vistos
+                    </li>
+                    <li class="list-group-item">
+                        Retomar tus compras incompletas
+                    </li>
+                </ul>
+                <h6 class="">
+                    Recibi notificaciones de tus compras, ofertas y descuentos
+                    exclusivos.
+                </h6>           
+                <!-- Button trigger modal -->
+                <button
+                    type="button"
+                    class="btn btn-link"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                >
+                    Política de Privacidad
+                </button>
+
+                <!-- Modal -->
+                <div
+                    class="modal fade modal-dialog-scrollable"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    Politica de Privacidad
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Commodi illo optio magnam
+                                harum ullam. Quibusdam quos unde repellendus,
+                                repudiandae, ratione doloribus velit assumenda
+                                quam, libero qui dolorum delectus cum quia?
+                                Vitae id incidunt magnam nisi corrupti rem
+                                molestiae voluptatum, saepe sapiente eaque quo
+                                illum fugit! Maxime asperiores dignissimos
+                                tempora porro minima voluptate culpa eius, vel,
+                                laboriosam beatae, nobis illum consequatur
+                                incidunt. Incidunt enim officia tempore a maxime
+                                in quaerat fuga perspiciatis beatae
+                                exercitationem! Debitis molestiae incidunt
+                                exercitationem a optio aliquid ad totam.
+                                Explicabo et quos voluptates dolor eaque
+                                pariatur suscipit hic obcaecati debitis, laborum
+                                praesentium commodi soluta, repellat illo eos
+                                illum quaerat dolore rerum, nemo deserunt
+                                quisquam itaque similique officiis. Minus
+                                voluptates itaque inventore praesentium, eius
+                                explicabo, necessitatibus velit qui ipsa aliquid
+                                obcaecati? Recusandae pariatur quo sapiente
+                                architecto explicabo ea ducimus veniam
+                                voluptatibus animi ex soluta omnis repellat fuga
+                                quidem culpa quas aliquid odit harum,
+                                praesentium ratione. Ipsa consequuntur qui
+                                ducimus maiores recusandae incidunt corporis?
+                                Atque est numquam magni voluptatem quo.
+                                Provident earum cupiditate odit reiciendis modi
+                                sunt explicabo recusandae, laudantium rerum,
+                                unde, neque aut consequatur necessitatibus?
+                                Optio maxime repudiandae in exercitationem
+                                voluptas nihil dignissimos delectus possimus
+                                sunt et ducimus illum suscipit, neque doloremque
+                                quos saepe. Similique quo distinctio
+                                perspiciatis sit saepe, rerum adipisci tempore
+                                repudiandae vitae temporibus id maxime illum
+                                libero. Nam explicabo sint labore reprehenderit,
+                                blanditiis beatae quia ad, quas laborum,
+                                deleniti dolorem temporibus molestiae fuga.
+                                Nobis assumenda repellendus ipsum reprehenderit
+                                aspernatur odit non modi. Veniam corporis
+                                voluptatibus, dolorum dicta cum praesentium. Rem
+                                quia earum, asperiores enim aperiam culpa
+                                laudantium ipsam dicta voluptas inventore
+                                officia, expedita recusandae ab rerum voluptatum
+                                ipsa praesentium? Dolor veritatis eveniet
+                                voluptate natus asperiores enim libero dolore
+                                qui, alias magni porro magnam blanditiis ratione
+                                quibusdam inventore nesciunt. Blanditiis illum
+                                impedit repellendus facilis aperiam sunt
+                                consectetur dignissimos expedita eveniet
+                                excepturi deserunt dolorem eum, ullam tempore
+                                modi in quaerat. Qui, numquam! Rem hic dolorum
+                                ducimus, aut ut iusto sint quos, ipsam aliquam,
+                                consectetur minus? Alias ad provident ut quod
+                                corrupti at necessitatibus labore consequatur!
+                                Corporis, in harum odio aperiam accusantium
+                                exercitationem dolores id vero non perspiciatis?
+                                Cumque dolore enim odit, nulla dignissimos
+                                aperiam quaerat alias nihil?
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                >
+                                    Cerrar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--<script src="/js/validator_users.js"></script> -->
-            <%- include("../partials/footer") %>
-    </body>
+        </div>
+    </div>
+    <!--<script src="/js/validator_users.js"></script> -->
+    <%- include("../partials/footer") %>
+</body>

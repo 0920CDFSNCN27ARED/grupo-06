@@ -1,13 +1,39 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <ul>
-                <li>
-                    <h5 class="text-muted text-center">
-                        <%= user? user.email : "Inciá sessión" %>
-                    </h5>
-                </li>
-            </ul>
+            <% if (user != undefined) { %>
+                
+                <% let name = user.email; let newName = name.split("@",1); %>
+                <div class="dropdown me-1">
+                    <img
+                        src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-4--v2.png"
+                        type="button"
+                        class=" dropdown-toggle"
+                        id="dropdownMenuOffset"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        data-bs-offset="10,20"
+                    />
+                    
+                
+                    
+                
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                    <li><a class="dropdown-item" href="#">Hola! <%= newName %></a></li>
+                    <li>
+                        <a class="dropdown-item" href="#">Configuración</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#"
+                            >Salir</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            
+
+            <% } %>
+
             <a class="navbar-brand" href=" /"
                 ><img
                     src="/images/logo_header.png"
@@ -31,7 +57,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/products">Productos</a>
-                    </li>                  
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a
@@ -45,8 +71,8 @@
                             Categorias
                         </a>
                         <ul
-                            class="dropdown-menu"
-                            aria-labelledby="navbarDropdown"
+                            class="dropdown-menu dropdown-menu-dark"
+                            aria-labelledby="navbarDarkDropdownMenuLink"
                         >
                             <li>
                                 <a class="dropdown-item" href="/products"
@@ -58,27 +84,27 @@
                                     >Procesadores</a
                                 >
                             </li>
-                               <li>
+                            <li>
                                 <a class="dropdown-item" href="/products"
                                     >Discos</a
                                 >
                             </li>
-                               <li>
+                            <li>
                                 <a class="dropdown-item" href="/products"
                                     >Motherboards</a
                                 >
                             </li>
-                               <li>
+                            <li>
                                 <a class="dropdown-item" href="/products"
                                     >Placas de Video</a
                                 >
                             </li>
-                               <li>
+                            <li>
                                 <a class="dropdown-item" href="/products"
                                     >Gabinetes</a
                                 >
                             </li>
-                               <li>
+                            <li>
                                 <a class="dropdown-item" href="/products"
                                     >Fuentes</a
                                 >
@@ -91,18 +117,19 @@
                             </li>
                         </ul>
                     </li>
-                     <% function EsAdmin(user,usuarios){ for (const i
-                                of usuarios) { if(user != undefined){ if
-                                (user.email == i.email && i.group_id == 1){
-                                return true; } } } } %> <% if (EsAdmin(user,
-                                usuarios)) { %>
-                                    
-                                    <a class="btn btn-outline-success mx-3" href="/products/create" role="button">Carga de productos</a>
-                                    
+                    <% function EsAdmin(user,usuarios){ for (const i of
+                    usuarios) { if(user != undefined){ if (user.email == i.email
+                    && i.group_id == 1){ return true; } } } } %> <% if
+                    (EsAdmin(user, usuarios)) { %>
 
-                                <% } %>
+                    <a
+                        class="btn btn-outline-success mx-3"
+                        href="/products/create"
+                        role="button"
+                        >Carga de productos</a
+                    >
 
-                  
+                    <% } %>
                 </ul>
                 <form class="d-flex">
                     <input

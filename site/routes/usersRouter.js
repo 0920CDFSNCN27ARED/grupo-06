@@ -26,7 +26,6 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage });
 
-
 router.get("/login", authenticateMiddleware, usersController.login);
 
 router.post(
@@ -77,9 +76,8 @@ router.post(
         check("lastname")
             .isLength({ min: 2 })
             .withMessage("debe ser un apellido con al menos 2 caracteres"),
-        check("password")
-            .isLength({min: 8}),
-            
+        check("password").isLength({ min: 8 }),
+
         check("email").isEmail().withMessage("debe ser un email valido"),
         body("email")
             .custom(async function (value) {

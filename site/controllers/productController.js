@@ -15,7 +15,6 @@ const productsController = {
                 toThousand: toThousand,
                 user: req.loggedUser,
                 usuarios: usuarios,
-                
             });
         });
     },
@@ -32,32 +31,33 @@ const productsController = {
     },
     createProd: async function (req, res, next) {
         const errors = validationResult(req);
-         if (errors.isEmpty()) {
-             console.log(req.file);
-             db.Product.create({
-                 name: req.body.name,
-                 description: req.body.description,
-                 price: req.body.price,
-                 img: req.files[0].filename,
-                 category_id: req.body.category,
-             });
-             return res.redirect("/");
-         } else {      
-             let usuarios = await db.User.findAll();    
+        if (errors.isEmpty()) {
+            console.log(req.file);
+            db.Product.create({
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                img: req.files[0].filename,
+                category_id: req.body.category,
+            });
+            return res.redirect("/");
+        } else {
+            let usuarios = await db.User.findAll();
             db.Category.findAll().then(function (categories) {
-                console.log("Errores de CreateProd"+errors)
+                console.log("Errores de CreateProd" + errors);
                 return res.render("products/create", {
                     errors: errors.errors,
                     user: req.loggedUser,
                     categories: categories,
-                    usuarios, usuarios,
+                    usuarios,
+                    usuarios,
                 });
             });
-         }
+        }
     },
 
     detail: (req, res) => {
-       /* db.Product.findByPk(req.params.id, {
+        /* db.Product.findByPk(req.params.id, {
             include: [{ association: "category" }],
         }).then(function (product) {
             res.render("products/product_detail", {
@@ -66,20 +66,21 @@ const productsController = {
                 user: req.loggedUser,
             });
         });*/
-         let pedidoProducto = db.Product.findByPk(req.params.id, {
-             include: [{ association: "category" }]});
-         let pedidoUsuario =  db.User.findAll();
-         Promise.all([pedidoProducto, pedidoUsuario]).then(function ([
+        let pedidoProducto = db.Product.findByPk(req.params.id, {
+            include: [{ association: "category" }],
+        });
+        let pedidoUsuario = db.User.findAll();
+        Promise.all([pedidoProducto, pedidoUsuario]).then(function ([
             product,
             usuarios,
         ]) {
-             res.render("products/product_detail", {
-                 toThousand: toThousand,
-                 product: product,
-                 usuarios: usuarios,
-                 user: req.loggedUser,
-             });
-         });
+            res.render("products/product_detail", {
+                toThousand: toThousand,
+                product: product,
+                usuarios: usuarios,
+                user: req.loggedUser,
+            });
+        });
     },
 
     edit: (req, res) => {

@@ -53,6 +53,6 @@ module.exports = {
 
     count: async (req, res) => {
         const count = await Product.count();
-        res.send(count);
+        res.send({ count });
     },
 };

@@ -55,4 +55,14 @@ module.exports = {
         const count = await Product.count();
         res.send({ count });
     },
+
+    totalPrice: async (req, res) => {
+        const products = await Product.findAll();
+        const totalPrice = products.reduce((acc, prod) => {
+            return acc + Number(prod.price);
+        }, 0);
+        res.send({
+            totalPrice,
+        });
+    },
 };

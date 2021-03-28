@@ -9,7 +9,7 @@ module.exports = {
             attributes: ["id", "email", "group_id"],
             include: [{ association: "group" }],
         });
-       
+
         res.send({
             count,
             users,
@@ -21,6 +21,12 @@ module.exports = {
             include: [{ association: "group" }],
         }).then(function (users) {
             res.send(users);
+        });
+    },
+    count: async (req, res) => {
+        const count = await User.count();
+        res.send({
+            count,
         });
     },
 };

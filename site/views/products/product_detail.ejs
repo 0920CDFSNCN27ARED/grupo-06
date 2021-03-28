@@ -63,22 +63,77 @@
                                 (user.email == i.email && i.group_id == 1){
                                 return true; } } } } %> <% if (EsAdmin(user,
                                 usuarios)) { %>
-                                <div class="my-2">
+                                <div class="d-grid gap-2 my-2">
                                     <a
                                         class="btn btn-outline-warning"
                                         href="/products/<%= product.id %>/edit "
                                         role="button"
-                                        >EDITAR </a
-                                    >
-                                </div>
-
-                                         <div class="my-2">
-                                            <form method="POST" action="delete/?_method=DELETE">
-                                <button type="submit" class="btn btn-outline-danger">
+                                        >EDITAR
+                                    </a>
+                                
+                                <!-- Button trigger modal -->
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-danger"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop"
+                                >
                                     ELIMINAR
                                 </button>
-                            
+
+                                <!-- Modal -->
+                                <div
+                                    class="modal fade"
+                                    id="staticBackdrop"
+                                    data-bs-backdrop="static"
+                                    data-bs-keyboard="false"
+                                    tabindex="-1"
+                                    aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true"
+                                >
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5
+                                                    class="modal-title"
+                                                    id="staticBackdropLabel"
+                                                >
+                                                    Estás seguro?
+                                                </h5>
+                                                <button
+                                                    type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"
+                                                ></button>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button
+                                                    type="button"
+                                                    class="btn btn-secondary"
+                                                    data-bs-dismiss="modal"
+                                                >
+                                                    Me errepentí
+                                                </button>
+                                                <form
+                                                    method="POST"
+                                                    action="delete/?_method=DELETE"
+                                                >
+                                                    <button
+                                                        type="submit"
+                                                        class="btn btn-outline-danger"
+                                                    >
+                                                        ELIMINAR
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                </div>
+
+                                
 
                                 <% } %>
                             </div>

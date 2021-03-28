@@ -65,4 +65,11 @@ module.exports = {
             totalPrice,
         });
     },
+    lastProduct: async (req, res) => {
+        const products = await Product.findAll();
+        const lastProduct = products[products.length - 1];
+        res.send({
+            lastProduct,
+        });
+    },
 };

@@ -85,10 +85,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
-      this.updateData();
-      console.log("data updated");
-    }, 5000);
     this.updateData();
   }
 

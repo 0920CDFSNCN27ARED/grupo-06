@@ -5,18 +5,10 @@ export default function Products(props) {
       <td>{props.description}</td>
       <td>{props.price}</td>
       <td>
-        <ul>
-          {props.category.map((category, i) => (
-            <li key={category + i}>{category}</li>
-          ))}
-        </ul>
+        <ul>{props.category}</ul>
       </td>
       <td>
-        <ul>
-          {props.color.map((color, i) => (
-            <li key={color + i}>{color}</li>
-          ))}
-        </ul>
+        <ul>{props.color}</ul>
       </td>
       <td>{props.stock}</td>
     </tr>

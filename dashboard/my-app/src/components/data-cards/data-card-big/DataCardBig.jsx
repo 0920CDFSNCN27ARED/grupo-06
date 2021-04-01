@@ -1,5 +1,4 @@
 import { Component } from "react";
-import productDummy from "../../../assets/product_dummy.svg";
 
 class DataCardBig extends Component {
   constructor(props) {

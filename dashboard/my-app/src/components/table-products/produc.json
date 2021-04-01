@@ -1,0 +1,183 @@
+
+
+{
+  "count": { "count": 15 },
+  "countByCategory": [
+    { "name": "Memorias", "products": 11 },
+    { "name": "Procesadores", "products": 4 },
+    { "name": "Discos", "products": 0 },
+    { "name": "Motherboards", "products": 0 },
+    { "name": "Placas de Video", "products": 0 },
+    { "name": "Gabinetes", "products": 0 },
+    { "name": "Fuentes", "products": 0 }
+  ],
+  "data": [
+    {
+      "id": 9,
+      "name": "Temp",
+      "description": "Sed sagittis.",
+      "img": "default-image.png",
+      "price": 5432,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/9"
+    },
+    {
+      "id": 10,
+      "name": "Home Ing",
+      "description": "Morbi non lectus.",
+      "img": "default-image.png",
+      "price": 8024,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/10"
+    },
+    {
+      "id": 15,
+      "name": "Viva",
+      "description": "Morbi non quam nec dui luctus rutrum.",
+      "img": "default-image.png",
+      "price": 7658,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/15"
+    },
+    {
+      "id": 17,
+      "name": "Zamit",
+      "description": "Integer ac neque.",
+      "img": "default-image.png",
+      "price": 4046,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/17"
+    },
+    {
+      "id": 22,
+      "name": "Holdlamis",
+      "description": "In sagittis dui vel nisl. Duis ac nibh.",
+      "img": "default-image.png",
+      "price": 9734,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/22"
+    },
+    {
+      "id": 24,
+      "name": "Keylex",
+      "description": "Duis bibendum.",
+      "img": "default-image.png",
+      "price": 8336,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/24"
+    },
+    {
+      "id": 27,
+      "name": "Fixflex",
+      "description": "Pellentesque eget nunc.",
+      "img": "default-image.png",
+      "price": 3235,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/27"
+    },
+    {
+      "id": 34,
+      "name": "Wrapsafe",
+      "description": "Integer tincidunt ante vel ipsum.",
+      "img": "default-image.png",
+      "price": 5068,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/34"
+    },
+    {
+      "id": 45,
+      "name": "Keylex",
+      "description": "Cras pellentesque volutpat dui.",
+      "img": "default-image.png",
+      "price": 7970,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/45"
+    },
+    {
+      "id": 46,
+      "name": "Keylex",
+      "description": "Nulla tempus.",
+      "img": "default-image.png",
+      "price": 5653,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/46"
+    },
+    {
+      "id": 47,
+      "name": "Duobam",
+      "description": "Nulla mollis molestie lorem.",
+      "img": "default-image.png",
+      "price": 9792,
+      "category_id": 1,
+      "category": { "id": 1, "category": "Memorias" },
+      "detail": "/api/product/47"
+    },
+    {
+      "id": 49,
+      "name": "i9",
+      "description": "Intel i9",
+      "img": "default-image.png",
+      "price": 500000,
+      "category_id": 2,
+      "category": { "id": 2, "category": "Procesadores" },
+      "detail": "/api/product/49"
+    },
+    {
+      "id": 50,
+      "name": "i9 PRO",
+      "description": "Intel i9 PRO",
+      "img": "default-image.png",
+      "price": 100000,
+      "category_id": 2,
+      "category": { "id": 2, "category": "Procesadores" },
+      "detail": "/api/product/50"
+    },
+    {
+      "id": 51,
+      "name": "i9 Pro Max",
+      "description": "i9 Pro Max",
+      "img": "default-image.png",
+      "price": 2000,
+      "category_id": 2,
+      "category": { "id": 2, "category": "Procesadores" },
+      "detail": "/api/product/51"
+    },
+    {
+      "id": 52,
+      "name": "i9 Pro Max2",
+      "description": "i9 Pro Max2",
+      "img": "default-image.png",
+      "price": 2000,
+      "category_id": 2,
+      "category": { "id": 2, "category": "Procesadores" },
+      "detail": "/api/product/52"
+    }
+  ]
+}
+
+
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object],
+[object Object]

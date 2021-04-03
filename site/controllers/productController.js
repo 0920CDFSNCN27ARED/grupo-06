@@ -103,18 +103,16 @@ const productsController = {
     },
 
     editProd: (req, res) => {
-        db.Product.update(
-            {
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                img: req.files[0].filename,
-                category_id: req.body.category,
-                where: {
-                    id: req.params.id,
-                },
-            
-            });
+        db.Product.update({
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            img: req.files[0].filename,
+            category_id: req.body.category,
+            where: {
+                id: req.params.id,
+            },
+        });
         res.redirect(`../products/${req.params.id}/detail`);
     },
     /*deleteShow: (req, res) => {
@@ -150,35 +148,35 @@ const productsController = {
         });
         res.redirect("/products");
     },
-   listadoProducto: async (req, res) => {
-        console.log("hola mundo")
-        const _catName = req.route.path.slice(1) 
-        const categoryName = _catName.charAt(0).toUpperCase() + _catName.slice(1);
-        console.log(categoryName)
-    
+    listadoProducto: async (req, res) => {
+        console.log("hola mundo");
+        const _catName = req.route.path.slice(1);
+        const categoryName =
+            _catName.charAt(0).toUpperCase() + _catName.slice(1);
+        console.log(categoryName);
+
         try {
             let category = await db.Category.findOne({
                 where: {
                     category: categoryName,
                 },
-
             });
-            console.log("category", category)
+            console.log("category", category);
             //function capitalizeFirstLetter(string) {
             //return string.charAt(0).toUpperCase() + string.slice(1);
             //}
 
-          // if (!category) {
+            // if (!category) {
             //   return res.send({ status: 404, msg: 'categoria no encontrada' });
-           // }
+            // }
             category = category.dataValues;
             //category.__pageTitle = category.pageTitle;
 
             let catID = category.id;
-            console.log(catID)
+            console.log(catID);
             let usuarios = await db.User.findAll();
             let products = await db.Product.findAll({
-                where: {category_id : catID},
+                where: { category_id: catID },
             });
 
             //products = products.map((product) => product.dataValues);
@@ -188,15 +186,18 @@ const productsController = {
                 category: category,
                 user: req.loggedUser,
                 usuarios: usuarios,
-                toThousand: toThousand, 
+                toThousand: toThousand,
             });
         } catch (err) {
             console.error(err);
-            return res.redirect(301, '/');
-         }
+            return res.redirect(301, "/");
         }
-    
-    
+    },
+
+    find: (req, res) => {
+        res.send("producto encontrado");
+    },
+
     /* const products = getProducts();
         const reqProductIndex = products.findIndex((prod) => {
             return prod.id == req.params.id;

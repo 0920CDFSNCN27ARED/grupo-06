@@ -194,16 +194,16 @@ const productsController = {
         }
     },
 
-    find: async (req, res) => {
+    search: async (req, res) => {
         let usuarios = await db.User.findAll();
-        let nameProd = req.params.name_prod;
+        let nameProd = req.query.name;
         console.log("letras " + nameProd);
         db.Product.findAll({
             where: {
                 name: { [db.Sequelize.Op.like]: "%" + nameProd + "%" },
             },
         }).then(function (products) {
-            return res.render("products/product_find", {
+            return res.render("products/product_search", {
                 products: products,
                 toThousand: toThousand,
                 user: req.loggedUser,

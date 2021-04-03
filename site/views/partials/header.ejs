@@ -1,166 +1,110 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <% if (user != undefined) { %>
-                
-                <% let name = user.email; let newName = name.split("@",1); %>
-                <div class="dropdown me-1">
-                    <img
-                        src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-4--v2.png"
-                        type="button"
-                        class=" dropdown-toggle"
-                        id="dropdownMenuOffset"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                        data-bs-offset="10,20"
-                    />                    
-                
-                    
-                
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                    <li><a class="dropdown-item" href="#">Hola! <%= newName %></a></li>
-                    <li>
-                        <a class="dropdown-item" href="#">Configuración</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#"
-                            >Salir</a
-                        >
-                    </li>
-                </ul>
-            </div>
-            
+            <% if (user !=undefined) { %>
 
-            <% } %>
+                <% let name=user.email; let newName=name.split("@",1); %>
+                    <div class="dropdown me-1">
+                        <img src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-4--v2.png"
+                            type="button" class=" dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown"
+                            aria-expanded="false" data-bs-offset="10,20" />
 
-            <a class="navbar-brand" href=" /"
-                ><img
-                    src="/images/logo_header.png"
-                    alt="Logo
-                CompumundoHiperMegaRed"
-                    width="200"
-            /></a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/products">Productos</a>
-                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbarDropdown"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            Categorias
-                        </a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-dark"
-                            aria-labelledby="navbarDarkDropdownMenuLink"
-                        >
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                            <li><a class="dropdown-item" href="#">Hola! <%= newName %></a></li>
                             <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Memorias</a
-                                >
+                                <a class="dropdown-item" href="#">Configuración</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Procesadores</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Discos</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Motherboards</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Placas de Video</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Gabinetes</a
-                                >
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Fuentes</a
-                                >
-                            </li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li>
-                                <a class="dropdown-item" href="/products"
-                                    >Todos los productos</a
-                                >
+                                <a class="dropdown-item" href="#">Salir</a>
                             </li>
                         </ul>
-                    </li>
-                    <% function EsAdmin(user,usuarios){ for (const i of
-                    usuarios) { if(user != undefined){ if (user.email == i.email
-                    && i.group_id == 1){ return true; } } } } %> <% if
-                    (EsAdmin(user, usuarios)) { %>
+                    </div>
 
-                    <a
-                        class="btn btn-outline-success mx-3"
-                        href="/products/create"
-                        role="button"
-                        >Carga de productos</a
-                    >
 
                     <% } %>
-                </ul>
-                <form class="d-flex">
-                    <input
-                        class="form-control me-2"
-                        type="search"
-                        placeholder="Buscar"
-                        aria-label="Search"
-                    />
-                    <button class="btn btn-outline-secondary" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
 
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navbarIcons">
-                    <li id="account">
-                        <a class="nav-link" href="/users/login"
-                            ><i class="fas fa-user-circle"></i
-                        ></a>
-                    </li>
-                    <li id="register">
-                        <a class="nav-link" href="/users/register"
-                            ><i class="fas fa-address-card"></i
-                        ></a>
-                    </li>
+                        <a class="navbar-brand" href=" /"><img src="/images/logo_header.png" alt="Logo
+                CompumundoHiperMegaRed" width="200" /></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                    <li id="checkout">
-                        <a class="nav-link" href="/checkout"
-                            ><i class="fas fa-shopping-cart"></i
-                        ></a>
-                    </li>
-                </ul>
-            </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/products">Productos</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Categorias
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Memorias</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Procesadores</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Discos</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Motherboards</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Placas de Video</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Gabinetes</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Fuentes</a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider" />
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/products">Todos los productos</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <% function EsAdmin(user,usuarios){ for (const i of usuarios) { if(user !=undefined){ if
+                                    (user.email==i.email && i.group_id==1){ return true; } } } } %>
+                                    <% if (EsAdmin(user, usuarios)) { %>
+
+                                        <a class="btn btn-outline-success mx-3" href="/products/create"
+                                            role="button">Carga de productos</a>
+
+                                        <% } %>
+                            </ul>
+                            <form action="/products/search" method="GET" class="d-flex">
+                                <input class="form-control me-2" name="name" type="search" placeholder="Buscar"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+
+                            <ul class="navbar-nav ml-auto mb-2 mb-lg-0" id="navbarIcons">
+                                <li id="account">
+                                    <a class="nav-link" href="/users/login"><i class="fas fa-user-circle"></i></a>
+                                </li>
+                                <li id="register">
+                                    <a class="nav-link" href="/users/register"><i class="fas fa-address-card"></i></a>
+                                </li>
+
+                                <li id="checkout">
+                                    <a class="nav-link" href="/checkout"><i class="fas fa-shopping-cart"></i></a>
+                                </li>
+                            </ul>
+                        </div>
         </div>
     </nav>
 </header>

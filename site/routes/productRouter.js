@@ -72,7 +72,7 @@ router.get("/auriculares", productsController.listadoProducto);
 router.get("/parlantes", productsController.listadoProducto);
 router.get("/sillas-gamers", productsController.listadoProducto);
 
-router.get("/find/:name_prod", productController.find);
+router.get("/search", productController.search);
 
 router.get("/:id/edit/", productController.edit);
 

@@ -194,8 +194,22 @@ const productsController = {
         }
     },
 
-    find: (req, res) => {
-        res.send("producto encontrado");
+    find: async (req, res) => {
+        let usuarios = await db.User.findAll();
+        let nameProd = req.params.name_prod;
+        console.log("letras " + nameProd);
+        db.Product.findAll({
+            where: {
+                name: { [db.Sequelize.Op.like]: "%" + nameProd + "%" },
+            },
+        }).then(function (products) {
+            return res.render("products/product_find", {
+                products: products,
+                toThousand: toThousand,
+                user: req.loggedUser,
+                usuarios: usuarios,
+            });
+        });
     },
 
     /* const products = getProducts();

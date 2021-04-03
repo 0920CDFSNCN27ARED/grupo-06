@@ -7,6 +7,7 @@ const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 const { check, validationResult, body } = require("express-validator");
 
 const multer = require("multer");
+const productsController = require("../controllers/productController");
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb (null, "public/images/products")
@@ -66,5 +67,19 @@ router.put("/:id", upload.any(), productController.editProd);
 //router.get("/:id/delete/", productController.deleteShow);
 
 router.delete("/:id/delete", productController.delete);
+
+
+router.get("/procesadores", productController.listadoProducto);
+router.get("/motherboards", productsController.listadoProducto)
+router.get("/emorias-ram", productsController.listadoProducto)
+router.get("/placas-de-video", productsController.listadoProducto)
+router.get("/discos-rigidos", productsController.listadoProducto)
+router.get("/notebooks", productsController.listadoProducto)
+router.get("/mouses", productsController.listadoProducto)
+router.get("/teclados", productsController.listadoProducto)
+router.get("/auriculares", productsController.listadoProducto)
+router.get("/parlantes", productsController.listadoProducto)
+router.get("/sillas-gamers", productsController.listadoProducto)
+
 
 module.exports = router;

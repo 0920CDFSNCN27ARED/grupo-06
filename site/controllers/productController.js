@@ -5,6 +5,7 @@ const { debug } = require("console");
 const db = require("../database/models");
 const { check, validationResult, body } = require("express-validator");
 const { defaultMaxListeners } = require("stream");
+const { products } = require("./api/productsController");
 
 const productsController = {
     productList: async (req, res) => {
@@ -109,13 +110,11 @@ const productsController = {
                 price: req.body.price,
                 img: req.files[0].filename,
                 category_id: req.body.category,
-            },
-            {
                 where: {
                     id: req.params.id,
                 },
-            }
-        );
+            
+            });
         res.redirect(`../products/${req.params.id}/detail`);
     },
     /*deleteShow: (req, res) => {
@@ -151,7 +150,53 @@ const productsController = {
         });
         res.redirect("/products");
     },
+   listadoProducto: async (req, res) => {
+        console.log("hola mundo")
+        const _catName = req.route.path.slice(1) 
+        const categoryName = _catName.charAt(0).toUpperCase() + _catName.slice(1);
+        console.log(categoryName)
+    
+        try {
+            let category = await db.Category.findOne({
+                where: {
+                    category: categoryName,
+                },
 
+            });
+            console.log("category", category)
+            //function capitalizeFirstLetter(string) {
+            //return string.charAt(0).toUpperCase() + string.slice(1);
+            //}
+
+          // if (!category) {
+            //   return res.send({ status: 404, msg: 'categoria no encontrada' });
+           // }
+            category = category.dataValues;
+            //category.__pageTitle = category.pageTitle;
+
+            let catID = category.id;
+            console.log(catID)
+            let usuarios = await db.User.findAll();
+            let products = await db.Product.findAll({
+                where: {category_id : catID},
+            });
+
+            //products = products.map((product) => product.dataValues);
+
+            return res.render("products/product_list", {
+                products: products,
+                category: category,
+                user: req.loggedUser,
+                usuarios: usuarios,
+                toThousand: toThousand, 
+            });
+        } catch (err) {
+            console.error(err);
+            return res.redirect(301, '/');
+         }
+        }
+    
+    
     /* const products = getProducts();
         const reqProductIndex = products.findIndex((prod) => {
             return prod.id == req.params.id;

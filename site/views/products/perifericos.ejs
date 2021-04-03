@@ -1,0 +1,19 @@
+<%- include("../partials/head") %>
+
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <div class="container">
+
+            <h2>Perifericos</h2>
+             <div class="row mt-4">
+                <%- include
+                ("../products/product_card_perifericos", {product:products[i]}) %> <% }%>
+            </div>
+            
+
+         </div>
+    </main>
+     <%- include("../partials/footer") %>
+</body>
+

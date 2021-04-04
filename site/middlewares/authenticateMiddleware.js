@@ -15,7 +15,7 @@ async function authenticateMiddleware(req, res, next) {
     }
 
     req.loggedUser = loggedUser;
-
+    //req.session.loggedUserId = loggedUser;
     res.locals.user = loggedUser;
     //console.log(req.loggedUser);
     next();

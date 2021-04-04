@@ -102,8 +102,10 @@ const productsController = {
         });
     },
 
-    editProd: (req, res) => {
-        db.Product.update({
+    editProd: async (req, res) => {
+         //let imagen = req.files[0].filename;
+         
+       let imagen = await db.Product.update({
             name: req.body.name,
             description: req.body.description,
             price: req.body.price,
@@ -112,6 +114,7 @@ const productsController = {
             where: {
                 id: req.params.id,
             },
+            
         });
         res.redirect(`../products/${req.params.id}/detail`);
     },

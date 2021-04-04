@@ -4,7 +4,9 @@ const toThousand = require("../utils/toThousand");
 const controller = {
     index: (req, res) => {
         let pedidoUsuario = db.User.findAll();
-        let pedidoProducto = db.Product.findAll();
+        let pedidoProducto = db.Product.findAll({
+            include: [{ association: "category" }],
+        });
 
         Promise.all([pedidoProducto, pedidoUsuario]).then(function ([
             products,

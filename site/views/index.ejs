@@ -1,202 +1,123 @@
 <%- include("partials/head") %>
 
-<body class="d-flex flex-column min-vh-100">
-    <%- include("partials/header") %>
-    <main>
-        <!---CARRUSEL--->
-        <section
-            id="carouselExampleControls"
-            class="carousel slide carousel-dark"
-            data-bs-ride="carousel"
-        >
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img
-                        src="/images/brands/BANNER_AMD.jpg"
-                        class="d-block w-100 "
-                        alt="AMD"
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        src="/images/brands/cat-302.jpg"
-                        class="d-block w-100 "
-                        alt="GeForce"
-                    />
-                </div>
-            </div>
-            <a
-                class="carousel-control-prev"
-                href="#carouselExampleControls"
-                role="button"
-                data-bs-slide="prev"
-            >
-                <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a
-                class="carousel-control-next"
-                href="#carouselExampleControls"
-                role="button"
-                data-bs-slide="next"
-            >
-                <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </section>
-
-        <h2 class="text-center m-5">Ofertas destacadas</h2>
-        <!---OFERTAS DESCATACAS CARDS--->
-        <div class="container">
-            <div class="row">
-                <% for (let i=0; i < 4; i++) { %> <%- include
-                ("products/product_card", {product:products[i]}) %> <% }%>
-            </div>
-        </div>
-
-        <div class="container">
-            
-            <!---PRODUCTOS CARD CON BOOTSTRAP-->
-
-            <div class="container m-2">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/motherboard.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Motherboars</h5>
-
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
+    <body class="d-flex flex-column min-vh-100">
+        <%- include("partials/header") %>
+            <main>
+                <!---CARRUSEL--->
+                <section id="carouselExampleControls" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/brands/BANNER_AMD.jpg" class="d-block w-100 " alt="AMD" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/brands/cat-302.jpg" class="d-block w-100 " alt="GeForce" />
                         </div>
                     </div>
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/gabinete.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Gabinetes</h5>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </section>
 
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/placa_video.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Placas de video</h5>
-
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/memoria_ram.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Memorias</h5>
-
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/discos.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Discos</h5>
-
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <img
-                                    src="/images/products/fuente.jpg"
-                                    class="card-img"
-                                    alt="Configura tu PC"
-                                />
-                                <h5 class="card-title">Fuentes</h5>
-
-                                <a href="#" class="btn btn-primary w-100"
-                                    >Ver más</a
-                                >
-                            </div>
-                        </div>
+                <h2 class="text-center m-5">Ofertas destacadas</h2>
+                <!---OFERTAS DESCATACAS CARDS--->
+                <div class="container">
+                    <div class="row">
+                        <% for (let i=0; i < 4; i++) { %>
+                            <%- include ("products/product_card", {product:products[i]}) %>
+                                <% }%>
                     </div>
                 </div>
-            </div>
 
-            <h2 class="text-center m-5">Marcas con las que trabajamos</h2>
+                <div class="container">
 
-            <!---MARCAS CON BOOTSTRAP-->
-            <div class="d-flex justify-content-between mb-4">
-                <img
-                    src="/images/brands/amd-logo-5.png"
-                    class="w-15 h-75"
-                    alt="..."
-                />
-                <img
-                    src="/images/brands/intel-logo-8.png"
-                    class="w-15 h-75"
-                    alt="..."
-                />
-                <img
-                    src="/images/brands/lenovo-logo-10.png"
-                    class="w-15 h-75"
-                    alt="..."
-                />
-                <img
-                    src="/images/brands/western-digital-logo-4-1.png"
-                    class="w-20 h-75"
-                    alt="..."
-                />
-                <img
-                    src="/images/brands/nvidia-logo-10-1.png"
-                    class="w-20 h-75"
-                    alt="..."
-                />
-            </div>
-        </div>
-    </main>
+                    <!---PRODUCTOS CARD CON BOOTSTRAP-->
 
-    <%- include("partials/footer") %>
-</body>
+                    <div class="container m-2">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/motherboard.jpg" class="card-img"
+                                            alt="Configura tu PC" />
+                                        <h5 class="card-title">Motherboars</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/gabinete.jpg" class="card-img"
+                                            alt="Configura tu PC" />
+                                        <h5 class="card-title">Gabinetes</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/placa_video.jpg" class="card-img"
+                                            alt="Configura tu PC" />
+                                        <h5 class="card-title">Placas de video</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/memoria_ram.jpg" class="card-img"
+                                            alt="Configura tu PC" />
+                                        <h5 class="card-title">Memorias</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/discos.jpg" class="card-img" alt="Configura tu PC" />
+                                        <h5 class="card-title">Discos</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <img src="/images/products/fuente.jpg" class="card-img" alt="Configura tu PC" />
+                                        <h5 class="card-title">Fuentes</h5>
+
+                                        <a href="#" class="btn btn-primary w-100">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-center m-5">Marcas con las que trabajamos</h2>
+
+                    <!---MARCAS CON BOOTSTRAP-->
+                    <div class="d-flex justify-content-between mb-4">
+                        <img src="/images/brands/amd-logo-5.png" class="w-15 h-75" alt="..." />
+                        <img src="/images/brands/intel-logo-8.png" class="w-15 h-75" alt="..." />
+                        <img src="/images/brands/lenovo-logo-10.png" class="w-15 h-75" alt="..." />
+                        <img src="/images/brands/western-digital-logo-4-1.png" class="w-20 h-75" alt="..." />
+                        <img src="/images/brands/nvidia-logo-10-1.png" class="w-20 h-75" alt="..." />
+                    </div>
+                </div>
+            </main>
+
+            <%- include("partials/footer") %>
+    </body>

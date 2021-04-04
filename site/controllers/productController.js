@@ -203,12 +203,21 @@ const productsController = {
                 name: { [db.Sequelize.Op.like]: "%" + nameProd + "%" },
             },
         }).then(function (products) {
-            return res.render("products/product_search", {
-                products: products,
-                toThousand: toThousand,
-                user: req.loggedUser,
-                usuarios: usuarios,
-            });
+            if (products.length == 0) {
+                return res.render("products/product_search", {
+                    products: products,
+                    toThousand: toThousand,
+                    user: req.loggedUser,
+                    usuarios: usuarios,
+                });
+            } else {
+                return res.render("products/product_search_null", {
+                    products: products,
+                    toThousand: toThousand,
+                    user: req.loggedUser,
+                    usuarios: usuarios,
+                });
+            }
         });
     },
 

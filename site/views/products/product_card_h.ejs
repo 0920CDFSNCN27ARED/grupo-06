@@ -1,7 +1,7 @@
 <div class="card mb-3" style="max-width: 75vw">
     <div class="row g-0 align-items-center">
         <div class="col">
-            <img src="/images/products/<%= product.image%>" class="card-img-top" alt="Card image cap" />
+            <img src="/images/products/<%= product.img%>" class="card-img-top" alt="Card image cap" />
         </div>
         <div class="col">
             <div class="card-body">
@@ -15,7 +15,7 @@
         </div>
         <div class="col">
             <p class="card-text">
-                <small class="text-muted">
+                <small class="text-muted"> $
                     <%=toThousand(product.price)%>
                 </small>
             </p>
@@ -40,7 +40,7 @@
         </div>
         <div class="col">
             <p class="card-text">
-                <small class="text-muted">
+                <small class="text-muted"> $
                     <%=toThousand(product.price)%>
                 </small>
             </p>

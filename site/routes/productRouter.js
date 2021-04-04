@@ -4,6 +4,7 @@ const productController = require("../controllers/productController");
 const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
+const recordameMiddleware = require("../middlewares/recordameMiddleware")
 const { check, validationResult, body } = require("express-validator");
 
 const multer = require("multer");
@@ -26,8 +27,7 @@ router.get("/:id/detail", productController.detail);
 
 router.get(
     "/create",
-    authenticateMiddleware,
-    authMiddleware,
+    
     productController.create
 );
 

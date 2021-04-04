@@ -11,6 +11,8 @@ const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const recordameMiddleware = require("../middlewares/recordameMiddleware");
 const db = require("../database/models");
+const { clearScreenDown } = require("readline");
+const { Console } = require("console");
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -129,6 +131,14 @@ router.get("/check", function (req, res) {
     } else {
         res.send("el usuario logueado es:" + req.loggedUser.email);
     }
+});
+
+router.get("/logout", function (req, res, next) {
+    req.session.destroy();
+    req.loggedUser = null;
+    res.locals.user = null;
+    res.clearCookie("recordame");       
+    res.redirect("/");
 });
 
 router.get("/detail/:id", usersController.detail);

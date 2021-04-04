@@ -10,7 +10,9 @@ const { products } = require("./api/productsController");
 const productsController = {
     productList: async (req, res) => {
         let usuarios = await db.User.findAll();
-        db.Product.findAll().then(function (products) {
+        db.Product.findAll({
+            include: [{ association: "category" }],
+        }).then(function (products) {
             return res.render("products/product_list", {
                 products: products,
                 toThousand: toThousand,

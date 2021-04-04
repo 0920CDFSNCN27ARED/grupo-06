@@ -104,20 +104,21 @@ const productsController = {
         });
     },
 
-    editProd: async (req, res) => {
-         //let imagen = req.files[0].filename;
-         
-       let imagen = await db.Product.update({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            img: req.files[0].filename,
-            category_id: req.body.category,
-            where: {
-                id: req.params.id,
+  editProd: (req, res) => {
+        db.Product.update(
+            {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                img: req.files[0].filename,
+                category_id: req.body.category,
             },
-            
-        });
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        );
         res.redirect(`../products/${req.params.id}/detail`);
     },
     /*deleteShow: (req, res) => {

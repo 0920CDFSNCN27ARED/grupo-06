@@ -96,7 +96,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `description` varchar(45) NOT NULL,
+  `description` varchar(2000) NOT NULL,
   `img` varchar(100) NOT NULL,
   `price` float NOT NULL,
   `discount_id` int unsigned DEFAULT NULL,

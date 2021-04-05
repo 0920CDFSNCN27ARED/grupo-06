@@ -4,7 +4,7 @@ const productController = require("../controllers/productController");
 const path = require("path");
 const authMiddleware = require("../middlewares/authMiddleware");
 const authenticateMiddleware = require("../middlewares/authenticateMiddleware");
-const recordameMiddleware = require("../middlewares/recordameMiddleware")
+const recordameMiddleware = require("../middlewares/recordameMiddleware");
 const { check, validationResult, body } = require("express-validator");
 
 const multer = require("multer");
@@ -27,7 +27,7 @@ router.get("/:id/detail", productController.detail);
 
 router.get(
     "/create",
-    
+
     productController.create
 );
 
@@ -60,11 +60,11 @@ router.post(
     ],
     productController.createProd
 );
-router.get("/procesadores", productController.listadoProducto);
+router.get("/Procesadores", productController.listadoProducto);
 router.get("/motherboards", productsController.listadoProducto);
 router.get("/gabinetes", productsController.listadoProducto);
-router.get("/placas-de-video", productsController.listadoProducto);
-router.get("/discos-rigidos", productsController.listadoProducto);
+router.get("/Placas%20de%20video", productsController.listadoProducto);
+router.get("/discos", productsController.listadoProducto);
 router.get("/notebooks", productsController.listadoProducto);
 router.get("/mouse", productsController.listadoProducto);
 router.get("/teclados", productsController.listadoProducto);
@@ -72,6 +72,8 @@ router.get("/auriculares", productsController.listadoProducto);
 router.get("/parlantes", productsController.listadoProducto);
 router.get("/sillas-gamers", productsController.listadoProducto);
 router.get("/monitores", productsController.listadoProducto);
+router.get("/fuentes", productsController.listadoProducto);
+router.get("/memorias", productsController.listadoProducto);
 
 router.get("/search", productController.search);
 

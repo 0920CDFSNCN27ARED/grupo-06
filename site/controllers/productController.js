@@ -12,6 +12,7 @@ const productsController = {
         let usuarios = await db.User.findAll();
         db.Product.findAll({
             include: [{ association: "category" }],
+            order: [["name", "ASC"]],
         }).then(function (products) {
             return res.render("products/product_list", {
                 products: products,
@@ -104,7 +105,7 @@ const productsController = {
         });
     },
 
-  editProd: (req, res) => {
+    editProd: (req, res) => {
         db.Product.update(
             {
                 name: req.body.name,
@@ -155,7 +156,6 @@ const productsController = {
         res.redirect("/products");
     },
     listadoProducto: async (req, res) => {
-        console.log("hola mundo");
         const _catName = req.route.path.slice(1);
         const categoryName =
             _catName.charAt(0).toUpperCase() + _catName.slice(1);
@@ -180,10 +180,10 @@ const productsController = {
 
             let catID = category.id;
             console.log(catID);
-             
+
             let usuarios = await db.User.findAll();
             let products = await db.Product.findAll({
-                 include: [{ association: "category" }],
+                include: [{ association: "category" }],
                 where: { category_id: catID },
             });
 

@@ -36,9 +36,7 @@
                                         <h2 class="padding_y_15 color_primary">
                                             $<%=toThousand(product.price)%>
                                         </h2>
-                                        <p class="grey">
-                                            <%= product.description%>
-                                        </p>
+
                                         <label for="quantity">Cantidad:</label>
                                         <div class="row">
                                             <div class="col-lg-2 mb-2">
@@ -111,8 +109,18 @@
 
                                                     <% } %>
                                         </div>
+
                                     </articles>
+
                                 </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div>
+                                    <h4>Descripción</h4>
+                                </div>
+                                <p class="grey pt-2">
+                                    <%= product.description%>
+                                </p>
                             </div>
                         </div>
                     </section>

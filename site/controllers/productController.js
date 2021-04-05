@@ -17,7 +17,7 @@ const productsController = {
                 products: products,
                 toThousand: toThousand,
                 user: req.loggedUser,
-                usuarios: usuarios,
+               usuarios: usuarios,
             });
         });
     },

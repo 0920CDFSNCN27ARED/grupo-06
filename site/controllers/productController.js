@@ -180,8 +180,10 @@ const productsController = {
 
             let catID = category.id;
             console.log(catID);
+             
             let usuarios = await db.User.findAll();
             let products = await db.Product.findAll({
+                 include: [{ association: "category" }],
                 where: { category_id: catID },
             });
 

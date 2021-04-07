@@ -106,6 +106,8 @@ const productsController = {
     },
 
     editProd: (req, res) => {
+        if (req.file != undefined)
+        {
         db.Product.update(
             {
                 name: req.body.name,
@@ -119,34 +121,26 @@ const productsController = {
                     id: req.params.id,
                 },
             }
-        );
+            
+            );
+        }else{
+            db.Product.update(
+            {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,               
+                category_id: req.body.category,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+            )
+        };            
         res.redirect(`../products/${req.params.id}/detail`);
     },
-    /*deleteShow: (req, res) => {
-        db.Product.findByPk(req.params.id, {
-            include: [{ association: "category" }],
-        }).then(function (product) {
-            res.render("products/product_delete", {
-                //product: requiredProduct,
-                toThousand: toThousand,
-                product: product,
-                
-                user: req.loggedUser,
-            });
-        });
-    },
-
-    /*const products = getProducts();
-        const product_delete = products.find((prod) => {
-            return prod.id == req.params.id;
-        });
-        res.render("products/product_delete", {
-            toThousand: toThousand,
-            products: products,
-            product: product_delete,
-            user: req.loggedUser,
-        });*/
-
+   
     delete: (req, res) => {
         db.Product.destroy({
             where: {
@@ -229,21 +223,7 @@ const productsController = {
         });
     },
 
-    /* const products = getProducts();
-        const reqProductIndex = products.findIndex((prod) => {
-            return prod.id == req.params.id;
-        });
-
-        products.splice(reqProductIndex, 1);
-
-        //convierto el array a JSON
-        const productsJSON = JSON.stringify(products, null, 2);
-        //sobre escribo el JSON dB.json
-        fs.writeFileSync("dB.json", productsJSON);
-        //redirigo al listado
-
-        res.redirect("/products");
-    },*/
+   
 };
 
 module.exports = productsController;

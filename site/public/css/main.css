@@ -25,10 +25,13 @@
     width: 100%;
     height: 50%;
     object-fit: contain;
-    
 }
 
 /* fa avatar register */
 .fs-20 {
     font-size: 20vh;
+}
+
+.card-title {
+    height: 54px;
 }

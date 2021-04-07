@@ -63,14 +63,14 @@ router.post(
 router.get("/Procesadores", productController.listadoProducto);
 router.get("/motherboards", productsController.listadoProducto);
 router.get("/gabinetes", productsController.listadoProducto);
-router.get("/Placas%20de%20video", productsController.listadoProducto);
+router.get("/Placasdevideo", productsController.listadoProducto);
 router.get("/discos", productsController.listadoProducto);
 router.get("/notebooks", productsController.listadoProducto);
 router.get("/mouse", productsController.listadoProducto);
 router.get("/teclado", productsController.listadoProducto);
 router.get("/auriculares", productsController.listadoProducto);
 router.get("/parlantes", productsController.listadoProducto);
-router.get("/sillasgamers", productsController.listadoProducto);
+router.get("/sillasgamer", productsController.listadoProducto);
 router.get("/monitores", productsController.listadoProducto);
 router.get("/fuentes", productsController.listadoProducto);
 router.get("/memorias", productsController.listadoProducto);
